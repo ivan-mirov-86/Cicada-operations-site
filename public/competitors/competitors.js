@@ -137,7 +137,7 @@ const comparison = [
   }
 ];
 
-const registry = [
+const cryptoGateways = [
   {
     name: "NOWPayments", site: "https://nowpayments.io/",
     product: "Hosted checkout, инвойсы, payment links и buttons, subscriptions, POS, плагины, white label, custody и customer accounts.",
@@ -290,6 +290,118 @@ const registry = [
   }
 ];
 
+const canadaRegistry = [
+  {
+    name: "EukaPay", site: "https://eukapay.com/",
+    product: "Hosted и встраиваемый checkout, payment links, разовые и регулярные инвойсы, подписки, POS и e-commerce плагины. REST API и webhooks для pay-in/payout; locked crypto→fiat conversion, выплаты на банк в USD/EUR/GBP/CAD, stablecoin settlement и интеграция с Xero.",
+    entity: "NUCL Technologies Inc.\nOntario; corp. 2790229\nFINTRAC M22233887",
+    risk: "Для клиентов вне США договор заключается с NUCL Technologies Inc.; для США используется отдельная компания. До интеграции подтвердить contracting entity, схему хранения средств, банковских партнёров, settlement SLA и тариф для нужной страны/индустрии."
+  },
+  {
+    name: "PayitFast", site: "https://payitfast.com/",
+    product: "Merchant Platform для криптоинвойсов и payment links: клиент платит поддерживаемым виртуальным активом, сервис конвертирует поступление в согласованную crypto/fiat валюту. Linked virtual IBAN, раздельный merchant balance, вывод и remittance, мониторинг платёжных потоков и доступы для команды.",
+    entity: "Silverleaf E-Money Services Ltd.\nBritish Columbia; corp. BC1394414\nFINTRAC M23026009",
+    risk: "Terms заявляют FINTRAC и регистрацию PSP в Bank of Canada, но часть операций выполняется через лицензированных партнёров. Запросить актуальную запись PSP, flow of funds, правила safeguarding, ответственность партнёров, сроки settlement и основания отклонения платежа."
+  },
+  {
+    name: "Cryptopay Business", site: "https://cryptopay.me/business/",
+    product: "Инвойсы, hosted checkout/widget, payment links, payment buttons и постоянные channel-адреса. REST API, callbacks, sandbox и CMS-плагины; business wallet, обмен, refunds, массовые выплаты и автоматический/банковский settlement, включая next-day bank settlement.",
+    entity: "RICHIELD FINANCIAL SERVICES INC.\nBritish Columbia; corp. BC1507884\nFINTRAC C100000420",
+    risk: "У группы несколько юридических лиц, и канадская компания не гарантирована для каждого продукта/региона. Получить проект service agreement с точной contracting entity, перечнем субподрядчиков, fiat-коридоров, ограниченных индустрий, reserve/hold и refund-процедур."
+  },
+  {
+    name: "Breet Business", site: "https://breet.io/business",
+    product: "Business Dashboard, crypto invoicing и OTC desk. API включает on-ramp, off-ramp, одноразовые или постоянные адреса, webhooks, конвертацию и payouts; 12+ активов. Входящий crypto автоматически конвертируется и выводится в USD/NGN/GHS на банк или mobile money.",
+    entity: "Wonesupport Inc.\nAlberta; corp. 2023367614\nFINTRAC N300000354",
+    risk: "Канадская компания есть, но продукт и банковский settlement ориентированы главным образом на Нигерию и Гану. В FINTRAC присутствуют ceased-запись и новая registered-запись той же компании; уточнить основание регистрации N300000354 и доступность USD settlement."
+  },
+  {
+    name: "PawPayments", site: "https://pawpayments.com/",
+    product: "Crypto-only gateway: hosted invoice checkout, REST API, webhooks и WooCommerce-плагин. Адреса и QR, 30+ криптовалют, настройка допустимого отклонения платежа, transaction tracking; автоконвертация в USDT/USDC, merchant balance и вывод на внешний crypto wallet.",
+    entity: "PawPayments Inc.\nOntario; corp. 1001222007\nFINTRAC C10001337",
+    risk: "Компания и FINTRAC-регистрация новые (2025), а публичная история операций короткая. Подтвердить отсутствие fiat settlement, custody/non-custody модель, объёмы, security audit, SLA, процесс AML-блокировок и возвратов."
+  },
+  {
+    name: "DogPay", site: "https://www.dogpay.com/",
+    product: "Payment-as-a-Service с checkout API, SDK, webhooks и плагинами для Shopify, WooCommerce, WordPress, Wix и Telegram. Приём USDT/USDC/ETH/BTC, crypto→fiat settlement, merchant dashboard, аналитика и reconciliation. Платформа также включает WaaS, BaaS, CaaS и fiat acquiring.",
+    entity: "Stratuspay Fintech Limited\nBritish Columbia; corp. BC1516708\nFINTRAC C100000785",
+    risk: "DogPay работает через группу компаний; канадская Stratuspay может быть не contracting entity для всех продуктов. Зафиксировать владельца средств и данных, поставщиков custody/cards/banking, применимое право, safeguarding, payout SLA и ответственность при блокировке."
+  },
+  {
+    name: "Wyrei", site: "https://www.wyrei.com/",
+    product: "API-интеграция и настраиваемый merchant dashboard. Управление несколькими crypto wallets, выбор способов оплаты и комиссий по сегментам/типам транзакций, мониторинг операций, отчётность и настройки аккаунта. Детальные checkout, payout и settlement-сценарии публично не раскрыты.",
+    entity: "Wyrei Pay Inc.\nBritish Columbia; corp. BC1414574\nFINTRAC M23924381",
+    risk: "На сайте FINTRAC registration называется лицензией, что юридически неточно. Публичных terms, тарифов и API-документации мало; проверить custody, банковских партнёров, safeguarding, complaints/refunds, settlement schedule, сети и независимые security-аудиты."
+  },
+  {
+    name: "Cryptomus", site: "https://cryptomus.com/",
+    product: "Инвойсы и payment links, hosted payment page, статические адреса, QR, REST API/SDK, webhooks и 20+ e-commerce модулей. Under/overpayment, доплата и refunds; recurring payments, mass payouts, auto-convert/auto-withdrawal, business wallet и вывод fiat через SEPA/SWIFT.",
+    entity: "Xeltox Enterprises Ltd.\nBritish Columbia; corp. BC1368872\nFINTRAC M22649585",
+    risk: "Критический regulatory risk: штраф FINTRAC CAD 176,96 млн в 2025 году и действия BCSC. В выгрузке FINTRAC статус указан Registered при expiry 2025-06-30; нужны юридическая проверка текущего статуса, результат апелляций и подтверждение права обслуживать выбранные рынки."
+  },
+  {
+    name: "Sendcoins", site: "https://www.sendcoins.ca/payment-gateway",
+    product: "Early-access gateway: dashboard, hosted checkout и charge links, API, real-time status webhooks, Shopify/WooCommerce плагины. Приём BTC/ETH/USDC в Mainnet, Arbitrum, Optimism и Base; хранение crypto либо автоматический CAD settlement на канадский банк.",
+    entity: "Sendcoin Inc.\nNova Scotia; Registry ID 4657335\nFINTRAC: не найден / pending",
+    risk: "Продукт находится в early access, а FINTRAC registration заявлена как pending и не найдена в реестре. Нет подтверждённой production-истории, публичного SLA, тарифов, custody/settlement-схемы и банковских партнёров; не включать в core shortlist до регистрации и тестовой транзакции."
+  },
+  {
+    name: "NordPay", site: "https://nord-pay.com/",
+    product: "Инвойсы, branded hosted checkout, REST API/webhooks и постоянные crypto wallets; 80+ токенов в 17+ сетях. Rate lock, partial/overpayment, auto-conversion, exchange, crypto/fiat settlement через SEPA/SWIFT, mass payouts CSV/API, workspaces, роли и AML risk scoring.",
+    entity: "Chiang Huat Global Capital Limited\nFederal / Ontario; corp. 1569180-0\nFINTRAC C100000500",
+    risk: "Канадская компания и FINTRAC подтверждены, но Terms используют право Кипра и Limassol, контактный телефон имеет код Грузии. Уточнить contracting entity и место операций; согласовать custody-формулировки, проверить good standing, PSP status, safeguarding и fiat settlement partners."
+  },
+  {
+    name: "Pallapay", site: "https://www.pallapay.com/",
+    product: "Hosted payment links и online checkout через API с IPN, sandbox, Python/PHP SDK и плагины WooCommerce/Magento/OpenCart/WHMCS. Multi-crypto acceptance, POS crypto→fiat, dashboard/balances и settlement в USD/EUR/GBP.",
+    entity: "Pallapay Ltd.\nFederal / Ontario; corp. 1497760-2\nFINTRAC M23088601",
+    risk: "Сайт указывает Pallapay Ltd. в Канаде, одновременно бренд связывается с Emirates Coin Investment LLC и другими компаниями группы. Требуются точная contracting entity, роль канадской компании, flow of funds, custody и fiat partners, применимое право, segregated accounts, reserves/holds и payout SLA."
+  },
+  {
+    name: "Cryptix", site: "https://www.cryptix.io/",
+    product: "Интеграция через REST API, HTML iFrame или payment links. Crypto checkout с real-time конвертацией в stablecoin/fiat, instant и mass payouts, refund workflow, KYT/AML screening, payment status tracking и merchant support; ориентирован также на gambling, betting и high-risk verticals.",
+    entity: "IZOLDA PAY INC.\nBritish Columbia; corp. BC1442624\nFINTRAC M23274246",
+    risk: "Регулируемые virtual-currency услуги новым клиентам оказывает IZOLDA PAY INC., а RSG Universal Payments Ltd. является техническим оператором. Зафиксировать разделение ответственности, обработчика данных, custody/safeguarding, complaints, payout SLA и применимое право."
+  },
+  {
+    name: "EnoviPay", site: "https://enovipay.com/",
+    product: "Managed crypto gateway с multi-asset invoices (USDT/USDC/BTC/ETH), QR, wallet-to-wallet и payment links. On/off-ramp через card/bank/APM, crypto↔fiat conversion, merchant wallet/account settlement, KYC/AML/KYT и автоматизация платёжных workflow через API integrations.",
+    entity: "Enovipay Solutions Inc.\nBritish Columbia; corp. BC1428796\nFINTRAC M23335114",
+    risk: "На сайте corporate number BC1428796 ошибочно назван номером FINTRAC; официальный MSB № M23335114. Проверить заявленную Bank of Canada PSP registration, settlement partners, flow of funds, custody, тарифы, SLA и референсы действующих мерчантов."
+  },
+  {
+    name: "Overchain", site: "https://overchain.io/accept-crypto-payments/",
+    product: "Payment widget для web/app/POS, digital invoices, payment links и development API. Уникальный адрес на транзакцию и 15-минутный rate lock; auto-convert в fiat, same-day bank settlement, crypto/fiat payouts, swap и reporting. Fireblocks custody, Chainalysis monitoring, 2FA и dual approval.",
+    entity: "Overchain (Canada) Limited\nOntario; corp. 1000853786\nFINTRAC C100000561",
+    risk: "Компания называет FINTRAC registration лицензией и использует широкие формулировки о надзоре. Terms предусматривают custodial wallet; запросить поставщика custody, сегрегацию и страхование, proof of reserves, PSP status, fiat rails, порядок AML freeze/appeal и security audit."
+  },
+  {
+    name: "PassimPay", site: "https://passimpay.io/",
+    product: "REST API, 12 CMS-плагинов, инвойсы, payment links, QR и статические адреса. 74+ активов / 18+ сетей; deposit/withdrawal/exchange webhooks, auto-conversion в stablecoins, scheduled transfers, transaction batching и Multisender, crypto exchange и EUR/USD settlement для eligible merchants.",
+    entity: "NILESPAY FINANCE INC.\nBritish Columbia; corp. BC1516629\nFINTRAC C100000852",
+    risk: "Канадская инкорпорация и FINTRAC подтверждены, но business address указан в Польше; у бренда также есть польская компания. Определить contracting entity и юрисдикцию данных/средств. Заявленные объёмы self-reported — нужны референсы, audit/SLA и подтверждение fiat-коридоров."
+  },
+  {
+    name: "Due", site: "https://www.opendue.com/",
+    product: "Stablecoin payments API и business account: virtual accounts для локальных pay-ins, automatic fiat→stablecoin conversion, USDT/USDC/EURC swaps и self-custodial wallet. Bulk payouts и payout links в 80+ стран через ACH/SEPA/Faster Payments/PIX/mobile money, роли, лимиты, approvals и audit trail.",
+    entity: "Due Payments Inc.\nOntario; corp. 1000864948\nFINTRAC C100000185",
+    risk: "Сильный смежный провайдер pay-in/pay-out и on/off-ramp, но публичный merchant checkout выражен слабее. Проверить возможность invoice acquiring, payer UX, webhooks, refunds, merchant reconciliation и точную entity на каждом payment rail."
+  },
+  {
+    name: "ArtPay", site: "https://artpay.co/",
+    product: "B2B business accounts с fiat и digital-asset balances. Входящие и исходящие domestic/cross-border платежи, FX, OTC-конвертация e-money↔stablecoins↔fiat и stablecoin on/off-ramp; удалённый onboarding и API-доступ. Публичный merchant checkout/инвойс не подтверждён.",
+    entity: "BUYEASY TECHNOLOGY CO., LTD\nFederal / Ontario; corp. 1500317-2\nFINTRAC M23877619",
+    risk: "Текущий ArtPay (artpay.co) — BUYEASY TECHNOLOGY CO., LTD; его нельзя смешивать с artpay.cloud/ARTCLUB 88. Позиционирование ближе к B2B accounts и stablecoin rails. Проверить checkout/invoice API, PSP record, account/custody providers, safeguarding и ownership бренда/IP."
+  },
+  {
+    name: "Pay4B", site: "https://www.pay4b.com/",
+    product: "B2B multicurrency e-wallet и выделенные/виртуальные IBAN. Внутренние переводы, SEPA/SWIFT pay-in/pay-out, transfers to/from crypto exchanges и crypto↔fiat операции для корпоративных клиентов. Публичные checkout, invoice API, webhooks и merchant acquiring flow не подтверждены.",
+    entity: "Pay4B Limited\nOntario; corp. 1000707154\nFINTRAC N300000219",
+    risk: "Публичные материалы подтверждают B2B payment infrastructure и crypto↔fiat, но merchant checkout, API, сети и settlement SLA описаны недостаточно. Запросить demo/API docs, contracting/partner map, custody/safeguarding, PSP record, pricing и reserve/hold policy."
+  }
+];
+
+
 function element(tag, className, text) {
   const node = document.createElement(tag);
   if (className) node.className = className;
@@ -346,7 +458,19 @@ function renderComparison() {
 
 function renderRegistry() {
   const body = document.querySelector("#registry-body");
-  registry.forEach((item, index) => {
+  canadaRegistry.forEach((item, index) => {
+    const row = document.createElement("tr");
+    row.append(element("td", "index-cell", String(index + 1).padStart(2, "0")));
+    const company = document.createElement("td");
+    company.append(companyLink(item), element("span", "canada-badge", "Canada entity"));
+    row.append(company, element("td", "description-cell", item.product), element("td", "entity-cell", item.entity), element("td", "risk-cell", item.risk));
+    body.append(row);
+  });
+}
+
+function renderCryptoGateways() {
+  const body = document.querySelector("#gateways-body");
+  cryptoGateways.forEach((item, index) => {
     const row = document.createElement("tr");
     row.append(element("td", "index-cell", String(index + 1).padStart(2, "0")));
     const company = document.createElement("td");
@@ -400,6 +524,7 @@ tabs.forEach((tab, index) => {
 renderShortlist();
 renderComparison();
 renderRegistry();
+renderCryptoGateways();
 selectView("shortlist");
 
 const productCards = [...document.querySelectorAll(".gateway-product")];
