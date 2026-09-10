@@ -348,8 +348,7 @@ h1 em { color: var(--blue); font-style: normal; }
 .panel-heading, .comparison-heading { display: grid; grid-template-columns: .9fr 1.1fr; gap: 72px; align-items: end; margin-bottom: 24px; }
 .panel-heading h3, .comparison-heading h3 { margin: 0; font-size: clamp(28px, 3vw, 42px); font-weight: 500; letter-spacing: -.04em; }
 .panel-heading > p, .comparison-heading > p { margin: 0 0 4px; color: var(--muted); font-size: 14px; line-height: 1.65; }
-.panel-kicker { margin-bottom: 10px; color: var(--blue); font-size: 10px; font-weight: 700; letter-spacing: .1em; }
-.shortlist-kicker { font-size: 14px; letter-spacing: .08em; }
+.panel-kicker { margin-bottom: 10px; color: var(--blue); font-size: 14px; font-weight: 700; letter-spacing: .08em; }
 
 .data-table-wrap { width: 100%; overflow-x: auto; border: 1px solid var(--line); border-radius: 20px; background: #fff; box-shadow: 0 20px 55px rgb(19 37 83 / 6%); }
 .competitor-data-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
