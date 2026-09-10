@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Архитектура Cicada Payment Gateway: каналы оплаты, интеграции, оркестрация и расчёты." />
+    <title>Scheme — Cicada Operations</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./scheme.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Cicada Operations — главная"><img src="./assets/cicada-wordmark-blue.svg" alt="Cicada" /><span>Operations</span></a>
+      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link" href="./index.html">Main</a><a class="nav-link" href="./payment-gateway.html">Payment Gateway</a><a class="nav-link active" href="./scheme.html" aria-current="page">Scheme</a></nav>
+    </header>
+
+    <main class="scheme-page">
+      <section class="scheme-intro section-shell reveal-step">
+        <p class="eyebrow"><span></span> Product architecture</p>
+        <h1>Cicada Payment<br /><em>Gateway</em></h1>
+        <p>Платёжный шлюз, который позволяет мерчанту принимать оплату от клиента: выставлять счёт в фиатной или цифровой валюте и создавать платёжную ссылку. Мерчант выбирает валюту счёта, управляет проверками и конвертацией, а также настраивает получение расчёта в фиате (USD, EUR, AED) или выбранном цифровом активе.</p>
+      </section>
+
+      <section class="scheme-canvas section-shell" aria-label="Архитектура Cicada Payment Gateway">
+        <div class="scheme-stage reveal-step">
+          <p class="scheme-label">Каналы оплаты для покупателя</p>
+          <div class="scheme-grid scheme-grid-four">
+            <article class="scheme-card"><strong>QR Code</strong><span>Оплата в магазине</span></article>
+            <article class="scheme-card"><strong>Payment Link</strong><span>Ссылка в сообщении</span></article>
+            <article class="scheme-card"><strong>Hosted Checkout</strong><span>Платёжная страница</span></article>
+            <article class="scheme-card"><strong>POS</strong><span>Касса и терминал</span></article>
+          </div>
+        </div>
+
+        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
+
+        <div class="scheme-stage reveal-step">
+          <p class="scheme-label">Доставка функционала мерчанту</p>
+          <div class="scheme-grid scheme-grid-four">
+            <article class="scheme-card"><strong>REST API</strong><span>Server-to-server</span></article>
+            <article class="scheme-card"><strong>Web &amp; Mobile SDK</strong><span>Встроенный checkout</span></article>
+            <article class="scheme-card"><strong>Plugin</strong><span>Сайт и интернет-магазин</span></article>
+            <article class="scheme-card"><strong>Dashboard</strong><span>No-code управление</span></article>
+          </div>
+        </div>
+
+        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
+        <article class="scheme-layer scheme-layer-control reveal-step"><strong>Merchant Control Plane</strong><span>Мерчанты · магазины · терминалы · пользователи · API-ключи · комиссии · лимиты · settlement-настройки</span></article>
+        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
+        <article class="scheme-layer scheme-layer-orchestration reveal-step"><strong>Payment Orchestration Layer</strong><span>Payment Intent · жизненный цикл платежа · маршрутизация · статусы · webhooks · refunds · idempotency</span></article>
+        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
+
+        <div class="scheme-stage reveal-step">
+          <p class="scheme-label">Платёжное и регулируемое ядро</p>
+          <div class="scheme-grid scheme-grid-three">
+            <article class="scheme-card"><strong>Compliance &amp; Risk</strong><span>KYB · KYC · SoF/SoW · KYT</span></article>
+            <article class="scheme-card"><strong>Wallet &amp; Blockchain</strong><span>Адреса · custody · monitoring</span></article>
+            <article class="scheme-card"><strong>Quote &amp; Exchange</strong><span>Курс · rate lock · OTC · hedge</span></article>
+          </div>
+        </div>
+
+        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
+        <article class="scheme-layer scheme-layer-ledger reveal-step"><strong>Ledger — финансовый источник истины</strong><span>Балансы · движение активов · обязательства перед мерчантом · комиссии · сверка · аудит</span></article>
+        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
+        <article class="scheme-layer reveal-step"><strong>Settlement Engine</strong><span>EUR и crypto payouts · расписания · банковские реквизиты · отчёты · возвраты переводов</span></article>
+        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
+
+        <div class="scheme-stage scheme-external reveal-step">
+          <p class="scheme-label">Внешняя инфраструктура</p>
+          <div class="scheme-grid scheme-grid-five">
+            <article class="scheme-card"><strong>Blockchain</strong></article>
+            <article class="scheme-card"><strong>Custodian</strong></article>
+            <article class="scheme-card"><strong>Chainalysis</strong></article>
+            <article class="scheme-card"><strong>OTC / Liquidity</strong></article>
+            <article class="scheme-card"><strong>Banks</strong></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="channel-difference section-shell reveal-step">
+        <div class="channel-difference-heading">
+          <p class="eyebrow"><span></span> Integration channels</p>
+          <h2>Разница между<br />каналами</h2>
+        </div>
+        <div class="difference-list">
+          <article><b>01</b><div><h3>Dashboard</h3><p>Сотрудник мерчанта работает вручную в личном кабинете.</p></div></article>
+          <article><b>02</b><div><h3>API</h3><p>Backend мерчанта автоматически взаимодействует с Cicada.</p></div></article>
+          <article><b>03</b><div><h3>SDK</h3><p>Готовые платёжные компоненты в приложении или на сайте.</p></div></article>
+          <article><b>04</b><div><h3>Plugin</h3><p>Готовое подключение Cicada к CMS или e-commerce-платформе.</p></div></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell"><img src="./assets/cicada-wordmark-blue.svg" alt="Cicada" /><p>Payment Gateway architecture</p></footer>
+  </body>
+</html>
