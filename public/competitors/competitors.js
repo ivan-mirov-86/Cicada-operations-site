@@ -411,12 +411,26 @@ function element(tag, className, text) {
 
 function companyLink(item) {
   const wrapper = element("div", "company-cell");
+  const identity = element("div", "company-identity");
+  const icon = element("span", "company-favicon");
+  const fallback = element("span", "company-favicon-fallback", item.name.trim().charAt(0).toUpperCase());
+  const image = document.createElement("img");
+  const hostName = new URL(item.site).hostname.replace(/^www\./, "");
+  image.src = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(hostName)}&sz=64`;
+  image.alt = "";
+  image.loading = "lazy";
+  image.decoding = "async";
+  image.addEventListener("error", () => icon.classList.add("is-fallback"));
   const link = element("a", "company-link", item.name);
   link.href = item.site;
   link.target = "_blank";
   link.rel = "noopener noreferrer";
-  const host = element("span", "company-host", new URL(item.site).hostname.replace(/^www\./, ""));
-  wrapper.append(link, host);
+  const copy = element("div", "company-copy");
+  const host = element("span", "company-host", hostName);
+  icon.append(fallback, image);
+  copy.append(link, host);
+  identity.append(icon, copy);
+  wrapper.append(identity);
   return wrapper;
 }
 
