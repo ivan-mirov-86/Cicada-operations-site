@@ -378,12 +378,18 @@ h1 em { color: var(--blue); font-style: normal; }
 .shortlist-table th:first-child { width: 7%; }
 .shortlist-table th:nth-child(2) { width: 20%; }
 .shortlist-table th:last-child { width: 73%; }
+.gateway-shortlist-group { margin-top: 112px; padding-top: 88px; border-top: 1px solid var(--line); }
 .comparison-heading { margin-top: 82px; }
 .comparison-table { min-width: 1500px; }
 .comparison-table th:first-child { width: 19%; }
 .comparison-table th:nth-child(n+2):nth-child(-n+6) { width: 8.5%; text-align: center; }
 .comparison-table th:last-child { width: 38.5%; }
 .comparison-table td:nth-child(n+2):nth-child(-n+6) { text-align: center; vertical-align: middle; }
+.gateway-comparison-table { min-width: 1320px; }
+.gateway-comparison-table th:first-child { width: 24%; }
+.gateway-comparison-table th:nth-child(n+2):nth-child(-n+4) { width: 11%; text-align: center; }
+.gateway-comparison-table th:last-child { width: 43%; text-align: left; }
+.gateway-comparison-table td:last-child { text-align: left; vertical-align: top; }
 .feature-name { display: block; margin-bottom: 8px; color: var(--ink); font-size: 14px; }
 .feature-description { display: block; color: #7d8491; font-size: 11px; line-height: 1.55; }
 .conclusion-cell { color: #424b59 !important; }
@@ -464,5 +470,6 @@ h1 em { color: var(--blue); font-style: normal; }
   .competitor-panel { padding-top: 34px; }
   .panel-heading h3, .comparison-heading h3 { font-size: 29px; }
   .comparison-heading { margin-top: 62px; }
+  .gateway-shortlist-group { margin-top: 76px; padding-top: 58px; }
   .coming-soon-card { grid-template-columns: 1fr; min-height: 360px; padding: 30px 24px; }
 }

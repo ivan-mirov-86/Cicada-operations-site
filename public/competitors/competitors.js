@@ -26,6 +26,147 @@ const shortlist = [
   }
 ];
 
+const gatewayShortlist = [
+  {
+    name: "NOWPayments",
+    site: "https://nowpayments.io/",
+    reason: "Функциональный benchmark для быстрого запуска массового merchant-продукта. Сильные стороны: 300+ активов, hosted checkout, инвойсы, payment links, POS, подписки, плагины, custody/customer accounts и mass payouts. Особое внимание стоит уделить модульности API, breadth of integrations и пути от простого checkout к платформенному wallet-продукту. Главный риск анализа — отсутствие собственной публичной VASP/payment licence и зависимость fiat-функций от партнёров."
+  },
+  {
+    name: "CoinGate",
+    site: "https://coingate.com/",
+    reason: "Регулируемый европейский benchmark с наиболее цельным end-to-end контуром: checkout, billing, постоянные payment channels, conversion, refunds, payouts и fiat settlement. Сильные стороны: MiCA CASP и Payment Institution permissions, зрелый API v2, sandbox, OpenAPI, granular API permissions и прозрачная обработка callbacks. В анализе важны операционные controls, reconciliation, payout approvals и сочетание crypto и fiat внутри одного business account."
+  },
+  {
+    name: "0xProcessing",
+    site: "https://0xprocessing.com/",
+    reason: "API-first benchmark для crypto-native и high-risk сценариев. Сильные стороны: invoices, static wallets, recurring payments, white label, Web3 checkout, virtual POS, массовые выплаты и широкая multi-chain поддержка. Компания полезна для изучения гибкости кастомной интеграции и прямых blockchain-flow. При этом публичная VASP/payment licence не найдена, поэтому продуктовые идеи нужно отделять от regulatory и counterparty-risk модели."
+  }
+];
+
+const gatewayComparison = [
+  {
+    feature: "Hosted checkout",
+    description: "Готовая платёжная страница принимает сумму и валюту заказа, показывает доступные активы, адрес или QR и отслеживает подтверждение. Она сокращает время интеграции и переносит основную поддержку payer UX на провайдера.",
+    values: ["Да", "Да", "Да: redirect/iFrame"],
+    conclusion: "Базовый паритет для всех трёх. Нужны адаптивная страница, брендирование, выбор сети, понятный таймер, статусы подтверждений и восстановление незавершённого платежа. Для снижения зависимости от провайдера checkout должен использовать тот же Payment Intent, что и собственный embedded flow."
+  },
+  {
+    feature: "Инвойсы и payment links",
+    description: "Инвойс фиксирует сумму, валюту, назначение и срок оплаты. Payment link позволяет принять платёж без разработки сайта и подходит для продаж, услуг, billing и ручного выставления счетов.",
+    values: ["Да", "Да: Billing API", "Да"],
+    conclusion: "Функция обязательна для self-service и sales-assisted onboarding. Паритет включает branded links, срок действия, повторную отправку, metadata/order ID, PDF или printable view и единый lifecycle с API-инвойсами."
+  },
+  {
+    feature: "REST API и webhooks",
+    description: "API создаёт платежи, получает статусы и управляет связанными операциями. Webhooks передают изменения серверу мерчанта и устраняют необходимость постоянного polling.",
+    values: ["Да", "Да", "Да"],
+    conclusion: "Все три закрывают базовый API flow. Для паритета нужны idempotency, подпись webhook, retry policy, event IDs, replay из кабинета, IP allowlist, versioning и журнал доставки. Документация должна описывать underpayment, reorg и late-payment edge cases."
+  },
+  {
+    feature: "Sandbox и developer tooling",
+    description: "Sandbox позволяет тестировать интеграцию без реальных средств. К developer tooling относятся SDK, OpenAPI/Postman, тестовые callbacks, примеры ошибок и диагностические логи.",
+    values: ["Да", "Да: sandbox/OpenAPI", "Тестовые платежи"],
+    conclusion: "CoinGate задаёт самый полный публичный стандарт. Паритет должен включать отдельные test keys, детерминированное прохождение всех статусов, webhook simulator и production checklist. У 0xProcessing нужно проверить, является ли test flow полноценной изолированной средой."
+  },
+  {
+    feature: "CMS и e-commerce плагины",
+    description: "Готовые плагины добавляют crypto payment method в интернет-магазин и синхронизируют статусы заказа. Они уменьшают стоимость подключения малого и среднего бизнеса.",
+    values: ["Да", "Да", "Не подтверждено"],
+    conclusion: "NOWPayments и CoinGate закрывают plugin-led acquisition. Первый набор целесообразно ограничить WooCommerce, Shopify и WHMCS/OpenCart, вести version compatibility и automated regression tests. Для 0xProcessing публичное покрытие плагинами нужно подтвердить отдельно."
+  },
+  {
+    feature: "Активы и сети",
+    description: "Широкое покрытие активов повышает вероятность, что клиент найдёт удобный coin/network. Для реального продукта важнее поддержка BTC, ETH, USDT и USDC в нужных сетях, чем максимальное число малоиспользуемых токенов.",
+    values: ["300+ активов", "Основные assets и L2", "85+ токенов / 18 сетей"],
+    conclusion: "NOWPayments лидирует по широте, 0xProcessing — по заявленной multi-chain глубине, CoinGate — по управляемому набору с fiat conversion. Паритет следует строить вокруг приоритетной network matrix, memo/tag, confirmation policy и единого asset directory API."
+  },
+  {
+    feature: "Постоянные адреса",
+    description: "Постоянный deposit address закрепляется за клиентом и принимает повторные пополнения без нового invoice. Сценарий нужен для gaming, wallets, exchanges и внутренних customer balances.",
+    values: ["Через Customer/Custody API", "Да: Payment Channels", "Да: static wallets"],
+    conclusion: "CoinGate и 0xProcessing дают наиболее явную модель customer-to-address. Паритет включает один customer ID, несколько asset/network addresses, webhook attribution, Travel Rule fields, minimum deposit, архивирование и безопасную ротацию."
+  },
+  {
+    feature: "Rate lock и отклонения оплаты",
+    description: "Rate lock фиксирует курс на время оплаты. Правила underpayment, overpayment, late payment и partial payment определяют, когда заказ считается оплаченным и что происходит с расхождением.",
+    values: ["Fixed-rate option", "Да: tolerance/callbacks", "Да"],
+    conclusion: "Нужен управляемый state machine, а не только флаг paid. Паритет включает configurable tolerance, доплату, refund или merchant acceptance, неизменяемый audit trail и отдельные webhook events. Курс и срок фиксации должны быть видны payer и мерчанту."
+  },
+  {
+    feature: "Автоконвертация",
+    description: "Автоконвертация меняет входящий актив на выбранный stablecoin, crypto или fiat. Она снижает volatility exposure и упрощает treasury management.",
+    values: ["Да", "Да", "Да: в stablecoins"],
+    conclusion: "Все три подтверждают автоматическую конвертацию, но глубина правил различается. Паритет требует target asset, trigger, minimum amount, прозрачный spread/rate, исключения по активам и историю каждой conversion leg."
+  },
+  {
+    feature: "Crypto и fiat settlement",
+    description: "Settlement определяет, в каком активе мерчант получает выручку и когда она становится доступна. Fiat settlement дополнительно требует банковских партнёров, safeguarding и country-specific permissions.",
+    values: ["Crypto + fiat через партнёров", "Crypto + EUR/USD/GBP", "Crypto; SEPA/SWIFT заявлены"],
+    conclusion: "CoinGate является наиболее сильным подтверждённым benchmark. Для паритета нужны selectable settlement currency, расписание, minimum payout, settlement statement и reconciliation reference. У NOWPayments и 0xProcessing необходимо отдельно проверять партнёров и доступность по странам."
+  },
+  {
+    feature: "Массовые выплаты",
+    description: "Mass payouts отправляют средства множеству получателей через API или batch-файл. Сценарии включают withdrawals, affiliates, marketplace sellers, payroll и refunds.",
+    values: ["Да", "Да: API/CSV/links", "Да"],
+    conclusion: "Паритет включает API и CSV, address validation, fee preview, duplicate detection, approvals, whitelist, per-item statuses и повтор только failed items. CoinGate дополнительно показывает полезный pattern payout links и разделение creator/approver."
+  },
+  {
+    feature: "Refunds",
+    description: "Refund создаёт отдельную blockchain-выплату после необратимого входящего платежа. Он должен сохранять связь с исходным invoice и повторно проверять адрес, сеть и compliance risk.",
+    values: ["Частично: через payout", "Да: full/partial API", "Не подтверждено"],
+    conclusion: "CoinGate задаёт целевой уровень: full и partial refund, status tracking и callbacks. Паритет должен включать approval, KYT адреса, rate/fee policy и связь с original payment. Для NOWPayments и 0xProcessing требуется подтвердить нативный refund workflow."
+  },
+  {
+    feature: "Recurring payments",
+    description: "Recurring flow автоматизирует регулярные crypto-платежи для SaaS, memberships и donations. В зависимости от модели это серия инвойсов, recurring deposit channel или подтверждённый план списаний.",
+    values: ["Да", "Да: billing/channels", "Да"],
+    conclusion: "Все три закрывают сценарий разными моделями. Паритет должен явно разделять recurring invoice и wallet-authorized payment, хранить consent, поддерживать retry/dunning, pause/cancel и webhooks каждого периода."
+  },
+  {
+    feature: "POS и QR",
+    description: "POS позволяет принять платёж при физическом присутствии клиента. Кассир задаёт сумму, а клиент сканирует динамический QR или открывает checkout на своём устройстве.",
+    values: ["Да", "Да", "Да: virtual POS"],
+    conclusion: "Функцию можно строить на общем Payment Intent без отдельного backend. Для паритета нужны mobile-friendly merchant mode, кассиры и смены, receipts, быстрый refresh курса и восстановление оплаты после закрытия экрана."
+  },
+  {
+    feature: "Custody и business balances",
+    description: "Custody или внутренний business balance позволяет хранить выручку, конвертировать её и финансировать выплаты. Это расширяет продукт, но добавляет требования к safeguarding, ledger controls и лицензированию.",
+    values: ["Да: Custody API", "Да: business account", "Wallet infrastructure"],
+    conclusion: "NOWPayments и CoinGate предлагают наиболее явный account-based контур. Если custody входит в стратегию, нужны segregated ledger, withdrawal controls, proof/reconciliation, roles и policy для dormant funds. У 0xProcessing следует подтвердить юридическую и техническую модель хранения."
+  },
+  {
+    feature: "White label и кастомизация",
+    description: "White label скрывает бренд провайдера и позволяет адаптировать checkout, домен, цвета и коммуникации под мерчанта. Функция важна для PSP, платформ и enterprise-клиентов.",
+    values: ["Да", "Частично: API/plugins", "Да"],
+    conclusion: "NOWPayments и 0xProcessing сильнее позиционируют white label. Паритет должен включать custom domain, logo/colors, локализацию, receipt/email templates и configurable asset list. Полное скрытие провайдера не должно нарушать обязательные legal disclosures."
+  },
+  {
+    feature: "Команды, роли и approvals",
+    description: "Роли ограничивают доступ сотрудников к balances, API keys, refunds и payouts. Approvals снижают риск ошибочной или мошеннической выплаты.",
+    values: ["Не подтверждено", "Да: permissions/approvals", "Не подтверждено"],
+    conclusion: "CoinGate — основной benchmark операционного контроля. Паритет требует owner/admin/developer/finance roles, separate API permissions, maker-checker для payout/refund, audit log и немедленный revoke. У двух других глубину RBAC нужно проверять на demo."
+  },
+  {
+    feature: "KYT, AML и санкции",
+    description: "KYT анализирует blockchain exposure, а AML/KYB controls проверяют мерчанта и транзакции. Это влияет на автоматическое зачисление, review, freeze и возможность settlement.",
+    values: ["Проверки заявлены", "Да: compliance checks", "KYT/KYB заявлены"],
+    conclusion: "Паритет включает risk score, configurable decision rules, case management, evidence trail, sanctions screening и понятный appeal/release workflow. Само наличие проверки недостаточно: необходимо оценить providers, thresholds, false positives и coverage по сетям."
+  },
+  {
+    feature: "Dashboard и reconciliation",
+    description: "Dashboard объединяет платежи, balances, fees, conversions, refunds и settlements. Reconciliation связывает provider transaction с order ID, blockchain tx и банковским payout.",
+    values: ["Да", "Да", "Да"],
+    conclusion: "Все три имеют кабинет, но целевой паритет определяется качеством данных. Нужны фильтры и поиск, gross/net/fee breakdown, tx hash, settlement reference, CSV/XLSX export, часовые пояса, saved views и audit history."
+  },
+  {
+    feature: "Регуляторный и юридический контур",
+    description: "Юридический контур определяет contracting entity, разрешённые услуги и ответственность за средства. Регистрация, лицензия и партнёрская услуга имеют разный правовой смысл.",
+    values: ["SVG entity; собственная licence не заявлена", "MiCA CASP LB002323; PI LB002324", "Seychelles entity; публичная licence не найдена"],
+    conclusion: "CoinGate — единственный сильный регулируемый benchmark в этой тройке. NOWPayments и 0xProcessing полезны для функционального анализа, но требуют усиленного due diligence по custody, fiat partners, safeguarding и legal basis. Product parity не должен автоматически переносить их risk model."
+  }
+];
+
 const comparison = [
   {
     feature: "Hosted checkout",
@@ -470,6 +611,35 @@ function renderComparison() {
   });
 }
 
+function renderGatewayShortlist() {
+  const body = document.querySelector("#gateway-shortlist-body");
+  gatewayShortlist.forEach((item, index) => {
+    const row = document.createElement("tr");
+    row.append(element("td", "index-cell", String(index + 1).padStart(2, "0")));
+    const company = document.createElement("td");
+    company.append(companyLink(item));
+    row.append(company, element("td", "description-cell", item.reason));
+    body.append(row);
+  });
+}
+
+function renderGatewayComparison() {
+  const body = document.querySelector("#gateway-comparison-body");
+  gatewayComparison.forEach((item) => {
+    const row = document.createElement("tr");
+    const feature = document.createElement("td");
+    feature.append(element("strong", "feature-name", item.feature), element("span", "feature-description", item.description));
+    row.append(feature);
+    item.values.forEach((value) => {
+      const cell = document.createElement("td");
+      cell.append(element("span", `status-pill ${statusClass(value)}`, value));
+      row.append(cell);
+    });
+    row.append(element("td", "conclusion-cell", item.conclusion));
+    body.append(row);
+  });
+}
+
 function renderRegistry() {
   const body = document.querySelector("#registry-body");
   canadaRegistry.forEach((item, index) => {
@@ -537,6 +707,8 @@ tabs.forEach((tab, index) => {
 
 renderShortlist();
 renderComparison();
+renderGatewayShortlist();
+renderGatewayComparison();
 renderRegistry();
 renderCryptoGateways();
 selectView("shortlist");
