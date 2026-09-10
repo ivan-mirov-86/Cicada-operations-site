@@ -77,26 +77,38 @@ function element(tag, className, text) {
 
 const list = document.querySelector("#decision-list");
 const head = element("div", "decision-row decision-head");
-["Решение", "Target date", "Документ"].forEach((label) => head.append(element("span", "", label)));
+head.append(element("span", "", "Вопросы для решения"));
 list.append(head);
 
-let decisionNumber = 0;
+decisionGroups.forEach((group, groupIndex) => {
+  const groupSection = element("section", "decision-group");
+  const groupTitle = element("button", "decision-group-title");
+  const groupBody = element("div", "decision-group-body");
+  const groupBodyId = `decision-group-${groupIndex + 1}`;
 
-decisionGroups.forEach((group) => {
-  const groupTitle = element("div", "decision-group-title");
-  groupTitle.append(element("span", "", String(decisionNumber + 1).padStart(2, "0")), element("h2", "", group.title));
-  list.append(groupTitle);
+  groupTitle.type = "button";
+  groupTitle.setAttribute("aria-expanded", "false");
+  groupTitle.setAttribute("aria-controls", groupBodyId);
+  groupTitle.append(element("span", "decision-group-heading", group.title), element("span", "decision-group-toggle", "+"));
+  groupBody.id = groupBodyId;
+  groupBody.hidden = true;
 
-  group.decisions.forEach((decision) => {
-    decisionNumber += 1;
+  group.decisions.forEach((decision, decisionIndex) => {
     const row = element("div", "decision-row");
     const title = element("div", "decision-title");
-    title.append(element("b", "", String(decisionNumber).padStart(2, "0")), element("strong", "", decision));
-    const date = element("span", "decision-empty", "—");
-    date.dataset.label = "Target date";
-    const documentLink = element("span", "decision-empty", "Не добавлен");
-    documentLink.dataset.label = "Документ";
-    row.append(title, date, documentLink);
-    list.append(row);
+    title.append(element("b", "", String(decisionIndex + 1).padStart(2, "0")), element("strong", "", decision));
+    row.append(title);
+    groupBody.append(row);
   });
+
+  groupTitle.addEventListener("click", () => {
+    const isOpen = groupTitle.getAttribute("aria-expanded") === "true";
+    groupTitle.setAttribute("aria-expanded", String(!isOpen));
+    groupTitle.classList.toggle("is-open", !isOpen);
+    groupTitle.querySelector(".decision-group-toggle").textContent = isOpen ? "+" : "−";
+    groupBody.hidden = isOpen;
+  });
+
+  groupSection.append(groupTitle, groupBody);
+  list.append(groupSection);
 });
