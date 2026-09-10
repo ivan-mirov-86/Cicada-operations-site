@@ -357,7 +357,7 @@ h1 em { color: var(--blue); font-style: normal; }
 .competitor-data-table td { padding: 20px 18px; border-bottom: 1px solid var(--line); color: #59616f; font-size: 13px; line-height: 1.58; vertical-align: top; }
 .competitor-data-table tbody tr:last-child td { border-bottom: 0; }
 .competitor-data-table tbody tr:hover { background: #fafbff; }
-.index-cell { color: var(--blue) !important; font-size: 14px !important; font-weight: 700; }
+.index-cell { color: var(--blue) !important; font-size: 14px !important; font-weight: 700; vertical-align: middle !important; }
 .company-cell { min-width: 0; }
 .company-identity { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .company-favicon { position: relative; display: grid; flex: 0 0 auto; width: 36px; height: 36px; overflow: hidden; place-items: center; border: 1px solid #dce3ef; border-radius: 10px; color: var(--blue); background: #f2f5fc; font-size: 14px; font-weight: 700; }
