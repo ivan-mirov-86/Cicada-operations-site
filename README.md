@@ -1,6 +1,11 @@
-# Информационный портал
+# Cicada Operations
 
-Статическая стартовая страница с автоматическим деплоем в GitHub Pages.
+Статический информационный сайт о платёжных QR-сценариях Cicada.
+
+## Страницы
+
+- `public/index.html` — главная страница.
+- `public/payment-gateway.html` — зарезервированная пустая страница Payment Gateway.
 
 ## Локальный просмотр
 
@@ -12,17 +17,13 @@ python3 -m http.server 8080 --directory public
 
 ## Деплой
 
-Workflow `.github/workflows/deploy-pages.yml` публикует содержимое каталога
-`public` после каждого push в ветку `main`.
+Workflow `.github/workflows/deploy-pages.yml` публикует каталог `public` после
+каждого push в ветку `main`.
 
 В настройках репозитория GitHub выберите:
 
 1. **Settings → Pages**.
 2. **Source → GitHub Actions**.
 
-Пользовательский домен задан в `public/CNAME`:
-
-`ivan-mirov-86-cicada-payments-com-2168.twc1.net`
-
-Для работы домена его DNS-запись CNAME должна указывать на
-`ivan-mirov-86.github.io`.
+Для Timeweb App Platform выберите тип `Frontend → HTML/CSS/JS`, ветку `main` и
+укажите `/public` в поле «Путь до директории проекта».
