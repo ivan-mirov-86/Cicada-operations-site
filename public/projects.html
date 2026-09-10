@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Три продуктовых направления Cicada: Pay-by-Link, Casino Processing и E-commerce Acquiring." />
+    <title>Projects — Cicada Operations</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./projects.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Cicada Operations — главная"><img src="./assets/cicada-wordmark-blue.svg" alt="Cicada" /><span>Operations</span></a>
+      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link" href="./index.html">Main</a><a class="nav-link" href="./payment-gateway.html">Payment Gateway</a><a class="nav-link" href="./scheme.html">Scheme</a><a class="nav-link active" href="./projects.html" aria-current="page">Projects</a></nav>
+    </header>
+
+    <main class="projects-page">
+      <section class="projects-intro section-shell">
+        <p class="eyebrow"><span></span> Product portfolio</p>
+        <div class="projects-intro-grid">
+          <h1>Три продукта.<br /><em>Одно платёжное ядро.</em></h1>
+          <p>Каждое направление решает отдельную задачу мерчанта, но использует общие сущности Cicada: Merchant, Payment Intent, Compliance, Wallet, Ledger, Exchange и Settlement.</p>
+        </div>
+      </section>
+
+      <section class="project-workspace section-shell" aria-labelledby="project-selector-title">
+        <div class="project-selector-header">
+          <div><p class="selector-label">Выберите продукт</p><h2 id="project-selector-title">Список работ</h2></div>
+          <div class="project-tabs" role="tablist" aria-label="Проекты Cicada">
+            <button class="project-tab active" type="button" role="tab" aria-selected="true" data-project="one"><span>01</span>Pay-by-Link</button>
+            <button class="project-tab" type="button" role="tab" aria-selected="false" data-project="two"><span>02</span>Casino</button>
+            <button class="project-tab" type="button" role="tab" aria-selected="false" data-project="three"><span>03</span>E-commerce</button>
+          </div>
+        </div>
+
+        <div class="project-summary" aria-live="polite">
+          <div class="project-summary-main">
+            <p id="project-kicker">PROJECT 01 · HIGH-VALUE MERCHANTS</p>
+            <h3 id="project-title">Merchant Pay-by-Link</h3>
+            <p id="project-description">Мерчант создаёт счёт и отправляет клиенту платёжную ссылку. Cicada принимает криптовалюту и перечисляет мерчанту фиат на банковский счёт.</p>
+          </div>
+          <dl class="project-facts">
+            <div><dt>Модель</dt><dd id="project-model">Invoice-based</dd></div>
+            <div><dt>Расчёт</dt><dd id="project-settlement">Fiat · T+1 / T+2</dd></div>
+            <div><dt>Основной канал</dt><dd id="project-channel">Dashboard + Link</dd></div>
+          </dl>
+        </div>
+
+        <div class="work-table-wrap">
+          <table class="work-table">
+            <thead><tr><th>Блок работ</th><th>Что реализуем</th><th>Результат</th></tr></thead>
+            <tbody id="project-table-body">
+              <tr><td><span>01</span><strong>Merchant onboarding</strong></td><td>Регистрация, KYB, UBO, KYC представителей, risk profile и верификация банковского счёта.</td><td>Одобренный Merchant Account</td></tr>
+              <tr><td><span>02</span><strong>Merchant Dashboard</strong></td><td>Создание счетов, статусы платежей, settlements, отчёты, команда и настройки.</td><td>No-code работа мерчанта</td></tr>
+              <tr><td><span>03</span><strong>Invoice &amp; Payment Link</strong></td><td>Счёт в EUR, USD или AED, описание товара, срок действия, ссылка и QR-код.</td><td>Готовый checkout для клиента</td></tr>
+              <tr><td><span>04</span><strong>Customer compliance</strong></td><td>KYC, sanctions, PEP, Source of Funds/Wealth и проверка исходящего кошелька.</td><td>Решение approve / review / reject</td></tr>
+              <tr><td><span>05</span><strong>Crypto acceptance</strong></td><td>Rate lock, уникальный адрес, monitoring, KYT, confirmations, underpayment и overpayment.</td><td>Статус Payment Accepted</td></tr>
+              <tr><td><span>06</span><strong>Exchange</strong></td><td>Продажа принятой криптовалюты через OTC, расчёт spread и комиссии.</td><td>Fiat обеспечен для выплаты</td></tr>
+              <tr><td><span>07</span><strong>Settlement</strong></td><td>End-of-day batching, банковская выплата T+1/T+2 и reconciliation.</td><td>Зачисление на счёт мерчанта</td></tr>
+              <tr><td><span>08</span><strong>Operations</strong></td><td>Refunds, compliance hold, ручные проверки, audit log и поддержка.</td><td>Управляемый операционный процесс</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mvp-result"><span>MVP RESULT</span><p id="project-mvp">Merchant registration → KYB → Invoice → Payment Link → Client KYC → Crypto payment → Fiat settlement</p></div>
+      </section>
+
+      <section class="shared-core-section">
+        <div class="section-shell shared-core-grid">
+          <div><p class="eyebrow light"><span></span> Shared infrastructure</p><h2>Общее ядро<br />для трёх продуктов</h2></div>
+          <div class="core-components" aria-label="Общие компоненты платформы">
+            <span>Merchant</span><span>Compliance</span><span>Payment Intent</span><span>Quote Engine</span><span>Wallets</span><span>Blockchain</span><span>Ledger</span><span>Exchange</span><span>Settlement</span><span>Webhooks</span><span>Backoffice</span><span>Reporting</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="launch-section section-shell" aria-labelledby="launch-title">
+        <div class="section-heading">
+          <div><p class="eyebrow"><span></span> Launch strategy</p><h2 id="launch-title">В какой последовательности запускать</h2></div>
+          <p>Последовательность строится не по размеру рынка, а по технологической и регуляторной зависимости продуктов.</p>
+        </div>
+
+        <div class="launch-roadmap">
+          <article class="launch-step launch-first">
+            <div class="launch-step-top"><span>Этап 01</span><small>Начать здесь</small></div>
+            <h3>Pay-by-Link</h3>
+            <p>Запускает базовый цикл платежа на контролируемом количестве крупных операций.</p>
+            <ul><li>Создаём Merchant, KYB и Payment Intent</li><li>Проверяем compliance и settlement</li><li>Сохраняем ручной контроль сложных кейсов</li></ul>
+          </article>
+          <article class="launch-step">
+            <div class="launch-step-top"><span>Этап 02</span><small>Масштабирование</small></div>
+            <h3>E-commerce</h3>
+            <p>Повторно использует ядро и добавляет массовые заказы, плагины и автоматические возвраты.</p>
+            <ul><li>Увеличиваем throughput</li><li>Добавляем API, SDK и e-commerce plugins</li><li>Автоматизируем reconciliation</li></ul>
+          </article>
+          <article class="launch-step">
+            <div class="launch-step-top"><span>Этап 03</span><small>После стабилизации</small></div>
+            <h3>Casino Processing</h3>
+            <p>Добавляет постоянные балансы, массовые депозиты и внешние выводы — самый сложный контур.</p>
+            <ul><li>Custody и treasury management</li><li>24/7 transaction monitoring</li><li>Crypto и fiat withdrawals</li></ul>
+          </article>
+        </div>
+
+        <div class="launch-rationale">
+          <div><span>01</span><p><strong>Сначала проверяем деньги.</strong> Pay-by-Link позволяет отладить владение средствами, KYT, обмен, ledger и банковскую выплату.</p></div>
+          <div><span>02</span><p><strong>Затем проверяем масштаб.</strong> E-commerce нагружает то же ядро большим количеством платежей, интеграций и возвратов.</p></div>
+          <div><span>03</span><p><strong>После этого добавляем custody.</strong> Casino требует зрелых балансов, кошельков, withdrawal controls и непрерывного risk monitoring.</p></div>
+        </div>
+      </section>
+
+      <section class="closing-section"><div class="section-shell closing-inner"><p class="eyebrow light"><span></span> Product sequence</p><h2>Transaction → Scale → Custody</h2><p>Каждый следующий запуск расширяет уже проверенное ядро, а не создаёт новую платёжную систему с нуля.</p></div></section>
+    </main>
+
+    <footer class="site-footer section-shell"><img src="./assets/cicada-wordmark-blue.svg" alt="Cicada" /><p>Product portfolio &amp; launch roadmap</p></footer>
+  </body>
+</html>
