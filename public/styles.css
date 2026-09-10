@@ -395,8 +395,8 @@ h1 em { color: var(--blue); font-style: normal; }
 .gateway-comparison-table { min-width: 1320px; }
 .gateway-comparison-table th:first-child { width: 24%; }
 .gateway-comparison-table th:nth-child(n+2):nth-child(-n+4) { width: 11%; text-align: center; }
-.gateway-comparison-table th:last-child { width: 43%; text-align: left; }
-.gateway-comparison-table td:last-child { text-align: left; vertical-align: top; }
+.comparison-table.gateway-comparison-table th:last-child { width: 43%; text-align: left; }
+.comparison-table.gateway-comparison-table td:last-child { text-align: left; vertical-align: top; }
 .feature-name { display: block; margin-bottom: 8px; color: var(--ink); font-size: 14px; }
 .feature-description { display: block; color: #7d8491; font-size: 11px; line-height: 1.55; }
 .conclusion-cell { color: #424b59 !important; }
