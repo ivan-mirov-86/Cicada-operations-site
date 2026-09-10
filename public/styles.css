@@ -306,10 +306,11 @@ h1 em { color: var(--blue); font-style: normal; }
 .competitors-intro { padding-block: 40px 64px; }
 .competitors-title-row { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-bottom: 26px; }
 .competitors-title { margin: 0; font-size: 48px; font-weight: 500; line-height: 1.08; letter-spacing: -.045em; }
-.competitors-conclusions-link { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 14px; padding: 14px 20px; border: 1px solid #ff5a00; border-radius: 999px; color: #fff; background: #ff5a00; box-shadow: 0 12px 28px rgb(255 90 0 / 24%); font-size: 15px; font-weight: 700; line-height: 1.2; transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.competitors-conclusions-link { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 12px; padding: 14px 20px; border: 1px solid #ff5a00; border-radius: 999px; color: #161820; background: #ff6a00; box-shadow: 0 12px 28px rgb(255 90 0 / 24%); font-size: 15px; font-weight: 750; line-height: 1.2; transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.competitors-conclusions-link .competitors-conclusions-alert { font-size: 17px; }
 .competitors-conclusions-link span { font-size: 20px; line-height: 1; transition: transform .2s ease; }
-.competitors-conclusions-link:hover { border-color: #e84f00; background: #e84f00; box-shadow: 0 15px 34px rgb(255 90 0 / 30%); transform: translateY(-2px); }
-.competitors-conclusions-link:hover span { transform: translateX(3px); }
+.competitors-conclusions-link:hover { border-color: #f15400; background: #ff7a1a; box-shadow: 0 15px 34px rgb(255 90 0 / 30%); transform: translateY(-2px); }
+.competitors-conclusions-link:hover span:last-child { transform: translateX(3px); }
 .competitors-conclusions-link:focus-visible { outline: 3px solid rgb(255 90 0 / 25%); outline-offset: 3px; }
 .competitors-summary { width: 100%; padding: 28px 32px; border: 1px solid #dbe4ff; border-left: 4px solid var(--blue); border-radius: 20px; background: var(--soft); }
 .competitors-summary p { margin: 0; color: #343c4a; font-size: 18px; line-height: 1.7; }
