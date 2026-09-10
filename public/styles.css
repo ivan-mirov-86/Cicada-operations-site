@@ -303,17 +303,17 @@ h1 em { color: var(--blue); font-style: normal; }
 
 /* Competitor landscape */
 .competitors-page { overflow: hidden; }
-.competitors-intro { padding-block: 104px 64px; }
-.competitors-intro-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 76px; align-items: end; }
-.competitors-intro h1 { margin: 0; }
-.competitors-intro-grid > p { margin: 0 0 8px; color: var(--muted); font-size: 16px; line-height: 1.72; }
-.gateway-products { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 54px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.competitors-intro { padding-block: 40px 64px; }
+.competitors-title { margin: 0 0 26px; font-size: 48px; font-weight: 500; line-height: 1.08; letter-spacing: -.045em; }
+.competitors-summary { width: 100%; padding: 28px 32px; border: 1px solid #dbe4ff; border-left: 4px solid var(--blue); border-radius: 20px; background: var(--soft); }
+.competitors-summary p { margin: 0; color: #343c4a; font-size: 18px; line-height: 1.7; }
+.gateway-products { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 32px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .gateway-products span { display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 16px 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: #3f4654; font-size: 13px; font-weight: 600; }
 .gateway-products b { color: var(--blue); font-size: 10px; }
 
 .competitor-explorer { padding-bottom: 128px; }
 .competitor-selector-heading { display: flex; align-items: end; justify-content: space-between; gap: 44px; margin-bottom: 28px; }
-.competitor-selector-heading h2 { max-width: 720px; margin: 0; font-size: clamp(32px, 3.4vw, 48px); font-weight: 500; line-height: 1.08; letter-spacing: -.045em; }
+.competitor-selector-heading h2 { max-width: 720px; margin: 0; font-size: 36px; font-weight: 500; line-height: 1.08; letter-spacing: -.045em; }
 .competitor-selector-heading > p { flex: 0 0 auto; margin: 0 0 6px; color: #7b818d; font-size: 12px; }
 .competitor-selector-heading > p strong { color: var(--ink); font-size: 15px; }
 .competitor-selector-heading > p span { display: inline-block; width: 18px; height: 1px; margin: 0 10px 4px; background: #c7ccd6; }
@@ -387,12 +387,11 @@ h1 em { color: var(--blue); font-style: normal; }
   .site-header { gap: 24px; }
   .site-nav { min-width: 0; }
   .nav-link { padding-inline: 13px; font-size: 12px; }
-  .competitors-intro-grid { gap: 48px; }
   .panel-heading, .comparison-heading { gap: 40px; }
 }
 
 @media (max-width: 820px) {
-  .competitors-intro-grid, .panel-heading, .comparison-heading { grid-template-columns: 1fr; gap: 26px; }
+  .panel-heading, .comparison-heading { grid-template-columns: 1fr; gap: 26px; }
   .gateway-products { grid-template-columns: repeat(2, 1fr); }
   .competitor-selector-heading { align-items: flex-start; flex-direction: column; gap: 18px; }
   .competitor-tabs { display: flex; overflow-x: auto; }
@@ -406,8 +405,11 @@ h1 em { color: var(--blue); font-style: normal; }
   .site-nav { flex: 1 1 auto; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; }
   .site-nav::-webkit-scrollbar { display: none; }
   .nav-link { flex: 0 0 auto; padding: 8px 7px; }
-  .competitors-intro { padding-block: 66px 48px; }
-  .competitors-intro-grid > p { font-size: 15px; }
+  .competitors-intro { padding-block: 40px 48px; }
+  .competitors-title { margin-bottom: 22px; font-size: 34px; }
+  .competitors-summary { padding: 22px 20px; border-radius: 16px; }
+  .competitors-summary p { font-size: 16px; line-height: 1.65; }
+  .competitor-selector-heading h2 { font-size: 30px; }
   .gateway-products { grid-template-columns: 1fr; margin-top: 38px; }
   .competitor-explorer { padding-bottom: 84px; }
   .competitor-tabs { width: calc(100vw - 32px); margin-right: -16px; border-radius: 16px; }
