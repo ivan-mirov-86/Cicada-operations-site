@@ -20,5 +20,9 @@ Workflow `.github/workflows/deploy-pages.yml` публикует содержи�
 1. **Settings → Pages**.
 2. **Source → GitHub Actions**.
 
-Для пользовательского домена добавьте файл `public/CNAME`, содержащий только
-имя домена, а затем настройте DNS у регистратора.
+Пользовательский домен задан в `public/CNAME`:
+
+`ivan-mirov-86-cicada-payments-com-2168.twc1.net`
+
+Для работы домена его DNS-запись CNAME должна указывать на
+`ivan-mirov-86.github.io`.
