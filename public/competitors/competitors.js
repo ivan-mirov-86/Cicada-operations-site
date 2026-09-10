@@ -579,6 +579,7 @@ function renderShortlist() {
   const body = document.querySelector("#shortlist-body");
   shortlist.forEach((item, index) => {
     const row = document.createElement("tr");
+    row.id = `company-${item.name.toLowerCase().replace(/[^a-z0-9]+/g, "")}`;
     row.append(element("td", "index-cell", String(index + 1).padStart(2, "0")));
     const company = document.createElement("td");
     company.append(companyLink(item));
@@ -615,6 +616,7 @@ function renderGatewayShortlist() {
   const body = document.querySelector("#gateway-shortlist-body");
   gatewayShortlist.forEach((item, index) => {
     const row = document.createElement("tr");
+    row.id = `company-${item.name.toLowerCase().replace(/[^a-z0-9]+/g, "")}`;
     row.append(element("td", "index-cell", String(index + 1).padStart(2, "0")));
     const company = document.createElement("td");
     company.append(companyLink(item));
@@ -711,7 +713,9 @@ renderGatewayShortlist();
 renderGatewayComparison();
 renderRegistry();
 renderCryptoGateways();
-selectView("shortlist");
+const requestedView = new URLSearchParams(window.location.search).get("view");
+selectView(["shortlist", "registry", "gateways"].includes(requestedView) ? requestedView : "shortlist");
+if (window.location.hash) requestAnimationFrame(() => document.getElementById(decodeURIComponent(window.location.hash.slice(1)))?.scrollIntoView({ block: "start" }));
 
 const productCards = [...document.querySelectorAll(".gateway-product")];
 

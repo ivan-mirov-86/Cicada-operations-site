@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Выводы конкурентного анализа Cicada Payment Gateway: стандарты рынка, целевая модель, продуктовый паритет и направления дальнейшего исследования." />
+    <meta name="theme-color" content="#ff5a00" />
+    <title>Выводы конкурентного анализа — Cicada Operations</title>
+    <link rel="icon" href="../assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
+    <link rel="stylesheet" href="../styles.css?v=20260911-19" />
+    <script src="./conclusions.js?v=20260911-1" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Cicada Operations — главная"><img src="../assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><span>Operations</span></a>
+      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link" href="../index.html">Main</a><a class="nav-link" href="../payment-gateway.html">Payment Gateway</a><a class="nav-link" href="../scheme.html">Scheme</a><a class="nav-link" href="../projects.html">Projects</a><a class="nav-link active" href="../competitors/">Competitors</a></nav>
+    </header>
+
+    <main class="conclusions-page">
+      <section class="conclusions-hero section-shell">
+        <a class="conclusions-back" href="../competitors/"><span aria-hidden="true">←</span> Competitive landscape</a>
+        <div class="conclusions-hero-grid">
+          <div>
+            <p class="conclusions-kicker">COMPETITIVE ANALYSIS · CONCLUSIONS</p>
+            <h1>Выводы конкурентного анализа</h1>
+          </div>
+          <div class="conclusions-hero-aside">
+            <p>Канадский рынок и международные криптоплатёжные шлюзы</p>
+            <time datetime="2026-09-11">Обновлено 11 сентября 2026</time>
+          </div>
+        </div>
+        <div class="conclusions-source-links" aria-label="Исходные разделы анализа">
+          <a href="../competitors/?view=shortlist#cryptoacquiring-parity">Открыть Паритет <span aria-hidden="true">↗</span></a>
+          <a href="../competitors/?view=shortlist#gateway-shortlist">Открыть Шорт-лист шлюзов <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+
+      <section class="conclusions-insight section-shell" aria-labelledby="main-conclusion-title">
+        <p class="conclusions-section-label" id="main-conclusion-title">Главный вывод</p>
+        <blockquote>Рынок уже ожидает базовый набор функций: checkout, инвойсы, API, webhooks, конвертацию и выплаты. Конкурентное преимущество формируется не количеством поддерживаемых токенов, а качеством полного merchant lifecycle — от onboarding и приёма платежа до settlement, refunds, payouts и reconciliation. Целевой продукт должен объединить функциональную широту глобальных шлюзов, операционную зрелость регулируемых провайдеров и надёжный канадский юридический и settlement-контур.</blockquote>
+        <div class="insight-tags" aria-label="Темы главного вывода"><span>Продукт</span><span>Операции</span><span>Регуляторика</span></div>
+      </section>
+
+      <section class="conclusions-section section-shell" id="analysis-cuts">
+        <div class="conclusions-section-heading"><div><p class="conclusions-kicker">TWO MARKET VIEWS</p><h2>Два среза анализа</h2></div><p>Функциональное сравнение и юридическая оценка отвечают на разные вопросы. Сильный продуктовый benchmark не является подтверждением надёжности его регуляторной модели.</p></div>
+        <div class="analysis-cards">
+          <article class="analysis-card">
+            <p class="analysis-card-meta"><span>01</span> Канадский рынок</p>
+            <h3>Что показывает Паритет</h3>
+            <p>Базовые платёжные функции у канадских конкурентов во многом совпадают. Реальные различия возникают в fiat settlement, постоянных адресах, обработке нестандартных платежей, refunds, ролях, approvals и качестве reconciliation. Наличие FINTRAC-регистрации само по себе не подтверждает устойчивость продукта или качество compliance.</p>
+            <ul><li>checkout, invoices, API и webhooks стали обязательным минимумом;</li><li>постоянные адреса важны для gaming, wallets и account top-ups;</li><li>fiat settlement зависит от конкретного юридического лица и банковских партнёров;</li><li>FINTRAC registration нельзя отображать как лицензию;</li><li>contracting entity, custody и safeguarding требуют отдельной проверки.</li></ul>
+            <a href="../competitors/?view=shortlist#cryptoacquiring-parity">Посмотреть сравнение канадских конкурентов <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="analysis-card">
+            <p class="analysis-card-meta"><span>02</span> Международные шлюзы</p>
+            <h3>Что показывает шорт-лист шлюзов</h3>
+            <p>Ни один конкурент не является полной моделью для копирования. NOWPayments показывает широту функций и каналов подключения, CoinGate — операционную и регуляторную зрелость, 0xProcessing — гибкость API, static-address и high-risk сценариев. Целевой продукт необходимо собирать из сильных сторон нескольких моделей.</p>
+            <ul><li>NOWPayments — benchmark продуктовой широты и быстрого подключения;</li><li>CoinGate — benchmark settlement, refunds, controls и лицензирования;</li><li>0xProcessing — benchmark API-first, white label и crypto-native flows;</li><li>функциональный benchmark не означает приемлемую юридическую модель;</li><li>широкая asset coverage не заменяет надёжную операционную инфраструктуру.</li></ul>
+            <a href="../competitors/?view=shortlist#gateway-parity">Посмотреть сравнение крипто-шлюзов <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="conclusions-section conclusions-model-section" id="target-model">
+        <div class="section-shell">
+          <div class="conclusions-section-heading"><div><p class="conclusions-kicker">TARGET PRODUCT MODEL</p><h2>Целевая продуктовая модель</h2></div><p>Не копировать одного конкурента. Собрать целевую модель из четырёх взаимодополняющих контуров.</p></div>
+          <div class="model-grid" id="model-grid"></div>
+        </div>
+      </section>
+
+      <section class="conclusions-section section-shell" id="parity-priorities">
+        <div class="conclusions-section-heading"><div><p class="conclusions-kicker">PRODUCT PARITY BACKLOG</p><h2>Приоритеты продуктового паритета</h2></div><p>Три уровня помогают отделить рыночный минимум от функций следующего релиза и возможностей для заметной дифференциации.</p></div>
+        <div class="parity-mobile-tabs" role="tablist" aria-label="Уровни продуктового паритета">
+          <button class="active" type="button" role="tab" aria-selected="true" data-parity-tab="must">Must have</button>
+          <button type="button" role="tab" aria-selected="false" data-parity-tab="next">Следующий релиз</button>
+          <button type="button" role="tab" aria-selected="false" data-parity-tab="differentiate">Дифференциаторы</button>
+        </div>
+        <div class="parity-grid" id="parity-grid"></div>
+      </section>
+
+      <section class="conclusions-section research-section" id="research">
+        <div class="section-shell">
+          <div class="conclusions-section-heading"><div><p class="conclusions-kicker">RESEARCH WORKSTREAMS</p><h2>Куда углубляться дальше</h2></div><p>Пять исследований должны закрыть решения, которые невозможно принять по публичным спискам функций.</p></div>
+          <div class="research-list" id="research-list"></div>
+        </div>
+      </section>
+
+      <section class="conclusions-section section-shell" id="open-decisions">
+        <div class="conclusions-section-heading"><div><p class="conclusions-kicker">OPEN PRODUCT DECISIONS</p><h2>Открытые продуктовые решения</h2></div><p>Эти вопросы требуют отдельного бизнес-, юридического и архитектурного решения. Конкурентный анализ даёт контекст, но не определяет ответ.</p></div>
+        <div class="decision-list" id="decision-list"></div>
+      </section>
+    </main>
+
+    <footer class="conclusions-footer">
+      <div class="section-shell conclusions-footer-grid">
+        <p>Выводы основаны на публичной информации и требуют подтверждения через договоры, официальные реестры, product demo и due diligence. Регистрация MSB/VASP не является банковской или платёжной лицензией.</p>
+        <div><time datetime="2026-09-11">Обновлено 11 сентября 2026</time><a href="#analysis-cuts">Методология</a><a href="mailto:?subject=Competitor%20data%20update">Сообщить об изменении данных</a></div>
+      </div>
+    </footer>
+  </body>
+</html>
