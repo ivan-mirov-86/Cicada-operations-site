@@ -21,8 +21,6 @@ const workstreams = [
   { slug: "canada-model", title: "Канадская регуляторная и settlement-модель", priority: "Критический перед go-to-market", why: "Юридический периметр и реальная банковская инфраструктура определяют, какие услуги можно обещать и исполнять на канадском рынке.", questions: ["необходимое contracting entity и FINTRAC obligations", "применимость Bank of Canada PSP registration", "custody, safeguarding и banking partners", "CAD settlement и restricted industries", "complaint и freeze/appeal process"], result: "Regulatory perimeter memo и partner requirements", benchmarks: ["EukaPay", "NordPay"] }
 ];
 
-const decisions = ["Custodial, non-custodial или hybrid модель", "Основной сегмент: e-commerce, gaming, platforms или general B2B", "Нужен ли fiat settlement в первом релизе", "Нужны ли постоянные адреса в MVP", "Какие активы и сети входят в первую network matrix", "Будут ли payouts частью первого релиза", "Какой уровень white label требуется", "Какой юридический и банковский контур используется в Канаде"];
-
 function el(tag, className, text) { const node = document.createElement(tag); if (className) node.className = className; if (text !== undefined) node.textContent = text; return node; }
 
 function renderModels() {
@@ -78,14 +76,8 @@ function renderResearch() {
   });
 }
 
-function renderDecisions() {
-  const list = document.querySelector("#decision-list");
-  const head = el("div", "decision-row decision-head"); ["Решение", "Owner", "Target date", "Status", "Документ"].forEach((label) => head.append(el("span", "", label))); list.append(head);
-  decisions.forEach((decision, index) => { const row = el("div", "decision-row"); const title = el("div", "decision-title"); title.append(el("b", "", String(index + 1).padStart(2, "0")), el("strong", "", decision)); const owner = el("span", "decision-empty", "—"); owner.dataset.label = "Owner"; const date = el("span", "decision-empty", "—"); date.dataset.label = "Target date"; const status = el("span", "decision-status", "Не решено"); status.dataset.label = "Status"; const documentLink = el("span", "decision-empty", "Не добавлен"); documentLink.dataset.label = "Документ"; row.append(title, owner, date, status, documentLink); list.append(row); });
-}
-
 document.querySelectorAll("[data-parity-tab]").forEach((button) => button.addEventListener("click", () => { const selected = button.dataset.parityTab; document.querySelectorAll("[data-parity-tab]").forEach((tab) => { const active = tab === button; tab.classList.toggle("active", active); tab.setAttribute("aria-selected", String(active)); }); document.querySelectorAll("[data-parity-panel]").forEach((panel) => panel.classList.toggle("mobile-active", panel.dataset.parityPanel === selected)); }));
 
-renderModels(); renderParity(); renderResearch(); renderDecisions();
+renderModels(); renderParity(); renderResearch();
 document.querySelector('[data-parity-panel="must"]')?.classList.add("mobile-active");
 const requestedFocus = new URLSearchParams(window.location.search).get("focus"); if (requestedFocus) focusWorkstream(requestedFocus, true);
