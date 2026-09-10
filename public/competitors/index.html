@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Конкурентная карта Cicada Payment Gateway: shortlist, канадские криптоэквайринги и сравнительный продуктовый паритет." />
+    <meta name="theme-color" content="#ff5a00" />
+    <title>Competitors — Cicada Operations</title>
+    <link rel="icon" href="../assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
+    <link rel="stylesheet" href="../styles.css?v=20260911-1" />
+    <script src="./competitors.js?v=20260911-1" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Cicada Operations — главная"><img src="../assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><span>Operations</span></a>
+      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link" href="../index.html">Main</a><a class="nav-link" href="../payment-gateway.html">Payment Gateway</a><a class="nav-link" href="../scheme.html">Scheme</a><a class="nav-link" href="../projects.html">Projects</a><a class="nav-link active" href="./" aria-current="page">Competitors</a></nav>
+    </header>
+
+    <main class="competitors-page">
+      <section class="competitors-intro section-shell">
+        <p class="eyebrow"><span></span> Competitive landscape</p>
+        <div class="competitors-intro-grid">
+          <h1>Конкурентная карта<br /><em>Cicada.</em></h1>
+          <p>Здесь собраны компании, которые могут конкурировать с новым продуктом Cicada Payment Gateway. Мы рассматриваем конкурентов относительно четырёх продуктовых направлений и используем данные как основу для продуктового паритета и due diligence. Срез подготовлен на 10 сентября 2026 года.</p>
+        </div>
+        <div class="gateway-products" aria-label="Продукты Cicada Payment Gateway">
+          <span><b>01</b> Core Gateway</span><span><b>02</b> Pay by Link</span><span><b>03</b> iGaming Gateway</span><span><b>04</b> E-commerce Gateway</span>
+        </div>
+      </section>
+
+      <section class="competitor-explorer section-shell" aria-labelledby="competitor-selector-title">
+        <div class="competitor-selector-heading">
+          <div><p class="selector-label">Выберите срез</p><h2 id="competitor-selector-title">Компании и продуктовый паритет</h2></div>
+          <p><strong>18</strong> компаний в реестре <span></span> <strong>5</strong> в shortlist</p>
+        </div>
+
+        <div class="competitor-tabs" role="tablist" aria-label="Разделы конкурентного анализа">
+          <button class="competitor-tab active" type="button" role="tab" aria-selected="true" aria-controls="shortlist-panel" id="shortlist-tab" data-view="shortlist"><span>01</span>Shortlist of competitors</button>
+          <button class="competitor-tab" type="button" role="tab" aria-selected="false" aria-controls="registry-panel" id="registry-tab" data-view="registry"><span>02</span>Криптоэквайринги <sup>*</sup></button>
+          <button class="competitor-tab" type="button" role="tab" aria-selected="false" aria-controls="gateways-panel" id="gateways-tab" data-view="gateways"><span>03</span>Crypto Gateways</button>
+        </div>
+
+        <section class="competitor-panel active" id="shortlist-panel" role="tabpanel" aria-labelledby="shortlist-tab">
+          <div class="panel-heading"><div><p class="panel-kicker">SHORTLIST · 5 COMPANIES</p><h3>Ближайшие продуктовые ориентиры</h3></div><p>Компании отобраны по широте merchant journey, способам интеграции, settlement, high-risk экспертизе и качеству developer tooling.</p></div>
+          <div class="data-table-wrap shortlist-table-wrap">
+            <table class="competitor-data-table shortlist-table"><thead><tr><th>№</th><th>Компания</th><th>Почему выбрали</th></tr></thead><tbody id="shortlist-body"></tbody></table>
+          </div>
+
+          <div class="comparison-heading"><div><p class="panel-kicker">PRODUCT PARITY</p><h3>Сравнение ключевых возможностей</h3></div><p>Статусы отражают публично подтверждённую функциональность. «Не подтверждено» означает, что возможность требует дополнительной проверки.</p></div>
+          <div class="data-table-wrap comparison-table-wrap">
+            <table class="competitor-data-table comparison-table"><thead><tr><th>Возможность</th><th>NordPay</th><th>EukaPay</th><th>PassimPay</th><th>Cryptix</th><th>Cryptomus</th><th>Вывод для Cicada</th></tr></thead><tbody id="comparison-body"></tbody></table>
+          </div>
+        </section>
+
+        <section class="competitor-panel" id="registry-panel" role="tabpanel" aria-labelledby="registry-tab" hidden>
+          <div class="panel-heading"><div><p class="panel-kicker">CANADA REGISTER · 18 COMPANIES</p><h3>Криптоэквайринги с канадским юридическим лицом</h3></div><p><sup>*</sup> В этом разделе показаны только компании, для которых в исследовании найдено юридическое лицо в Канаде. Регистрация FINTRAC относится к AML/ATF-надзору и не является лицензией или одобрением бизнеса.</p></div>
+          <div class="data-table-wrap registry-table-wrap">
+            <table class="competitor-data-table registry-table"><thead><tr><th>№</th><th>Бренд и сайт</th><th>Продукт / сценарий</th><th>Канадское юрлицо / регистрация</th><th>Оговорки / риски</th></tr></thead><tbody id="registry-body"></tbody></table>
+          </div>
+        </section>
+
+        <section class="competitor-panel" id="gateways-panel" role="tabpanel" aria-labelledby="gateways-tab" hidden>
+          <div class="coming-soon-card">
+            <span>03</span><div><p class="panel-kicker">CRYPTO GATEWAYS</p><h3>Coming Soon</h3><p>Сегмент будет добавлен после формирования критериев и отдельного списка компаний.</p></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell"><img src="../assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><p>Competitive landscape · 10.09.2026</p></footer>
+  </body>
+</html>
