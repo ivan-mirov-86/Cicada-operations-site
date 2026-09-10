@@ -350,3 +350,32 @@ renderShortlist();
 renderComparison();
 renderRegistry();
 selectView("shortlist");
+
+const productCards = [...document.querySelectorAll(".gateway-product")];
+
+function closeProductCards(exceptCard) {
+  productCards.forEach((card) => {
+    if (card === exceptCard) return;
+    card.classList.remove("is-open");
+    card.querySelector(".product-info-toggle").setAttribute("aria-expanded", "false");
+  });
+}
+
+productCards.forEach((card) => {
+  const toggle = card.querySelector(".product-info-toggle");
+  toggle.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const willOpen = !card.classList.contains("is-open");
+    closeProductCards(card);
+    card.classList.toggle("is-open", willOpen);
+    toggle.setAttribute("aria-expanded", String(willOpen));
+  });
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".gateway-product")) closeProductCards();
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeProductCards();
+});

@@ -308,8 +308,24 @@ h1 em { color: var(--blue); font-style: normal; }
 .competitors-summary { width: 100%; padding: 28px 32px; border: 1px solid #dbe4ff; border-left: 4px solid var(--blue); border-radius: 20px; background: var(--soft); }
 .competitors-summary p { margin: 0; color: #343c4a; font-size: 18px; line-height: 1.7; }
 .gateway-products { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 32px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.gateway-products span { display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 16px 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); color: #3f4654; font-size: 13px; font-weight: 600; }
-.gateway-products b { color: var(--blue); font-size: 10px; }
+.gateway-product { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 14px; min-width: 0; min-height: 68px; padding: 14px 16px 14px 18px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fff; }
+.gateway-product-label { display: flex; align-items: center; gap: 14px; min-width: 0; color: #3f4654; font-size: 13px; font-weight: 600; }
+.gateway-product-label b { flex: 0 0 auto; color: var(--blue); font-size: 10px; }
+.gateway-product-label span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.product-info-toggle { display: grid; flex: 0 0 auto; width: 28px; height: 28px; padding: 0; place-items: center; border: 1px solid #cfd7e8; border-radius: 50%; color: var(--blue); background: #fff; font: 600 13px/1 Georgia, serif; cursor: pointer; transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease; }
+.product-info-toggle:hover, .product-info-toggle:focus-visible, .gateway-product.is-open .product-info-toggle { border-color: var(--blue); color: #fff; background: var(--blue); transform: translateY(-1px); }
+.product-info-toggle:focus-visible { outline: 3px solid rgb(12 64 238 / 18%); outline-offset: 2px; }
+.product-info { position: absolute; top: calc(100% + 12px); left: 18px; z-index: 20; width: min(420px, calc(100vw - 48px)); padding: 22px; border: 1px solid #d9e1f1; border-radius: 18px; visibility: hidden; opacity: 0; color: #4e5664; background: #fff; box-shadow: 0 24px 70px rgb(16 35 78 / 18%); transform: translateY(-6px); pointer-events: none; transition: opacity .18s ease, transform .18s ease, visibility .18s ease; }
+.gateway-product:nth-child(4n) .product-info { right: 18px; left: auto; }
+.gateway-product:hover .product-info, .gateway-product:focus-within .product-info, .gateway-product.is-open .product-info { visibility: visible; opacity: 1; transform: translateY(0); pointer-events: auto; }
+.product-info::before { position: absolute; top: -7px; left: 18px; width: 12px; height: 12px; border-top: 1px solid #d9e1f1; border-left: 1px solid #d9e1f1; background: #fff; content: ""; transform: rotate(45deg); }
+.gateway-product:nth-child(4n) .product-info::before { right: 18px; left: auto; }
+.product-info p { margin: 0 0 12px; font-size: 14px; line-height: 1.62; }
+.product-info p:last-of-type { margin-bottom: 18px; }
+.product-info a { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); font-size: 13px; font-weight: 700; }
+.product-info a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.product-info a span { transition: transform .2s ease; }
+.product-info a:hover span { transform: translateX(3px); }
 
 .competitor-explorer { padding-bottom: 128px; }
 .competitor-selector-heading { display: flex; align-items: end; justify-content: space-between; gap: 44px; margin-bottom: 28px; }
@@ -411,6 +427,9 @@ h1 em { color: var(--blue); font-style: normal; }
   .competitors-summary p { font-size: 16px; line-height: 1.65; }
   .competitor-selector-heading h2 { font-size: 30px; }
   .gateway-products { grid-template-columns: 1fr; margin-top: 38px; }
+  .gateway-product-label span { overflow: visible; text-overflow: clip; white-space: normal; }
+  .product-info { top: calc(100% + 8px); right: 12px !important; left: 12px !important; width: auto; }
+  .product-info::before, .gateway-product:nth-child(4n) .product-info::before { right: 16px; left: auto; }
   .competitor-explorer { padding-bottom: 84px; }
   .competitor-tabs { width: calc(100vw - 32px); margin-right: -16px; border-radius: 16px; }
   .competitor-tab { flex-basis: 210px; }

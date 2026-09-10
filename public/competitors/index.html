@@ -7,8 +7,8 @@
     <meta name="theme-color" content="#ff5a00" />
     <title>Competitors — Cicada Operations</title>
     <link rel="icon" href="../assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
-    <link rel="stylesheet" href="../styles.css?v=20260911-2" />
-    <script src="./competitors.js?v=20260911-1" defer></script>
+    <link rel="stylesheet" href="../styles.css?v=20260911-3" />
+    <script src="./competitors.js?v=20260911-2" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -23,7 +23,41 @@
           <p>На этой странице собраны компании и платёжные решения, которые мы рассматриваем как потенциальных конкурентов и продуктовые ориентиры для Cicada Payment Gateway. Анализ охватывает четыре направления: Core Gateway, Pay by Link, iGaming Gateway и E-commerce Gateway. Сравнение помогает определить необходимый функционал, продуктовый паритет и приоритеты дальнейшей разработки.</p>
         </div>
         <div class="gateway-products" aria-label="Продукты Cicada Payment Gateway">
-          <span><b>01</b> Core Gateway</span><span><b>02</b> Pay by Link</span><span><b>03</b> iGaming Gateway</span><span><b>04</b> E-commerce Gateway</span>
+          <article class="gateway-product">
+            <div class="gateway-product-label"><b>01</b><span>Core Gateway</span></div>
+            <button class="product-info-toggle" type="button" aria-expanded="false" aria-controls="core-product-info" aria-label="Подробнее о Cicada Core">i</button>
+            <div class="product-info" id="core-product-info">
+              <p>Cicada Core рассматривается не как отдельный клиентский продукт, а как общая платформа, на которой работают три продукта: Pay by Link, iGaming Gateway и E-commerce Gateway. В дальнейшем в Core будут добавляться новые платёжные шлюзы и субпродукты.</p>
+              <a href="#">Подробнее <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="gateway-product">
+            <div class="gateway-product-label"><b>02</b><span>Pay by Link</span></div>
+            <button class="product-info-toggle" type="button" aria-expanded="false" aria-controls="pay-by-link-product-info" aria-label="Подробнее о Pay by Link">i</button>
+            <div class="product-info" id="pay-by-link-product-info">
+              <p>Pay by Link — инструмент для приёма платежей в цифровых активах без технической интеграции с сайтом или приложением мерчанта.</p>
+              <p>Мерчант создаёт счёт в личном кабинете Cicada, получает уникальную ссылку или QR-код и самостоятельно отправляет его клиенту через email, мессенджер, социальную сеть, SMS или другой канал. Клиент открывает платёжную страницу и переводит выбранную криптовалюту. Cicada отслеживает платёж и показывает мерчанту его актуальный статус.</p>
+              <a href="#">Подробнее <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="gateway-product">
+            <div class="gateway-product-label"><b>03</b><span>iGaming Gateway</span></div>
+            <button class="product-info-toggle" type="button" aria-expanded="false" aria-controls="igaming-product-info" aria-label="Подробнее об iGaming Gateway">i</button>
+            <div class="product-info" id="igaming-product-info">
+              <p>iGaming Gateway — специализированное решение для пополнения игрового аккаунта цифровыми активами и последующего расчёта с оператором платформы в фиатной валюте или криптовалюте.</p>
+              <p>Продукт может подключаться напрямую к системе оператора либо через используемую им игровую платформу. В дальнейшем решение также может поддерживать выплаты игрокам.</p>
+              <a href="#">Подробнее <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="gateway-product">
+            <div class="gateway-product-label"><b>04</b><span>E-commerce Gateway</span></div>
+            <button class="product-info-toggle" type="button" aria-expanded="false" aria-controls="ecommerce-product-info" aria-label="Подробнее об E-commerce Gateway">i</button>
+            <div class="product-info" id="ecommerce-product-info">
+              <p>E-commerce Gateway — способ встроить оплату цифровыми активами непосредственно в checkout интернет-магазина, маркетплейса, SaaS-сервиса или платформы цифровых товаров.</p>
+              <p>В отличие от Pay by Link, платёж создаётся автоматически на основании заказа в системе мерчанта. Cicada получает итоговую сумму, проводит клиента через оплату и возвращает системе мерчанта статус транзакции.</p>
+              <a href="#">Подробнее <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
         </div>
       </section>
 
