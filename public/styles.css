@@ -392,10 +392,6 @@ h1 em { color: var(--blue); font-style: normal; }
 .status-unconfirmed { color: #8b4050; background: #ffedf1; }
 .status-info { color: #1742ba; background: #eaf0ff; }
 
-.registry-metrics { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 24px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.registry-metrics div { display: flex; align-items: baseline; gap: 10px; min-height: 68px; padding: 17px 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #fbfcff; }
-.registry-metrics strong { color: var(--blue); font-size: 24px; font-weight: 600; }
-.registry-metrics span { color: #6f7683; font-size: 13px; }
 .registry-table { min-width: 1500px; }
 .registry-table th:first-child { width: 5%; }
 .registry-table th:nth-child(2) { width: 15%; }
@@ -464,7 +460,6 @@ h1 em { color: var(--blue); font-style: normal; }
   .competitor-tabs { width: calc(100vw - 32px); margin-right: -16px; border-radius: 16px; }
   .competitor-tab { flex-basis: 250px; font-size: 15px; }
   .competitor-tab span { font-size: 11px; }
-  .registry-metrics { grid-template-columns: 1fr; }
   .competitor-panel { padding-top: 34px; }
   .panel-heading h3, .comparison-heading h3 { font-size: 29px; }
   .comparison-heading { margin-top: 62px; }
