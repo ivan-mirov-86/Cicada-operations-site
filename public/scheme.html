@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#071431" />
     <title>Global Scheme — Cicada Operations</title>
     <link rel="icon" href="./assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
-    <link rel="stylesheet" href="./styles.css?v=20260911-38" />
+    <link rel="stylesheet" href="./styles.css?v=20260911-39" />
     <script src="./scheme.js?v=20260910-2" defer></script>
   </head>
   <body>
@@ -71,7 +71,7 @@
       </section>
 
       <section class="product-connections" aria-labelledby="connections-title"><div class="section-shell">
-        <div class="description-heading reveal-step"><div><p class="description-kicker">PRODUCT CONNECTIONS</p><h2 id="connections-title">Как продукты подключаются</h2></div><p>Канал подключения зависит от сценария мерчанта, но платёжные сущности, статусы и операционный контур остаются общими.</p></div>
+        <div class="description-heading reveal-step"><div><p class="description-kicker">PRODUCT CONNECTIONS</p><h2 id="connections-title">Как продукты подключаются</h2></div><p>Три продукта дают мерчанту разные точки входа в единый платёжный контур. Pay by Link подходит для ручного no-code выставления счетов, E-commerce Gateway встраивает оплату в checkout и автоматизирует order-based поток, а iGaming Gateway связывает депозит с аккаунтом игрока. Независимо от канала все операции создают единый Payment Intent и проходят общие проверки, ledger, конвертацию и settlement в Cicada Core. Поэтому подключение нового продукта не требует отдельной платёжной инфраструктуры и сохраняет единые статусы, баланс и отчётность.</p></div>
         <div class="product-connections-grid">
           <article class="reveal-step"><span>01</span><h3>Pay by Link</h3><p>Сотрудник создаёт счёт в Dashboard и передаёт клиенту ссылку или QR-код.</p><dl><div><dt>Мерчант</dt><dd>Dashboard</dd></div><div><dt>Клиент</dt><dd>Payment Link</dd></div><div><dt>Статус</dt><dd>Dashboard</dd></div></dl></article>
           <article class="reveal-step"><span>02</span><h3>E-commerce Gateway</h3><p>Backend создаёт платёж из заказа и получает его состояние автоматически.</p><dl><div><dt>Мерчант</dt><dd>REST API</dd></div><div><dt>Клиент</dt><dd>Hosted Checkout</dd></div><div><dt>Статус</dt><dd>Signed Webhook</dd></div></dl></article>
