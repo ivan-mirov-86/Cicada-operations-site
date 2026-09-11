@@ -536,6 +536,12 @@ h1 em { color: var(--blue); font-style: normal; }
 .parity-items summary::after { position: absolute; top: 18px; right: 20px; color: #8b94a4; content: "+"; }
 .parity-items details[open] summary::after { content: "−"; }
 .parity-items details p { margin: -4px 22px 18px; color: #727b89; font-size: 13px; line-height: 1.55; }
+.parity-roadmap-link { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-top: 18px; padding: 24px 28px; border-radius: 18px; color: #fff; background: var(--blue); box-shadow: 0 18px 42px rgb(12 64 238 / 18%); transition: transform .2s ease, box-shadow .2s ease; }
+.parity-roadmap-link:hover { box-shadow: 0 22px 50px rgb(12 64 238 / 25%); transform: translateY(-2px); }
+.parity-roadmap-link span { display: grid; gap: 7px; }
+.parity-roadmap-link small { color: #b8c8ff; font-size: 11px; font-weight: 750; letter-spacing: .08em; }
+.parity-roadmap-link strong { font-size: 18px; font-weight: 650; }
+.parity-roadmap-link > b { display: grid; width: 42px; height: 42px; flex: 0 0 42px; place-items: center; border-radius: 50%; color: var(--blue); background: #fff; font-size: 20px; }
 .research-list { display: grid; gap: 14px; }
 .research-item { overflow: hidden; scroll-margin-top: 110px; border: 1px solid #d7deeb; border-radius: 20px; background: #fff; box-shadow: 0 12px 34px rgb(21 42 91 / 5%); transition: border-color .2s ease, box-shadow .2s ease; }
 .research-item[open] { border-color: #bac9ed; box-shadow: 0 18px 44px rgb(21 42 91 / 9%); }
@@ -710,6 +716,8 @@ h1 em { color: var(--blue); font-style: normal; }
   .parity-mobile-tabs button.active { color: #fff; background: var(--blue); }
   .parity-card { display: none; }
   .parity-card.mobile-active { display: block; }
+  .parity-roadmap-link { padding: 20px; }
+  .parity-roadmap-link strong { font-size: 16px; line-height: 1.4; }
   .research-item { border-radius: 16px; }
   .research-item summary { grid-template-columns: 42px 1fr 36px; gap: 12px; min-height: 78px; padding: 18px 16px; }
   .research-number { width: 40px; height: 40px; }
