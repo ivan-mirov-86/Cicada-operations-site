@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Планируемая последовательность разработки Cicada Payments: Cicada Core, Pay by Link, E-commerce Gateway и iGaming Gateway." />
+    <meta name="theme-color" content="#ff5a00" />
+    <title>Roadmap — Cicada Operations</title>
+    <link rel="icon" href="../assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
+    <link rel="stylesheet" href="../styles.css?v=20260911-26" />
+    <script src="./roadmap.js?v=20260911-1" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Cicada Operations — главная"><img src="../assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><span>Operations</span></a>
+      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link" href="../payment-gateway.html">Payment Gateway</a><a class="nav-link" href="../scheme.html">Scheme</a><a class="nav-link" href="../projects.html">Projects</a><a class="nav-link active" href="./" aria-current="page">Roadmap</a><a class="nav-link" href="../competitors/">Competitors</a><a class="nav-link" href="../open-decisions/">Open decisions</a></nav>
+    </header>
+
+    <main class="roadmap-page">
+      <section class="roadmap-hero section-shell">
+        <div class="roadmap-hero-grid">
+          <div>
+            <p class="roadmap-kicker">PRODUCT ROADMAP</p>
+            <h1>От платёжного ядра к специализированным продуктам</h1>
+          </div>
+          <div class="roadmap-hero-copy">
+            <p>Roadmap показывает рекомендуемую последовательность разработки Cicada Payments. Сначала создаётся базовое платёжное ядро, затем на нём последовательно проверяются полный платёжный цикл, масштабируемые e-commerce-интеграции и наиболее сложный iGaming-сценарий.</p>
+            <span class="roadmap-status">PLANNED SEQUENCE · NO COMMITTED DATES</span>
+            <small>Этапы отражают зависимости и критерии готовности. Они не являются утверждённым календарным планом и не содержат обещаний по срокам запуска.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="roadmap-blocker section-shell" aria-labelledby="roadmap-blocker-title">
+        <div class="roadmap-blocker-copy">
+          <p class="roadmap-kicker">BLOCKING DECISIONS</p>
+          <h2 id="roadmap-blocker-title">До начала разработки</h2>
+          <p>До фиксации регуляторного периметра, ролей сторон, движения активов, custody-модели и settlement невозможно окончательно утвердить архитектуру и границы MVP. Эти решения должны быть закрыты либо приняты как явно контролируемые допущения.</p>
+          <a href="../open-decisions/">Посмотреть открытые решения <span aria-hidden="true">→</span></a>
+        </div>
+        <ul class="roadmap-blocker-list">
+          <li>Регуляторный периметр продукта</li>
+          <li>Роли сторон и движение активов</li>
+          <li>Данные покупателя, KYC и Travel Rule</li>
+          <li>Пороги, агрегация и отчётность</li>
+          <li>Допустимые типы мерчантов</li>
+          <li>KYT, санкции, возвраты и settlement</li>
+          <li>Договоры, данные и готовность к запуску</li>
+        </ul>
+      </section>
+
+      <section class="roadmap-overview" aria-labelledby="roadmap-overview-title">
+        <div class="section-shell">
+          <div class="roadmap-heading roadmap-heading-light">
+            <div><p class="roadmap-kicker">FOUR PRODUCT STAGES</p><h2 id="roadmap-overview-title">Последовательность развития</h2></div>
+            <p>Cicada Core — не отдельный клиентский продукт, а общая платформа. После выпуска Core v1 ядро продолжает развиваться: каждый следующий продукт проверяет его в новом сценарии и добавляет общие возможности.</p>
+          </div>
+          <div class="roadmap-track">
+            <article class="roadmap-node"><span>01</span><h3>Cicada Core v1</h3><p>Создать управляемый базовый жизненный цикл криптоплатежа.</p><strong>Результат</strong><small>Работающий общий платёжный контур.</small><a href="#core" data-roadmap-link>Подробнее <b aria-hidden="true">↘</b></a></article>
+            <article class="roadmap-node"><span>02</span><h3>Pay by Link</h3><p>Проверить полный платёжный цикл на простом no-code сценарии.</p><strong>Результат</strong><small>Первый прикладной продукт для мерчанта.</small><a href="#pay-by-link" data-roadmap-link>Подробнее <b aria-hidden="true">↘</b></a></article>
+            <article class="roadmap-node"><span>03</span><h3>E-commerce Gateway</h3><p>Добавить системную интеграцию, автоматизацию и масштабирование.</p><strong>Результат</strong><small>Автоматизированный order-based процессинг.</small><a href="#ecommerce" data-roadmap-link>Подробнее <b aria-hidden="true">↘</b></a></article>
+            <article class="roadmap-node"><span>04</span><h3>iGaming Gateway</h3><p>Расширить платформу account-based и high-risk сценариями.</p><strong>Результат</strong><small>Управляемые депозиты на аккаунт игрока.</small><a href="#igaming" data-roadmap-link>Подробнее <b aria-hidden="true">↘</b></a></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="roadmap-details section-shell" aria-labelledby="roadmap-details-title">
+        <div class="roadmap-heading">
+          <div><p class="roadmap-kicker">STAGE DETAILS</p><h2 id="roadmap-details-title">Что входит в каждый этап</h2></div>
+          <p>Этап завершается не по дате, а после достижения проверяемого результата. Раскройте карточку, чтобы увидеть границы работ и критерии перехода.</p>
+        </div>
+
+        <details class="roadmap-stage" id="core">
+          <summary aria-controls="core-content" aria-expanded="false"><span>01</span><div><small>CICADA CORE V1</small><h3>Общее платёжное ядро</h3><p>Цель — создать минимальное общее ядро для всех прикладных продуктов.</p></div><i aria-hidden="true">+</i></summary>
+          <div class="roadmap-stage-body" id="core-content">
+            <div class="roadmap-stage-grid"><div><h4>Почему сначала</h4><ul><li>Все продукты зависят от единой модели платежа.</li><li>Ledger, wallet и settlement нужны до надёжной обработки средств.</li><li>Compliance и flow of funds должны быть общей инфраструктурой.</li><li>Единый Core предотвращает появление несовместимых платёжных систем.</li></ul></div><div><h4>Состав этапа</h4><ul><li>Merchant Account и базовый onboarding.</li><li>Payment Intent, сумма в CAD, USD, EUR или криптовалюте.</li><li>Выбор приоритетного цифрового актива и сети.</li><li>Базовый hosted checkout и интеграция Fireblocks.</li><li>Blockchain monitoring, confirmations, KYT/AML и risk scoring.</li><li>Статусы pending, paid, partial, overpaid, expired и blocked.</li><li>Ledger, OTC-конвертация, crypto или fiat settlement.</li><li>Dashboard, signed webhooks, reporting, reconciliation и audit trail.</li></ul></div></div>
+            <div class="roadmap-result"><span>Результат этапа</span><p>Core v1 способен создать платёж, принять и проверить цифровой актив, отразить операцию в ledger, выполнить конвертацию при необходимости и сформировать расчёт с мерчантом.</p></div>
+            <div class="roadmap-criteria"><h4>Критерии перехода к Pay by Link</h4><ul><li>Утверждён базовый flow of funds.</li><li>Определены роли custody и settlement.</li><li>Один Payment Intent проходит полный жизненный цикл.</li><li>Статусы воспроизводимы и фиксируются в audit trail.</li><li>Blockchain-транзакция связана с invoice или order ID.</li><li>Подтверждены базовые refunds и исключительные ситуации.</li><li>Доступен минимальный Dashboard.</li></ul></div>
+          </div>
+        </details>
+
+        <details class="roadmap-stage" id="pay-by-link">
+          <summary aria-controls="pay-by-link-content" aria-expanded="false"><span>02</span><div><small>PAY BY LINK</small><h3>Первый прикладной продукт</h3><p>Цель — проверить полный merchant lifecycle без сложной интеграции на стороне мерчанта.</p></div><i aria-hidden="true">+</i></summary>
+          <div class="roadmap-stage-body" id="pay-by-link-content">
+            <div class="roadmap-stage-grid"><div><h4>Почему следующим</h4><ul><li>Для первого мерчанта не требуется API-интеграция.</li><li>Объём операций можно контролировать.</li><li>Сценарий проверяет checkout, rate lock, KYT, conversion и settlement.</li><li>Исключительные ситуации допустимо обрабатывать вручную.</li><li>Это самый быстрый способ проверить Core в реальной операции.</li></ul></div><div><h4>Состав этапа</h4><ul><li>Создание одноразовой ссылки в Dashboard.</li><li>Фиксированная сумма, валюта, срок действия и курс.</li><li>Ссылка и QR-код для передачи клиенту.</li><li>Выбор клиентом криптовалюты и сети.</li><li>Адрес, сумма, статус и отслеживание подтверждений.</li><li>Underpayment, overpayment, refunds и разрешённые ручные решения.</li><li>История счетов, поиск, уведомления и settlement в согласованной валюте.</li></ul></div></div>
+            <aside class="roadmap-boundary"><strong>Граница первого релиза</strong><p>Одноразовая ссылка с фиксированной суммой, сроком действия и автоматическим отслеживанием статуса. Многоразовые ссылки, свободная сумма, массовое создание и расширенная аналитика остаются за границами первого релиза.</p></aside>
+            <div class="roadmap-result"><span>Результат этапа</span><p>Мерчант создаёт счёт, отправляет клиенту ссылку или QR-код, принимает цифровой актив и получает расчёт в выбранной валюте.</p></div>
+            <div class="roadmap-criteria"><h4>Критерии перехода к E-commerce</h4><ul><li>Протестирован полный жизненный цикл платежа.</li><li>Известны причины незавершённых и ошибочных операций.</li><li>Проработаны partial, overpaid, expired и blocked.</li><li>Подтверждены правила refunds и сетевых комиссий.</li><li>Работает сверка invoice, blockchain-транзакции и settlement.</li><li>API-объекты достаточно стабильны для автоматизации.</li></ul></div>
+          </div>
+        </details>
+
+        <details class="roadmap-stage" id="ecommerce">
+          <summary aria-controls="ecommerce-content" aria-expanded="false"><span>03</span><div><small>E-COMMERCE GATEWAY</small><h3>Автоматизация заказов и интеграций</h3><p>Цель — превратить проверенный платёжный цикл в масштабируемый поток заказов.</p></div><i aria-hidden="true">+</i></summary>
+          <div class="roadmap-stage-body" id="ecommerce-content">
+            <div class="roadmap-stage-grid"><div><h4>Почему после Pay by Link</h4><ul><li>Используется тот же Payment Intent и hosted checkout.</li><li>Для интеграции нужны стабильные API и webhooks.</li><li>Возрастает число параллельных платежей.</li><li>Refunds и reconciliation должны работать с меньшим объёмом ручных операций.</li><li>Требуется более зрелая поддержка мерчанта.</li></ul></div><div><h4>Состав этапа</h4><ul><li>REST API для создания и чтения платежей.</li><li>Idempotency, versioning, hosted checkout.</li><li>Signed webhooks, retries и журнал доставки.</li><li>Order ID, metadata и return URLs.</li><li>Sandbox, test keys и автоматические статусы заказа.</li><li>Late, underpayment и overpayment handling.</li><li>Полные и частичные refunds, branding, Dashboard и reconciliation.</li></ul></div></div>
+            <div class="roadmap-priority"><h4>Приоритет интеграций</h4><ol><li>Hosted checkout + REST API + webhooks</li><li>Один приоритетный плагин после выбора целевой платформы</li><li>Embedded checkout или widget</li><li>SDK и дополнительные плагины</li></ol></div>
+            <div class="roadmap-result"><span>Результат этапа</span><p>Система мерчанта автоматически создаёт криптоплатёж на основании заказа, получает его статусы и завершает заказ после подтверждения Cicada.</p></div>
+            <div class="roadmap-criteria"><h4>Критерии перехода к iGaming</h4><ul><li>API-контракт стабилен и документирован.</li><li>Webhooks поддерживают retry и дедупликацию.</li><li>Sandbox воспроизводит ключевые статусы.</li><li>Система выдерживает согласованную нагрузку.</li><li>Refunds и reconciliation не требуют постоянной ручной работы.</li><li>Dashboard ищет по order, payment и txhash.</li></ul></div>
+          </div>
+        </details>
+
+        <details class="roadmap-stage" id="igaming">
+          <summary aria-controls="igaming-content" aria-expanded="false"><span>04</span><div><small>IGAMING GATEWAY</small><h3>Account-based и high-risk процессинг</h3><p>Цель — обеспечить депозиты игроков и последующий расчёт с оператором платформы.</p></div><i aria-hidden="true">+</i></summary>
+          <div class="roadmap-stage-body" id="igaming-content">
+            <div class="roadmap-stage-grid"><div><h4>Почему последним</h4><ul><li>Требуется зрелое и проверенное Core-ядро.</li><li>Поток платежей становится непрерывным и высоконагруженным.</li><li>Нужно сопоставлять транзакции с постоянными аккаунтами.</li><li>Постоянные адреса усиливают требования к monitoring и reconciliation.</li><li>Custody-балансы, payouts и high-risk среда расширяют регуляторный контур.</li></ul></div><div><h4>Состав этапа</h4><ul><li>Создание депозита по player ID.</li><li>Уникальные или постоянные адреса после утверждения модели.</li><li>Сопоставление транзакции с игроком.</li><li>Минимальный депозит и confirmation policy.</li><li>KYT/AML, risk scoring, автоматическая и ручная обработка риска.</li><li>Deposit webhooks, underpayment, overpayment и история операций.</li><li>OTC-конвертация и settlement оператору в согласованной валюте.</li><li>Прямая интеграция или API игровой платформы.</li></ul></div></div>
+            <aside class="roadmap-boundary roadmap-boundary-dark"><strong>iGaming payouts · Subsequent release</strong><p>Отдельный последующий релиз: проверка адреса получателя, whitelist, лимиты, approvals, управление ликвидностью, предварительный расчёт комиссии, bulk payouts, payout webhooks и повтор только неуспешных выплат.</p></aside>
+            <aside class="roadmap-hypothesis">Требования к iGaming Gateway являются продуктовой гипотезой и должны быть подтверждены интервью с операторами и поставщиками игровых платформ.</aside>
+            <div class="roadmap-result"><span>Результат этапа</span><p>Игровая платформа создаёт депозит для конкретного игрока, получает подтверждённый статус платежа, зачисляет средства на своей стороне, а Cicada выполняет проверку, конвертацию и расчёт с оператором.</p></div>
+          </div>
+        </details>
+      </section>
+
+      <section class="roadmap-transitions">
+        <div class="section-shell">
+          <div class="roadmap-heading"><div><p class="roadmap-kicker">TRANSITION LOGIC</p><h2>Как развивается платформа</h2></div><p>Порядок этапов уменьшает неопределённость: сначала команда доказывает целостность инфраструктуры, затем транзакции, масштаб и account-based процессинг.</p></div>
+          <div class="transition-formula" aria-label="Infrastructure, Transaction, Scale, Account-based processing"><span>Infrastructure</span><b>→</b><span>Transaction</span><b>→</b><span>Scale</span><b>→</b><span>Account-based processing</span></div>
+          <div class="transition-grid"><article><span>01 → 02</span><p>От технической инфраструктуры к первому управляемому пользовательскому сценарию.</p></article><article><span>02 → 03</span><p>От контролируемых ручных счетов к автоматизированному потоку заказов и интеграций.</p></article><article><span>03 → 04</span><p>От масштабируемого order-based процессинга к постоянным аккаунтам, депозитам и high-risk операциям.</p></article></div>
+        </div>
+      </section>
+
+      <section class="roadmap-related section-shell" aria-labelledby="roadmap-related-title">
+        <div class="roadmap-heading"><div><p class="roadmap-kicker">RELATED MATERIALS</p><h2 id="roadmap-related-title">Связанные материалы</h2></div><p>Roadmap связывает продуктовую модель с конкурентным анализом и решениями, которые необходимо принять до фиксации архитектуры и MVP.</p></div>
+        <div class="roadmap-related-grid"><a href="../projects.html"><span>01</span><h3>Project Description</h3><p>Три прикладных продукта и общее ядро Cicada Payments.</p><b>Открыть →</b></a><a href="../competitors/"><span>02</span><h3>Competitors</h3><p>Канадские криптоэквайринги и международные криптоплатёжные шлюзы.</p><b>Открыть →</b></a><a href="../Conclusions/"><span>03</span><h3>Conclusions</h3><p>Выводы анализа и принципы целевой продуктовой модели.</p><b>Открыть →</b></a><a href="../open-decisions/"><span>04</span><h3>Open decisions</h3><p>Блокирующие юридические, продуктовые и архитектурные вопросы.</p><b>Открыть →</b></a></div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell"><img src="../assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><p>Product roadmap · 11.09.2026</p></footer>
+  </body>
+</html>
