@@ -28,7 +28,7 @@ sharedPlatformCards.forEach((card) => {
 });
 
 function revealHashTarget() {
-  const target = document.querySelector(window.location.hash);
+  const target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
   if (!target) return;
   target.classList.add("hash-target");
   window.setTimeout(() => target.classList.remove("hash-target"), 1400);

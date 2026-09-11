@@ -28,6 +28,11 @@ img { display: block; max-width: 100%; }
   backdrop-filter: blur(18px);
 }
 .brand { display: flex; align-items: flex-end; gap: 13px; }
+.language-selector { display: flex; align-items: center; flex: 0 0 auto; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: #f5f7fc; gap: 2px; margin-left: 12px; }
+.language-selector button { border: 0; background: transparent; color: #666b78; padding: 9px 10px; min-width: 38px; border-radius: 999px; font: 600 13px/1.2 Inter, Arial, sans-serif; cursor: pointer; transition: background .15s, color .15s; }
+.language-selector button[aria-pressed="true"] { color: var(--blue); background: white; box-shadow: 0 1px 5px rgb(7 20 49 / 12%); }
+.language-selector button:hover { color: var(--blue); }
+.language-selector button:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
 .brand img { width: 124px; height: auto; }
 .brand span { color: #5c6270; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .site-nav { display: flex; align-items: center; gap: 8px; }
@@ -1010,6 +1015,23 @@ h1 em { color: var(--blue); font-style: normal; }
 .not-found-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-top: 32px; }
 .not-found-actions a { display: inline-flex; align-items: center; gap: 20px; padding: 14px 19px; border: 1px solid #cbd6f3; border-radius: 999px; color: var(--blue); font-size: 14px; font-weight: 750; }
 .not-found-actions .not-found-primary { color: #fff; border-color: var(--blue); background: var(--blue); box-shadow: 0 14px 32px rgb(12 64 238 / 20%); }
+
+/* Keep the language control visible without squeezing the main navigation. */
+.site-header:has(.language-selector) { gap: 14px; }
+.site-header:has(.language-selector) .site-nav { margin-left: auto; }
+.site-header:has(.language-selector) .nav-link { padding-inline: 14px; }
+@media (max-width: 1199px) {
+  .site-header:has(.language-selector) { display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; padding: 12px 24px; }
+  .site-header:has(.language-selector) .brand { grid-column: 1; grid-row: 1; }
+  .site-header:has(.language-selector) .language-selector { grid-column: 2; grid-row: 1; margin: 0; }
+  .site-header:has(.language-selector) .site-nav { grid-column: 1 / -1; grid-row: 2; margin: 0; width: 100%; overflow-x: auto; gap: 6px; }
+  .site-header:has(.language-selector) .nav-link { font-size: 14px; padding: 10px 14px; flex: 0 0 auto; }
+}
+@media (max-width: 600px) {
+  .site-header:has(.language-selector) { padding-inline: 16px; }
+  .site-header:has(.language-selector) .brand img { width: 90px; }
+  .language-selector button { min-height: 36px; min-width: 40px; }
+}
 
 @media (max-width: 900px) {
   .not-found-main { min-height: auto; grid-template-columns: 1fr; gap: 32px; padding-block: 70px; }
