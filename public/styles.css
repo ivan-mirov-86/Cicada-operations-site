@@ -34,6 +34,9 @@ img { display: block; max-width: 100%; }
 .nav-link { padding: 12px 20px; border-radius: 999px; color: #565b66; font-size: 14px; font-weight: 600; transition: .2s ease; }
 .nav-link:hover { color: var(--blue); background: var(--soft); }
 .nav-link.active { color: #fff; background: var(--blue); box-shadow: 0 12px 30px rgb(12 64 238 / 22%); }
+.nav-link-open-decisions { padding-block: 10px; border: 1px solid #ffc09b; color: #bd4307; background: #fff5ee; box-shadow: 0 8px 22px rgb(255 90 0 / 9%); }
+.nav-link-open-decisions:hover { color: #a53700; border-color: #ff8b4a; background: #ffe9db; }
+.nav-link-open-decisions.active { color: #8f2f00; border-color: #ff7a30; background: #ffdfca; box-shadow: 0 12px 30px rgb(255 90 0 / 16%); }
 
 .hero { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; min-height: 720px; padding-block: 86px; }
 .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 28px; color: #626977; font-size: 12px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; }
