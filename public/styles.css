@@ -826,7 +826,7 @@ h1 em { color: var(--blue); font-style: normal; }
 .architecture-core { display: grid; grid-template-columns: 1.2fr .8fr; gap: 44px; padding: 34px 38px; border: 1px solid rgb(130 158 255 / 38%); border-radius: 20px; background: linear-gradient(115deg, rgb(12 64 238 / 45%), rgb(25 49 103 / 42%)); box-shadow: 0 20px 60px rgb(0 0 0 / 16%); }
 .architecture-core span, .architecture-products span { color: #8eacff; font-size: 11px; font-weight: 750; letter-spacing: .08em; }
 .architecture-core h3 { margin: 12px 0 12px; font-size: 38px; letter-spacing: -.045em; }
-.architecture-core p { max-width: 570px; margin: 0; color: #c4cede; font-size: 15px; line-height: 1.65; }
+.architecture-core p { max-width: none; margin: 0; color: #c4cede; font-size: 15px; line-height: 1.65; }
 .architecture-core ul { display: flex; flex-wrap: wrap; gap: 9px; align-content: center; margin: 0; padding: 0; list-style: none; }
 .architecture-core li { padding: 9px 12px; border: 1px solid rgb(149 173 255 / 26%); border-radius: 999px; color: #e8edff; background: rgb(255 255 255 / 6%); font-size: 12px; }
 .architecture-connection { position: relative; width: fit-content; margin: 0 auto; padding: 31px 18px 17px; color: #8ea2c7; font-size: 11px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; }
