@@ -595,21 +595,21 @@ h1 em { color: var(--blue); font-style: normal; }
 /* Product roadmap */
 .roadmap-page { overflow: hidden; }
 .roadmap-kicker { margin: 0 0 16px; color: var(--blue); font-size: 13px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
-.roadmap-hero { padding-block: 70px 76px; }
+.roadmap-hero { width: min(100% - 64px, 1360px); padding-block: 70px 76px; }
 .roadmap-hero-grid { display: grid; grid-template-columns: 1fr; gap: 46px; }
 .roadmap-hero h1 { max-width: none; margin: 0; font-size: clamp(38px, 3.55vw, 52px); line-height: 1.02; white-space: nowrap; }
 .roadmap-hero-copy { display: grid; grid-template-columns: auto 1fr; gap: 22px 32px; align-items: center; padding: 34px 38px; border-radius: 22px; color: #fff; background: linear-gradient(115deg, #0c40ee, #1949e5 64%, #315dec); box-shadow: 0 20px 48px rgb(12 64 238 / 18%); }
 .roadmap-hero-copy > p { grid-column: 1 / -1; max-width: none; margin: 0; color: #fff; font-size: 19px; line-height: 1.65; }
 .roadmap-status { display: inline-flex; margin: 0; padding: 9px 13px; border: 1px solid rgb(255 255 255 / 32%); border-radius: 999px; color: #fff; background: rgb(255 255 255 / 11%); font-size: 11px; font-weight: 750; letter-spacing: .065em; }
 .roadmap-hero-copy small { display: block; max-width: none; color: rgb(255 255 255 / 72%); font-size: 13px; line-height: 1.6; }
-.roadmap-blocker { display: grid; grid-template-columns: 1.06fr .94fr; gap: 64px; margin-bottom: 112px; padding: 38px 40px; border: 1px solid #ffd8bd; border-left: 5px solid #ff5a00; border-radius: 22px; background: #fff8f1; }
+.roadmap-blocker { display: grid; width: min(100% - 64px, 1360px); grid-template-columns: .88fr 1.12fr; gap: 48px; margin-bottom: 112px; padding: 42px 44px; border: 1px solid #ffd8bd; border-left: 5px solid #ff5a00; border-radius: 22px; background: #fff8f1; }
 .roadmap-blocker .roadmap-kicker { color: #d54c00; }
 .roadmap-blocker h2 { margin-bottom: 18px; font-size: clamp(34px, 3vw, 46px); font-weight: 550; letter-spacing: -.045em; }
 .roadmap-blocker-copy > p:not(.roadmap-kicker) { max-width: 680px; margin-bottom: 26px; color: #555d6a; font-size: 16px; line-height: 1.68; }
 .roadmap-blocker-copy a { display: inline-flex; align-items: center; gap: 28px; padding: 13px 16px 13px 18px; border-radius: 999px; color: #2b241f; background: #ffddc7; font-size: 14px; font-weight: 700; }
 .roadmap-blocker-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; align-content: center; margin: 0; padding: 0; list-style: none; }
-.roadmap-blocker-list li { position: relative; min-height: 54px; padding: 17px 14px 14px 34px; border: 1px solid #f2d9c8; border-radius: 12px; color: #454b56; background: rgb(255 255 255 / 72%); font-size: 13px; line-height: 1.45; }
-.roadmap-blocker-list li::before { position: absolute; top: 21px; left: 16px; width: 7px; height: 7px; border-radius: 50%; background: #ff5a00; content: ""; }
+.roadmap-blocker-list li { position: relative; display: flex; min-height: 62px; align-items: center; padding: 16px 16px 16px 36px; border: 1px solid #f2d9c8; border-radius: 12px; color: #454b56; background: rgb(255 255 255 / 78%); font-size: 13px; line-height: 1.4; }
+.roadmap-blocker-list li::before { position: absolute; top: 50%; left: 17px; width: 7px; height: 7px; border-radius: 50%; background: #ff5a00; content: ""; transform: translateY(-50%); }
 .roadmap-overview { padding-block: 112px; color: #fff; background: radial-gradient(circle at 86% 7%, rgb(43 88 255 / 30%), transparent 30%), var(--navy); }
 .roadmap-heading { display: grid; grid-template-columns: 1.04fr .96fr; gap: 72px; align-items: end; margin-bottom: 46px; }
 .roadmap-heading h2 { margin: 0; font-size: clamp(38px, 4vw, 56px); font-weight: 500; line-height: 1.04; letter-spacing: -.05em; }
@@ -694,6 +694,10 @@ h1 em { color: var(--blue); font-style: normal; }
   .roadmap-priority ol { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (min-width: 1380px) {
+  .roadmap-blocker-list li { white-space: nowrap; }
+}
+
 @media (max-width: 900px) {
   .roadmap-hero h1 { white-space: normal; }
 }
@@ -748,7 +752,7 @@ h1 em { color: var(--blue); font-style: normal; }
   .open-decisions-hero { padding-block: 34px 76px; }
   .open-decisions-heading h1 { font-size: 36px; }
   .conclusions-section-heading > .open-decisions-warning { padding: 10px; }
-  .roadmap-hero { padding-block: 42px 64px; }
+  .roadmap-hero { width: calc(100% - 32px); padding-block: 42px 64px; }
   .roadmap-hero h1 { font-size: 42px; }
   .roadmap-hero-grid { gap: 30px; }
   .roadmap-hero-copy { grid-template-columns: 1fr; gap: 16px; padding: 24px 20px; border-radius: 16px; }
