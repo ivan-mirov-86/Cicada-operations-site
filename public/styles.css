@@ -1083,8 +1083,10 @@ h1 em { color: var(--blue); font-style: normal; }
 #lifecycle-title, #connections-title { scroll-margin-top: 104px; }
 .payment-lifecycle-grid { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0; padding: 0; border-top: 1px solid var(--line); border-left: 1px solid var(--line); list-style: none; }
 .payment-lifecycle-grid li { min-height: 190px; padding: 23px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.payment-lifecycle-grid span { color: var(--blue); font-size: 18px; font-weight: 750; }
-.payment-lifecycle-grid strong { display: block; margin-top: 41px; font-size: 19px; }
+.payment-lifecycle-grid span { display: flex; align-items: center; gap: 12px; color: var(--blue); font-size: 18px; font-weight: 750; }
+.payment-lifecycle-grid li:not(:last-child) span::after { display: grid; width: 34px; height: 26px; place-items: center; border: 1px solid #cbd7ff; border-radius: 999px; color: var(--blue); background: #f4f7ff; box-shadow: 0 7px 16px rgb(12 64 238 / 8%); content: "→"; font-size: 17px; font-weight: 500; line-height: 1; }
+.payment-lifecycle-grid li:nth-child(4) span::after { content: "↙"; }
+.payment-lifecycle-grid strong { display: block; margin-top: 34px; font-size: 19px; }
 .payment-lifecycle-grid p { margin: 10px 0 0; color: #626c7b; font-size: 14px; line-height: 1.55; }
 
 .product-connections { padding-block: 108px; background: #f4f7fc; }
@@ -1114,6 +1116,8 @@ h1 em { color: var(--blue); font-style: normal; }
   .global-external-grid { grid-template-columns: repeat(3, 1fr); }
   .global-core-operations { grid-template-columns: repeat(3, 1fr); }
   .payment-lifecycle-grid { grid-template-columns: repeat(2, 1fr); }
+  .payment-lifecycle-grid li:nth-child(even):not(:last-child) span::after { content: "↙"; }
+  .payment-lifecycle-grid li:nth-child(odd) span::after { content: "→"; }
   .global-scheme-boundary { grid-template-columns: 1fr 1.3fr; }
   .global-scheme-boundary a { grid-column: 1 / -1; justify-self: start; }
 }
@@ -1137,6 +1141,7 @@ h1 em { color: var(--blue); font-style: normal; }
   .global-flow-connector span { font-size: 9px; }
   .payment-lifecycle { padding-block: 78px; }
   .payment-lifecycle-grid, .product-connections-grid { grid-template-columns: 1fr; }
+  .payment-lifecycle-grid li:nth-child(n):not(:last-child) span::after { content: "↓"; }
   .payment-lifecycle-grid li { min-height: 165px; }
   .product-connections { padding-block: 78px; }
   .product-connections-grid > article { min-height: 340px; padding: 24px; }
