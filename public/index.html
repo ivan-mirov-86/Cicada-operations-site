@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Cicada Operations — как QR-код передаёт платёжный контекст и связывает оплату с инвойсом." />
-    <meta name="theme-color" content="#ff5a00" />
-    <title>Cicada Operations — Payment QR</title>
+    <meta name="description" content="Cicada Operations — единое пространство материалов по формированию продукта Cicada Payments." />
+    <meta name="theme-color" content="#0c40ee" />
+    <title>Cicada Payments — Project Workspace</title>
     <link rel="icon" href="./assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
-    <link rel="stylesheet" href="./styles.css?v=20260911-40" />
+    <link rel="stylesheet" href="./styles.css?v=20260911-45" />
   </head>
   <body>
     <header class="site-header">
@@ -23,93 +23,122 @@
       </nav>
     </header>
 
-    <main>
-      <section class="hero section-shell">
-        <div class="hero-copy">
-          <p class="eyebrow"><span></span> Payment QR</p>
-          <h1>QR-код передаёт<br /><em>платёжный контекст</em></h1>
-          <p class="hero-lead">Один код связывает реквизиты, сумму и конкретную операцию. Банк или кошелёк считывает данные, показывает детали и создаёт платёж после подтверждения пользователя.</p>
-          <a class="primary-button" href="#qr-basics">Разобрать механику <span>↓</span></a>
+    <main class="hub-page">
+      <section class="hub-hero section-shell" aria-labelledby="hub-title">
+        <div>
+          <p class="hub-kicker">INTERNAL PROJECT HUB</p>
+          <h1 id="hub-title">Единое пространство проекта <em>Cicada Payments</em></h1>
         </div>
-        <div class="hero-visual">
-          <img src="./assets/qr-payment-illustration.png?v=20260910-2" alt="Оплата по QR-коду с мобильного устройства" />
-          <div class="signal-card"><span class="signal-dot"></span><div><small>PAYMENT STATUS</small><strong>Context received</strong></div></div>
-        </div>
-      </section>
-
-      <section class="metrics-band" aria-label="Ключевые характеристики">
-        <div class="section-shell metrics-grid">
-          <div><strong>01</strong><span>Structured payload</span></div><div><strong>02</strong><span>Static or dynamic</span></div><div><strong>03</strong><span>Linked to invoice</span></div><div><strong>04</strong><span>Verified result</span></div>
+        <div class="hub-hero-copy">
+          <p>Здесь собрана актуальная информация о формируемом продукте Cicada Payments: состав платформы, целевая архитектура, этапы разработки, рыночные ориентиры и решения, которые необходимо принять до фиксации MVP.</p>
+          <p>Используйте главную страницу как карту рабочего пространства — от общего понимания продукта к деталям, обоснованиям и вопросам, которые ещё требуют ответа.</p>
+          <dl class="hub-meta">
+            <div><dt>PROJECT STATE</dt><dd>Concept &amp; planning</dd></div>
+            <div><dt>LAST UPDATED</dt><dd>11.09.2026</dd></div>
+          </dl>
         </div>
       </section>
 
-      <section class="content-section section-shell" id="qr-basics">
-        <div class="section-heading">
-          <div><p class="eyebrow"><span></span> Inside the code</p><h2>Что происходит<br />после сканирования</h2></div>
-          <p>QR-код не проводит платёж самостоятельно. Он передаёт приложению точный набор данных, необходимый для создания и проверки операции.</p>
-        </div>
-        <div class="feature-grid four-columns">
-          <article class="feature-card"><div class="card-number">01</div><p class="card-label">Payload</p><h3>Данные внутри</h3><p>URL или URI, получатель, сумма, валюта или актив. Код также может передавать invoice, order или session ID.</p></article>
-          <article class="feature-card"><div class="card-number">02</div><p class="card-label">Static</p><h3>Статический QR</h3><p>Постоянные реквизиты для повторного использования. Сумму вводит клиент либо запрашивает приложение.</p></article>
-          <article class="feature-card accent-card"><div class="card-number">03</div><p class="card-label">Dynamic</p><h3>Динамический QR</h3><p>Новый payload для каждой операции. Сумма и заказ заранее связаны с конкретным инвойсом.</p></article>
-          <article class="feature-card"><div class="card-number">04</div><p class="card-label">Result</p><h3>Статус оплаты</h3><p>Сеть подтверждает перевод, а backend проверяет транзакцию и обновляет статус заказа.</p></article>
-        </div>
-      </section>
-
-      <section class="dark-section">
+      <section class="hub-map" aria-labelledby="hub-map-title">
         <div class="section-shell">
-          <div class="section-heading dark-heading">
-            <div><p class="eyebrow light"><span></span> QR use cases</p><h2>Один формат.<br />Четыре сценария.</h2></div>
-            <p>Сценарий зависит от того, кто показывает код, какое приложение его читает и как сервис получает статус оплаты.</p>
+          <div class="hub-section-heading">
+            <div><p class="hub-kicker">WORKSPACE LOGIC</p><h2 id="hub-map-title">Как устроено пространство</h2></div>
+            <p>Каждый раздел отвечает на отдельный уровень вопросов. Последовательность помогает пройти от продуктовой модели к плану, архитектуре, рыночным основаниям и блокирующим решениям.</p>
           </div>
-          <div class="use-case-list">
-            <article><span class="case-index">01</span><div><small>Merchant-presented</small><h3>QR показывает продавец</h3></div><p>Касса, ресторан или терминал. Клиент сканирует код кошельком, проверяет сумму и подтверждает оплату.</p></article>
-            <article><span class="case-index">02</span><div><small>Consumer-presented</small><h3>QR показывает клиент</h3></div><p>Клиент открывает код в приложении. Продавец сканирует его и передаёт данные в платёжную систему.</p></article>
-            <article><span class="case-index">03</span><div><small>Remote checkout</small><h3>Онлайн-оплата и счета</h3></div><p>QR переносит checkout с экрана или PDF-инвойса на телефон и сохраняет связь платежа с заказом.</p></article>
-            <article><span class="case-index">04</span><div><small>Crypto payment</small><h3>Перевод из кошелька</h3></div><p>Кошелёк получает сеть, адрес, актив, сумму и reference. Backend связывает подтверждённую транзакцию с инвойсом.</p></article>
-          </div>
+          <nav class="hub-path" aria-label="Логика разделов сайта">
+            <a href="./projects.html"><span>01</span><small>Что создаём</small><strong>Project description</strong></a>
+            <a href="./roadmap/"><span>02</span><small>В каком порядке</small><strong>Roadmap</strong></a>
+            <a href="./scheme.html"><span>03</span><small>Как устроено</small><strong>Global Scheme</strong></a>
+            <a href="./competitors/"><span>04</span><small>На что ориентируемся</small><strong>Competitors</strong></a>
+            <a class="is-warning" href="./open-decisions/"><span>05</span><small>Что блокирует</small><strong>Open decisions</strong></a>
+          </nav>
         </div>
       </section>
 
-      <section class="content-section section-shell">
-        <div class="section-heading">
-          <div><p class="eyebrow"><span></span> Buyer channels</p><h2>Пять каналов<br />покупателя</h2></div>
-          <p>Все каналы используют один Payment Intent. POS и Merchant App могут показывать QR или открывать checkout.</p>
+      <section class="hub-directory section-shell" aria-labelledby="hub-directory-title">
+        <div class="hub-section-heading">
+          <div><p class="hub-kicker">PROJECT DIRECTORY</p><h2 id="hub-directory-title">Разделы рабочего пространства</h2></div>
+          <p>Выберите раздел по вопросу, на который нужно ответить. Карточки показывают назначение страницы и уровень детализации, который внутри неё доступен.</p>
         </div>
-        <div class="channel-grid">
-          <article class="channel-card featured"><span>01 / SCAN</span><h3>QR</h3><p>Для кассы, PDF-инвойса или экрана. Покупатель сканирует код камерой или кошельком.</p></article>
-          <article class="channel-card"><span>02 / SHARE</span><h3>Payment Link</h3><p>Ссылка из email, мессенджера или счёта для удалённой продажи.</p></article>
-          <article class="channel-card"><span>03 / WEB</span><h3>Hosted Checkout</h3><p>Страница Cicada для выбора актива и сети, проверок и отображения статуса.</p></article>
-          <article class="channel-card"><span>04 / IN STORE</span><h3>POS</h3><p>Продавец создаёт платёж на терминале, а покупатель получает QR или ссылку.</p></article>
-          <article class="channel-card wide"><span>05 / IN APP</span><h3>Merchant App</h3><p>Оплата внутри приложения мерчанта через SDK, deep link или WalletConnect.</p></article>
-        </div>
-        <div class="core-note"><span>Общее ядро</span><p>Один Payment Intent управляет котировкой, compliance, адресом, статусом и settlement независимо от канала.</p></div>
-      </section>
 
-      <section class="matching-section">
-        <div class="section-shell">
-          <div class="section-heading">
-            <div><p class="eyebrow"><span></span> Invoice matching</p><h2>Как связать платёж<br />с инвойсом</h2></div>
-            <p>Надёжные методы сохраняют уникальный ключ в блокчейне или платёжном протоколе. Адрес, сумма и время дополняют проверку.</p>
-          </div>
-          <div class="matching-table" role="table" aria-label="Способы сопоставления платежа">
-            <div class="matching-row matching-head" role="row"><span>Механизм</span><span>Ключ сопоставления</span><span>Особенность</span></div>
-            <div class="matching-row" role="row"><div><b>01</b><strong>Уникальный адрес</strong><small>Deterministic</small></div><p>Адрес или subaddress конкретного инвойса</p><p>Широкая совместимость</p></div>
-            <div class="matching-row" role="row"><div><b>02</b><strong>Memo, tag, reference</strong><small>Deterministic</small></div><p>On-chain поле или account reference</p><p>Один адрес для многих счетов</p></div>
-            <div class="matching-row" role="row"><div><b>03</b><strong>Контракт</strong><small>Deterministic</small></div><p>invoiceId в calldata и событии</p><p>Точный контроль платежа</p></div>
-            <div class="matching-row" role="row"><div><b>04</b><strong>Protocol session</strong><small>Deterministic</small></div><p>Payment hash или tx hash</p><p>Прямая связь с транзакцией</p></div>
-            <div class="matching-row" role="row"><div><b>05</b><strong>Адрес плательщика</strong><small>Conditional</small></div><p>From address, актив, сумма и окно времени</p><p>Подходит для известных B2B wallets</p></div>
-            <div class="matching-row" role="row"><div><b>06</b><strong>Уникальная сумма</strong><small>Fallback</small></div><p>Точная сумма как временный fingerprint</p><p>Простой вариант для MVP</p></div>
-          </div>
-          <p class="verification-note">Backend всегда проверяет сеть, токен, получателя, фактическую сумму, finality и уникальность transaction hash.</p>
-        </div>
-      </section>
+        <div class="hub-directory-grid">
+          <article class="hub-card">
+            <div class="hub-card-head"><span>01</span><small>PRODUCT MODEL</small></div>
+            <p class="hub-question">Что именно мы создаём?</p>
+            <h3>Project description</h3>
+            <p>Cicada Payments как единая платформа: общий Core и три прикладных продукта для разных платёжных сценариев.</p>
+            <ul>
+              <li>состав и роль частей платформы;</li>
+              <li>пользователи и сценарии применения;</li>
+              <li>возможности и границы концепции;</li>
+              <li>единые компоненты Cicada Core.</li>
+            </ul>
+            <a class="hub-card-link" href="./projects.html">Открыть описание <b aria-hidden="true">→</b></a>
+          </article>
 
-      <section class="closing-section">
-        <div class="section-shell closing-inner"><p class="eyebrow light"><span></span> Cicada infrastructure</p><h2>От платёжного контекста<br />к подтверждённому результату</h2><p>Один управляемый поток для QR, checkout, POS и merchant applications.</p></div>
+          <article class="hub-card">
+            <div class="hub-card-head"><span>02</span><small>DELIVERY SEQUENCE</small></div>
+            <p class="hub-question">В каком порядке развивать продукт?</p>
+            <h3>Roadmap</h3>
+            <p>Рекомендуемая последовательность разработки — от общего платёжного ядра к специализированным продуктам.</p>
+            <ul>
+              <li>четыре этапа развития;</li>
+              <li>зависимости между этапами;</li>
+              <li>результат и критерии готовности;</li>
+              <li>границы и допущения планирования.</li>
+            </ul>
+            <a class="hub-card-link" href="./roadmap/">Открыть Roadmap <b aria-hidden="true">→</b></a>
+          </article>
+
+          <article class="hub-card">
+            <div class="hub-card-head"><span>03</span><small>SYSTEM MAP</small></div>
+            <p class="hub-question">Как взаимодействуют части системы?</p>
+            <h3>Global Scheme</h3>
+            <p>Единая карта будущей платформы — от участника и точки входа до обработки платежа и расчёта с мерчантом.</p>
+            <ul>
+              <li>участники и прикладные продукты;</li>
+              <li>сервисы и операции Cicada Core;</li>
+              <li>внешняя инфраструктура;</li>
+              <li>сквозной жизненный цикл платежа.</li>
+            </ul>
+            <a class="hub-card-link" href="./scheme.html">Открыть схему <b aria-hidden="true">→</b></a>
+          </article>
+
+          <article class="hub-card">
+            <div class="hub-card-head"><span>04</span><small>MARKET EVIDENCE</small></div>
+            <p class="hub-question">На какие рыночные ориентиры мы опираемся?</p>
+            <h3>Competitors</h3>
+            <p>Канадские криптоэквайринги и международные шлюзы показывают рыночный минимум, зрелые практики и возможные точки дифференциации.</p>
+            <ul>
+              <li>shortlist компаний и шлюзов;</li>
+              <li>сравнение ключевых возможностей;</li>
+              <li>продуктовый и операционный benchmark;</li>
+              <li>выводы для целевой модели Cicada.</li>
+            </ul>
+            <div class="hub-card-actions"><a href="./competitors/">Открыть анализ <b aria-hidden="true">→</b></a><a href="./Conclusions/">Открыть выводы <b aria-hidden="true">→</b></a></div>
+          </article>
+        </div>
+
+        <article class="hub-decision-card">
+          <div>
+            <p class="hub-kicker">05 · BLOCKING DECISIONS</p>
+            <p class="hub-question">Что необходимо решить до фиксации MVP?</p>
+            <h3>Open decisions</h3>
+          </div>
+          <div>
+            <p>Этот раздел собирает вопросы, ответы на которые определяют продуктовые границы, архитектуру, регуляторный периметр и операционную модель. Пока они не закрыты, решения по разработке остаются допущениями и могут привести к дорогостоящей переработке.</p>
+            <ul>
+              <li>регуляторный периметр и допустимые мерчанты;</li>
+              <li>роли сторон, custody и движение активов;</li>
+              <li>KYC, KYT, Travel Rule и санкционные проверки;</li>
+              <li>settlement, договоры, данные и готовность к запуску.</li>
+            </ul>
+          </div>
+          <a href="./open-decisions/">Открыть решения <b aria-hidden="true">→</b></a>
+        </article>
       </section>
     </main>
 
-    <footer class="site-footer section-shell"><img src="./assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><p>Payment QR overview</p></footer>
+    <footer class="site-footer section-shell"><img src="./assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><p>Project workspace · 11.09.2026</p></footer>
   </body>
 </html>

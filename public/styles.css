@@ -1150,3 +1150,101 @@ h1 em { color: var(--blue); font-style: normal; }
   .global-scheme-boundary { grid-template-columns: 1fr; gap: 18px; padding: 24px 21px; }
   .global-scheme-boundary a { grid-column: auto; }
 }
+
+/* Project workspace */
+.hub-page { overflow: hidden; }
+#hub-map-title, #hub-directory-title { scroll-margin-top: 104px; }
+.hub-kicker { margin: 0 0 16px; color: var(--blue); font-size: 13px; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
+.hub-hero { display: grid; grid-template-columns: .92fr 1.08fr; gap: 88px; align-items: center; padding-block: 70px 82px; }
+.hub-hero h1 { max-width: 650px; margin: 0; font-size: clamp(50px, 5.2vw, 74px); font-weight: 500; line-height: .98; letter-spacing: -.055em; }
+.hub-hero h1 em { display: block; color: var(--blue); font-style: normal; }
+.hub-hero-copy { display: grid; gap: 17px; }
+.hub-hero-copy > p { max-width: 700px; margin: 0; color: #626b7a; font-size: 16px; line-height: 1.7; }
+.hub-hero-copy > p:first-child { color: #303846; font-size: 18px; }
+.hub-meta { display: flex; flex-wrap: wrap; gap: 10px; margin: 8px 0 0; }
+.hub-meta > div { min-width: 190px; padding: 12px 14px; border: 1px solid #d9e1f2; border-radius: 12px; background: #f8faff; }
+.hub-meta dt { color: #8992a2; font-size: 12px; font-weight: 700; letter-spacing: .06em; }
+.hub-meta dd { margin: 6px 0 0; color: #30394a; font-size: 14px; font-weight: 650; }
+
+.hub-map { padding-block: 86px; color: #fff; background: radial-gradient(circle at 87% 8%, rgb(43 91 255 / 28%), transparent 30%), var(--navy); }
+.hub-section-heading { display: grid; grid-template-columns: .92fr 1.08fr; gap: 76px; align-items: end; margin-bottom: 40px; }
+.hub-section-heading h2 { max-width: 660px; margin: 0; font-size: clamp(38px, 4vw, 56px); font-weight: 500; line-height: 1.04; letter-spacing: -.05em; }
+.hub-section-heading > p { max-width: 680px; margin: 0 0 3px; color: #697281; font-size: 16px; line-height: 1.7; }
+.hub-map .hub-kicker { color: #8faaff; }
+.hub-map .hub-section-heading h2 { color: #fff; }
+.hub-map .hub-section-heading > p { color: #b6c1d6; }
+.hub-path { display: grid; grid-template-columns: repeat(5, 1fr); overflow: hidden; border: 1px solid rgb(255 255 255 / 17%); border-radius: 22px; background: rgb(255 255 255 / 4%); box-shadow: 0 28px 64px rgb(0 0 0 / 18%); }
+.hub-path a { position: relative; display: flex; min-width: 0; min-height: 188px; flex-direction: column; padding: 24px 22px; border-right: 1px solid rgb(255 255 255 / 14%); transition: background .2s ease, transform .2s ease; }
+.hub-path a:last-child { border-right: 0; }
+.hub-path a:not(:last-child)::after { position: absolute; top: 25px; right: 17px; color: #7898ff; content: "→"; font-size: 19px; }
+.hub-path a:hover { background: rgb(49 91 219 / 22%); }
+.hub-path span { color: #84a2ff; font-size: 19px; font-weight: 750; }
+.hub-path small { margin-top: 50px; color: #8f9cb4; font-size: 12px; font-weight: 650; letter-spacing: .03em; }
+.hub-path strong { margin-top: 9px; color: #f4f7ff; font-size: 17px; line-height: 1.35; }
+.hub-path .is-warning { background: rgb(255 90 0 / 9%); }
+.hub-path .is-warning span, .hub-path .is-warning small { color: #ff9c65; }
+.hub-path .is-warning strong { color: #ffe6d7; }
+
+.hub-directory { padding-block: 104px 112px; }
+.hub-directory-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.hub-card { display: flex; min-height: 420px; flex-direction: column; padding: 31px; border: 1px solid #dce2ed; border-radius: 21px; background: #fff; box-shadow: 0 14px 36px rgb(22 46 96 / 5%); transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.hub-card:hover { border-color: #bdcaeb; box-shadow: 0 22px 48px rgb(22 46 96 / 9%); transform: translateY(-3px); }
+.hub-card-head { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.hub-card-head span { color: var(--blue); font-size: 25px; font-weight: 750; letter-spacing: -.04em; }
+.hub-card-head small { color: #8c95a5; font-size: 12px; font-weight: 750; letter-spacing: .07em; }
+.hub-question { margin: 46px 0 10px; color: var(--blue); font-size: 15px; font-weight: 700; }
+.hub-card h3, .hub-decision-card h3 { margin: 0 0 15px; font-size: 29px; letter-spacing: -.04em; }
+.hub-card > p:not(.hub-question) { margin: 0; color: #626c7b; font-size: 15px; line-height: 1.65; }
+.hub-card ul, .hub-decision-card ul { margin: 22px 0 0; padding: 0; list-style: none; }
+.hub-card li, .hub-decision-card li { position: relative; padding: 5px 0 5px 17px; color: #485262; font-size: 14px; line-height: 1.5; }
+.hub-card li::before, .hub-decision-card li::before { position: absolute; top: 13px; left: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--blue); content: ""; }
+.hub-card-link { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: auto; padding-top: 24px; border-top: 1px solid var(--line); color: var(--blue); font-size: 14px; font-weight: 750; }
+.hub-card-link b, .hub-card-actions b { font-size: 18px; font-weight: 500; }
+.hub-card-actions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; margin-top: auto; padding-top: 24px; }
+.hub-card-actions a { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border: 1px solid #cbd6f3; border-radius: 999px; color: var(--blue); font-size: 13px; font-weight: 750; transition: color .2s ease, background .2s ease; }
+.hub-card-actions a:hover { color: #fff; background: var(--blue); }
+
+.hub-decision-card { display: grid; grid-template-columns: .75fr 1.25fr auto; gap: 42px; align-items: center; margin-top: 16px; padding: 34px 36px; border: 1px solid #ffc49f; border-left: 5px solid #ff5a00; border-radius: 18px; background: linear-gradient(120deg, #fff8f2, #fff3e9); box-shadow: 0 18px 42px rgb(255 90 0 / 7%); }
+.hub-decision-card .hub-kicker { color: #d94a00; }
+.hub-decision-card .hub-question { margin: 24px 0 8px; color: #a23c0a; }
+.hub-decision-card h3 { margin-bottom: 0; }
+.hub-decision-card > div:nth-child(2) > p { margin: 0; color: #625b58; font-size: 15px; line-height: 1.65; }
+.hub-decision-card li::before { background: #ff5a00; }
+.hub-decision-card > a { display: inline-flex; align-items: center; gap: 24px; padding: 13px 15px 13px 18px; border-radius: 999px; color: #fff; background: #ff5a00; white-space: nowrap; font-size: 14px; font-weight: 750; box-shadow: 0 12px 28px rgb(255 90 0 / 18%); }
+.hub-decision-card > a b { font-size: 18px; font-weight: 500; }
+
+@media (max-width: 1000px) {
+  .hub-hero, .hub-section-heading { grid-template-columns: 1fr; gap: 32px; }
+  .hub-hero { padding-block: 58px 70px; }
+  .hub-path { grid-template-columns: 1fr; }
+  .hub-path a { min-height: 112px; border-right: 0; border-bottom: 1px solid rgb(255 255 255 / 14%); }
+  .hub-path a:last-child { border-bottom: 0; }
+  .hub-path a:not(:last-child)::after { top: auto; right: 22px; bottom: 18px; content: "↓"; }
+  .hub-path small { margin-top: 22px; }
+  .hub-decision-card { grid-template-columns: 1fr 1.25fr; }
+  .hub-decision-card > a { grid-column: 1 / -1; justify-self: start; }
+}
+
+@media (max-width: 720px) {
+  .hub-hero { padding-block: 44px 58px; }
+  .hub-hero h1 { font-size: 43px; }
+  .hub-hero-copy > p:first-child { font-size: 16px; }
+  .hub-meta { display: grid; grid-template-columns: 1fr; }
+  .hub-map, .hub-directory { padding-block: 74px; }
+  .hub-section-heading { margin-bottom: 32px; }
+  .hub-section-heading h2 { font-size: 36px; }
+  .hub-section-heading > p { font-size: 15px; }
+  .hub-path { border-radius: 17px; }
+  .hub-path a { min-height: 104px; padding: 20px; }
+  .hub-directory-grid { grid-template-columns: 1fr; }
+  .hub-card { min-height: 390px; padding: 24px 21px; border-radius: 17px; }
+  .hub-question { margin-top: 38px; }
+  .hub-card h3, .hub-decision-card h3 { font-size: 25px; }
+  .hub-card-actions { grid-template-columns: 1fr; }
+  .hub-decision-card { grid-template-columns: 1fr; gap: 20px; padding: 27px 21px; }
+  .hub-decision-card > a { grid-column: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hub-path a, .hub-card { transition: none; }
+}
