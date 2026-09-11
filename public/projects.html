@@ -30,11 +30,11 @@
 
       <section class="architecture-section" id="architecture" aria-labelledby="architecture-title">
         <div class="section-shell">
-          <div class="description-heading description-heading-light"><div><p class="description-kicker">PLATFORM MODEL</p><h2 id="architecture-title">Архитектура Cicada Payments</h2></div><p>Все прикладные продукты используют общие платёжные сущности, wallet-инфраструктуру, проверки, ledger, конвертацию и расчёты Cicada Core.</p></div>
+          <div class="description-heading description-heading-light"><div><p class="description-kicker">PLATFORM MODEL</p><h2 id="architecture-title">Общая архитектура<br />Cicada Payments</h2></div><p>Все прикладные продукты используют общие платёжные сущности, wallet-инфраструктуру, проверки, ledger, конвертацию и расчёты Cicada Core.</p></div>
           <div class="architecture-map" role="img" aria-label="Cicada Core является общей основой для Pay by Link, E-commerce Gateway и iGaming Gateway">
             <article class="architecture-core"><div><span>01 · PLATFORM FOUNDATION</span><h3>Cicada Core</h3><p>Общая кастодиальная платформа для создания платежей, управления цифровыми активами, проверок, конвертации, расчётов и операционной отчётности.</p></div><ul aria-label="Ключевые компоненты Cicada Core"><li>Merchant</li><li>Payment Intent</li><li>Checkout</li><li>Compliance</li><li>Fireblocks</li><li>Wallets</li><li>Ledger</li><li>OTC</li><li>Settlement</li></ul></article>
             <p class="architecture-connection">Три продукта используют единое ядро</p>
-            <div class="architecture-products"><article><span>02 · NO-CODE</span><h3>Pay by Link</h3><p>Счёт, ссылка или QR-код без интеграции с сайтом.</p></article><article><span>03 · ORDER-BASED</span><h3>E-commerce Gateway</h3><p>Оплата цифровыми активами внутри checkout мерчанта.</p></article><article><span>04 · ACCOUNT-BASED</span><h3>iGaming Gateway</h3><p>Депозиты с сопоставлением платежа и аккаунта игрока.</p></article></div>
+            <div class="architecture-products"><article><span>02 · NO-CODE</span><h3>Pay by Link</h3><p>Создание счёта, платёжной ссылки или QR-кода без интеграции с сайтом. Статус платежа и расчёт проходят через Cicada Core.</p></article><article><span>03 · ORDER-BASED</span><h3>E-commerce Gateway</h3><p>Создание платежа из заказа, hosted checkout и автоматический возврат статуса в систему мерчанта через webhook.</p></article><article><span>04 · ACCOUNT-BASED</span><h3>iGaming Gateway</h3><p>Пополнение игрового аккаунта цифровыми активами, сопоставление депозита с player ID и последующий расчёт с оператором.</p></article></div>
           </div>
         </div>
       </section>
