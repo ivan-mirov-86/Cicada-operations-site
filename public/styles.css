@@ -492,7 +492,7 @@ h1 em { color: var(--blue); font-style: normal; }
 .conclusions-hero h1 { max-width: 780px; margin: 0; font-size: clamp(48px, 5vw, 72px); line-height: 1.01; }
 .conclusions-hero-aside { padding-bottom: 7px; }
 .conclusions-hero-aside p { max-width: 680px; margin: 0 0 18px; color: #3f4859; font-size: 17px; line-height: 1.68; }
-.conclusions-hero time, .conclusions-footer time { color: #858d9b; font-size: 13px; }
+.conclusions-hero time { color: #858d9b; font-size: 13px; }
 .conclusions-insight { padding: 28px 32px; border: 1px solid #dbe4ff; border-left: 4px solid var(--blue); border-radius: 20px; background: var(--soft); }
 .conclusions-insight blockquote { max-width: 1120px; margin: 0; color: #343c4a; font-size: clamp(19px, 1.75vw, 22px); font-weight: 500; line-height: 1.62; letter-spacing: -.014em; }
 .conclusions-section { padding-block: 104px; }
@@ -579,11 +579,6 @@ h1 em { color: var(--blue); font-style: normal; }
 .decision-title { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 12px; align-items: center; }
 .decision-title b { color: var(--blue); font-size: 15px; }
 .decision-title strong { color: #343c49; font-size: 15px; line-height: 1.55; }
-.conclusions-footer { margin-top: 26px; padding-block: 38px; border-top: 1px solid var(--line); background: #fafbfe; }
-.conclusions-footer-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 70px; align-items: start; }
-.conclusions-footer-grid > p { margin: 0; color: #707887; font-size: 13px; line-height: 1.65; }
-.conclusions-footer-grid > div { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 18px; }
-.conclusions-footer a { color: var(--blue); font-size: 13px; font-weight: 600; }
 .open-decisions-page { min-height: calc(100vh - 78px); }
 .open-decisions-hero { padding-block: 46px 112px; }
 .open-decisions-heading { grid-template-columns: .82fr 1.18fr; gap: 56px; margin-bottom: 54px; }
@@ -636,8 +631,6 @@ h1 em { color: var(--blue); font-style: normal; }
   .decision-group-toggle { width: 34px; height: 34px; flex-basis: 34px; font-size: 22px; }
   .decision-row { padding: 18px; }
   .decision-title { grid-template-columns: 34px minmax(0, 1fr); gap: 8px; align-items: start; }
-  .conclusions-footer-grid { grid-template-columns: 1fr; gap: 24px; }
-  .conclusions-footer-grid > div { justify-content: flex-start; }
   .open-decisions-hero { padding-block: 34px 76px; }
   .open-decisions-heading h1 { font-size: 36px; }
   .conclusions-section-heading > .open-decisions-warning { padding: 10px; }
