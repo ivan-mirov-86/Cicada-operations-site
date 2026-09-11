@@ -810,10 +810,6 @@ h1 em { color: var(--blue); font-style: normal; }
 .description-hero-copy { display: grid; gap: 18px; padding-bottom: 4px; }
 .description-hero-copy > p { max-width: 720px; margin: 0; color: #606978; font-size: 16px; line-height: 1.7; }
 .description-hero-copy > p:first-child { color: #303846; font-size: 18px; }
-.description-hero-actions { display: flex; align-items: center; gap: 14px; margin-top: 8px; }
-.description-hero-actions > span { padding: 9px 13px; border: 1px solid #c9d5f5; border-radius: 999px; color: var(--blue); background: #f6f8ff; font-size: 10px; font-weight: 750; letter-spacing: .065em; }
-.description-hero-actions a { display: inline-flex; align-items: center; gap: 20px; padding: 11px 16px 11px 18px; border-radius: 999px; color: #fff; background: var(--blue); font-size: 13px; font-weight: 700; }
-.description-hero-actions a b { font-size: 17px; }
 
 .description-heading { display: grid; grid-template-columns: 1.05fr .95fr; gap: 72px; align-items: end; margin-bottom: 42px; }
 .description-heading h2 { max-width: 690px; margin: 0; font-size: clamp(38px, 4vw, 56px); font-weight: 500; line-height: 1.04; letter-spacing: -.05em; }
@@ -968,7 +964,6 @@ h1 em { color: var(--blue); font-style: normal; }
   .description-hero { padding-block: 44px 64px; }
   .description-hero h1 { font-size: 43px; }
   .description-hero-copy > p:first-child { font-size: 16px; }
-  .description-hero-actions { align-items: flex-start; flex-direction: column; }
   .description-heading { margin-bottom: 32px; }
   .description-heading h2 { font-size: 36px; }
   .description-heading > p { font-size: 15px; }
