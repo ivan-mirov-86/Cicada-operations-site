@@ -3,116 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Три продуктовых направления Cicada: Pay-by-Link, Casino Processing и E-commerce Acquiring." />
+    <meta name="description" content="Архитектура Cicada Payments: общее платёжное ядро Cicada Core и продукты Pay by Link, E-commerce Gateway и iGaming Gateway." />
     <meta name="theme-color" content="#ff5a00" />
-    <title>Projects — Cicada Operations</title>
+    <title>Project Description — Cicada Operations</title>
     <link rel="icon" href="./assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
-    <link rel="stylesheet" href="./styles.css?v=20260911-1" />
-    <script src="./projects.js?v=20260910-2" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=20260911-32" />
+    <script src="./projects.js?v=20260911-3" defer></script>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="./index.html" aria-label="Cicada Operations — главная"><img src="./assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><span>Operations</span></a>
-      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link" href="./payment-gateway.html">Payment Gateway</a><a class="nav-link" href="./scheme.html">Scheme</a><a class="nav-link active" href="./projects.html" aria-current="page">Projects</a><a class="nav-link" href="./roadmap/">Roadmap</a><a class="nav-link" href="./competitors/">Competitors</a><a class="nav-link" href="./open-decisions/">Open decisions</a></nav>
+      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link" href="./payment-gateway.html">Payment Gateway</a><a class="nav-link" href="./scheme.html">Scheme</a><a class="nav-link active" href="./projects.html" aria-current="page">Project Description</a><a class="nav-link" href="./roadmap/">Roadmap</a><a class="nav-link" href="./competitors/">Competitors</a><a class="nav-link" href="./open-decisions/">Open decisions</a></nav>
     </header>
 
-    <main class="projects-page">
-      <section class="projects-intro section-shell">
-        <p class="eyebrow"><span></span> Product portfolio</p>
-        <div class="projects-intro-grid">
-          <h1>Три продукта.<br /><em>Одно платёжное ядро.</em></h1>
-          <p>Каждое направление решает отдельную задачу мерчанта, но использует общие сущности Cicada: Merchant, Payment Intent, Compliance, Wallet, Ledger, Exchange и Settlement.</p>
-        </div>
-      </section>
-
-      <section class="project-workspace section-shell" aria-labelledby="project-selector-title">
-        <div class="project-selector-header">
-          <div><p class="selector-label">Выберите продукт</p><h2 id="project-selector-title">Список работ</h2></div>
-          <div class="project-tabs" role="tablist" aria-label="Проекты Cicada">
-            <button class="project-tab active" type="button" role="tab" aria-selected="true" data-project="one"><span>01</span>Pay-by-Link</button>
-            <button class="project-tab" type="button" role="tab" aria-selected="false" data-project="two"><span>02</span>Casino</button>
-            <button class="project-tab" type="button" role="tab" aria-selected="false" data-project="three"><span>03</span>E-commerce</button>
-          </div>
-        </div>
-
-        <div class="project-summary" aria-live="polite">
-          <div class="project-summary-main">
-            <p id="project-kicker">PROJECT 01 · HIGH-VALUE MERCHANTS</p>
-            <h3 id="project-title">Merchant Pay-by-Link</h3>
-            <p id="project-description">Мерчант создаёт счёт и отправляет клиенту платёжную ссылку. Cicada принимает криптовалюту и перечисляет мерчанту фиат на банковский счёт.</p>
-          </div>
-          <dl class="project-facts">
-            <div><dt>Модель</dt><dd id="project-model">Invoice-based</dd></div>
-            <div><dt>Расчёт</dt><dd id="project-settlement">Fiat · T+1 / T+2</dd></div>
-            <div><dt>Основной канал</dt><dd id="project-channel">Dashboard + Link</dd></div>
-          </dl>
-        </div>
-
-        <div class="work-table-wrap">
-          <table class="work-table">
-            <thead><tr><th>Блок работ</th><th>Что реализуем</th><th>Результат</th></tr></thead>
-            <tbody id="project-table-body">
-              <tr><td><span>01</span><strong>Merchant onboarding</strong></td><td>Регистрация, KYB, UBO, KYC представителей, risk profile и верификация банковского счёта.</td><td>Одобренный Merchant Account</td></tr>
-              <tr><td><span>02</span><strong>Merchant Dashboard</strong></td><td>Создание счетов, статусы платежей, settlements, отчёты, команда и настройки.</td><td>No-code работа мерчанта</td></tr>
-              <tr><td><span>03</span><strong>Invoice &amp; Payment Link</strong></td><td>Счёт в EUR, USD или AED, описание товара, срок действия, ссылка и QR-код.</td><td>Готовый checkout для клиента</td></tr>
-              <tr><td><span>04</span><strong>Customer compliance</strong></td><td>KYC, sanctions, PEP, Source of Funds/Wealth и проверка исходящего кошелька.</td><td>Решение approve / review / reject</td></tr>
-              <tr><td><span>05</span><strong>Crypto acceptance</strong></td><td>Rate lock, уникальный адрес, monitoring, KYT, confirmations, underpayment и overpayment.</td><td>Статус Payment Accepted</td></tr>
-              <tr><td><span>06</span><strong>Exchange</strong></td><td>Продажа принятой криптовалюты через OTC, расчёт spread и комиссии.</td><td>Fiat обеспечен для выплаты</td></tr>
-              <tr><td><span>07</span><strong>Settlement</strong></td><td>End-of-day batching, банковская выплата T+1/T+2 и reconciliation.</td><td>Зачисление на счёт мерчанта</td></tr>
-              <tr><td><span>08</span><strong>Operations</strong></td><td>Refunds, compliance hold, ручные проверки, audit log и поддержка.</td><td>Управляемый операционный процесс</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="mvp-result"><span>MVP RESULT</span><p id="project-mvp">Merchant registration → KYB → Invoice → Payment Link → Client KYC → Crypto payment → Fiat settlement</p></div>
-      </section>
-
-      <section class="shared-core-section">
-        <div class="section-shell shared-core-grid">
-          <div><p class="eyebrow light"><span></span> Shared infrastructure</p><h2>Общее ядро<br />для трёх продуктов</h2></div>
-          <div class="core-components" aria-label="Общие компоненты платформы">
-            <span>Merchant</span><span>Compliance</span><span>Payment Intent</span><span>Quote Engine</span><span>Wallets</span><span>Blockchain</span><span>Ledger</span><span>Exchange</span><span>Settlement</span><span>Webhooks</span><span>Backoffice</span><span>Reporting</span>
+    <main class="description-page">
+      <section class="description-hero section-shell">
+        <div class="description-hero-grid">
+          <div><p class="description-kicker">PRODUCT ARCHITECTURE</p><h1>Четыре части.<br />Одна платёжная платформа.</h1></div>
+          <div class="description-hero-copy">
+            <p>Cicada Payments объединяет общее кастодиальное платёжное ядро и три прикладных продукта. Мерчант проходит регистрацию один раз, подключает нужные способы приёма платежей и управляет операциями через единую инфраструктуру.</p>
+            <p>Cicada Core — не отдельный клиентский продукт, а общая платформа для Pay by Link, E-commerce Gateway и iGaming Gateway. В дальнейшем Core может поддерживать новые платёжные методы, шлюзы и субпродукты.</p>
+            <div class="description-hero-actions"><span>PRODUCT CONCEPT · PLANNING STAGE</span><a href="#architecture">Посмотреть структуру <b aria-hidden="true">↓</b></a></div>
           </div>
         </div>
       </section>
 
-      <section class="launch-section section-shell" aria-labelledby="launch-title">
-        <div class="section-heading">
-          <div><p class="eyebrow"><span></span> Launch strategy</p><h2 id="launch-title">В какой последовательности запускать</h2></div>
-          <p>Последовательность строится не по размеру рынка, а по технологической и регуляторной зависимости продуктов.</p>
-        </div>
-
-        <div class="launch-roadmap">
-          <article class="launch-step launch-first">
-            <div class="launch-step-top"><span>Этап 01</span><small>Начать здесь</small></div>
-            <h3>Pay-by-Link</h3>
-            <p>Запускает базовый цикл платежа на контролируемом количестве крупных операций.</p>
-            <ul><li>Создаём Merchant, KYB и Payment Intent</li><li>Проверяем compliance и settlement</li><li>Сохраняем ручной контроль сложных кейсов</li></ul>
-          </article>
-          <article class="launch-step">
-            <div class="launch-step-top"><span>Этап 02</span><small>Масштабирование</small></div>
-            <h3>E-commerce</h3>
-            <p>Повторно использует ядро и добавляет массовые заказы, плагины и автоматические возвраты.</p>
-            <ul><li>Увеличиваем throughput</li><li>Добавляем API, SDK и e-commerce plugins</li><li>Автоматизируем reconciliation</li></ul>
-          </article>
-          <article class="launch-step">
-            <div class="launch-step-top"><span>Этап 03</span><small>После стабилизации</small></div>
-            <h3>Casino Processing</h3>
-            <p>Добавляет постоянные балансы, массовые депозиты и внешние выводы — самый сложный контур.</p>
-            <ul><li>Custody и treasury management</li><li>24/7 transaction monitoring</li><li>Crypto и fiat withdrawals</li></ul>
-          </article>
-        </div>
-
-        <div class="launch-rationale">
-          <div><span>01</span><p><strong>Сначала проверяем деньги.</strong> Pay-by-Link позволяет отладить владение средствами, KYT, обмен, ledger и банковскую выплату.</p></div>
-          <div><span>02</span><p><strong>Затем проверяем масштаб.</strong> E-commerce нагружает то же ядро большим количеством платежей, интеграций и возвратов.</p></div>
-          <div><span>03</span><p><strong>После этого добавляем custody.</strong> Casino требует зрелых балансов, кошельков, withdrawal controls и непрерывного risk monitoring.</p></div>
+      <section class="architecture-section" id="architecture" aria-labelledby="architecture-title">
+        <div class="section-shell">
+          <div class="description-heading description-heading-light"><div><p class="description-kicker">PLATFORM MODEL</p><h2 id="architecture-title">Архитектура Cicada Payments</h2></div><p>Все прикладные продукты используют общие платёжные сущности, wallet-инфраструктуру, проверки, ledger, конвертацию и расчёты Cicada Core.</p></div>
+          <div class="architecture-map" role="img" aria-label="Cicada Core является общей основой для Pay by Link, E-commerce Gateway и iGaming Gateway">
+            <article class="architecture-core"><div><span>01 · PLATFORM FOUNDATION</span><h3>Cicada Core</h3><p>Общая кастодиальная платформа для создания платежей, управления цифровыми активами, проверок, конвертации, расчётов и операционной отчётности.</p></div><ul aria-label="Ключевые компоненты Cicada Core"><li>Merchant</li><li>Payment Intent</li><li>Checkout</li><li>Compliance</li><li>Fireblocks</li><li>Wallets</li><li>Ledger</li><li>OTC</li><li>Settlement</li></ul></article>
+            <p class="architecture-connection">Три продукта используют единое ядро</p>
+            <div class="architecture-products"><article><span>02 · NO-CODE</span><h3>Pay by Link</h3><p>Счёт, ссылка или QR-код без интеграции с сайтом.</p></article><article><span>03 · ORDER-BASED</span><h3>E-commerce Gateway</h3><p>Оплата цифровыми активами внутри checkout мерчанта.</p></article><article><span>04 · ACCOUNT-BASED</span><h3>iGaming Gateway</h3><p>Депозиты с сопоставлением платежа и аккаунта игрока.</p></article></div>
+          </div>
         </div>
       </section>
 
-      <section class="closing-section"><div class="section-shell closing-inner"><p class="eyebrow light"><span></span> Product sequence</p><h2>Transaction → Scale → Custody</h2><p>Каждый следующий запуск расширяет уже проверенное ядро, а не создаёт новую платёжную систему с нуля.</p></div></section>
+      <section class="product-navigator section-shell" aria-labelledby="navigator-title">
+        <div class="description-heading"><div><p class="description-kicker">PRODUCT NAVIGATOR</p><h2 id="navigator-title">Части платформы</h2></div><p>Перейдите к нужному продукту, чтобы увидеть его роль, пользовательский сценарий, возможности и границы концепции.</p></div>
+        <div class="product-navigator-grid">
+          <a class="product-nav-card product-nav-core" href="#core"><span>01</span><small>PLATFORM FOUNDATION</small><h3>Cicada Core</h3><p>Единое ядро для создания, проверки, обработки, конвертации и расчёта платежей.</p><strong>Используют: все продукты Cicada Payments</strong><b>Подробнее →</b></a>
+          <a class="product-nav-card" href="#pay-by-link"><span>02</span><small>NO-CODE PAYMENTS</small><h3>Pay by Link</h3><p>Создание счетов и отправка ссылок или QR-кодов без технической интеграции.</p><strong>Сценарий: удалённые и индивидуальные продажи</strong><b>Подробнее →</b></a>
+          <a class="product-nav-card" href="#ecommerce"><span>03</span><small>ORDER-BASED CHECKOUT</small><h3>E-commerce Gateway</h3><p>Автоматическое создание платежа из заказа и возврат статуса через webhook.</p><strong>Сценарий: системный поток заказов</strong><b>Подробнее →</b></a>
+          <a class="product-nav-card" href="#igaming"><span>04</span><small>ACCOUNT-BASED DEPOSITS</small><h3>iGaming Gateway</h3><p>Пополнение игрового аккаунта цифровыми активами и расчёт с оператором.</p><strong>Сценарий: iGaming-депозиты</strong><b>Подробнее →</b></a>
+        </div>
+      </section>
+
+      <section class="product-detail product-detail-core" id="core" aria-labelledby="core-title"><div class="section-shell">
+        <div class="product-detail-head"><span>01</span><div><p class="description-kicker">CICADA CORE</p><h2 id="core-title">Общее платёжное ядро</h2></div><p>Cicada Core создаёт и отслеживает платежи, управляет цифровыми активами через Fireblocks, применяет необходимые проверки, отражает операции в ledger, выполняет конвертацию через OTC и формирует расчёт с мерчантом в криптовалюте или фиате.</p></div>
+        <div class="product-detail-grid"><div class="product-purpose"><h3>Роль в платформе</h3><p>Core не позволяет каждому продукту заново создавать кошельки, compliance, расчёты и статусы. Все каналы используют единый Payment Intent и общий операционный контур.</p><h4>Используют</h4><ul><li>все мерчанты Cicada Payments;</li><li>Pay by Link, E-commerce Gateway и iGaming Gateway;</li><li>будущие платёжные методы и субпродукты.</li></ul></div><ol class="product-flow" aria-label="Схема работы Cicada Core"><li>Мерчант или его система</li><li>Payment Intent и checkout</li><li>Выбор актива и сети</li><li>Blockchain transaction</li><li>Fireblocks, monitoring и risk checks</li><li>Ledger и OTC conversion</li><li>Crypto или fiat settlement</li><li>Dashboard, reporting и reconciliation</li></ol></div>
+        <details class="product-disclosure"><summary aria-controls="core-capabilities" aria-expanded="false"><span>Возможности и продуктовые оговорки</span><i aria-hidden="true">+</i></summary><div class="product-disclosure-body" id="core-capabilities"><div><h3>Основные возможности</h3><ul class="feature-list"><li>Merchant Account и Payment Intent</li><li>счёт в CAD, USD, EUR или криптовалюте</li><li>основные цифровые активы и приоритетные сети с возможностью расширения</li><li>Fireblocks, wallets и blockchain monitoring</li><li>KYT/AML-проверки и risk scoring</li><li>статусы pending, paid, partial, overpaid, expired, refunded и blocked</li><li>ledger, OTC conversion и settlement</li><li>Dashboard, webhooks, reporting, audit trail и reconciliation</li></ul></div><aside><span>PLANNING BOUNDARY</span><p>Compliance-модель, точные условия fiat settlement и правила проверки покупателя требуют отдельных решений. Core показан как целевая платформа, а не как уже работающий production-продукт.</p></aside></div></details>
+      </div></section>
+
+      <section class="product-detail" id="pay-by-link" aria-labelledby="pay-by-link-title"><div class="section-shell">
+        <div class="product-detail-head"><span>02</span><div><p class="description-kicker">PAY BY LINK</p><h2 id="pay-by-link-title">No-code приём платежей</h2></div><p>Pay by Link позволяет принимать цифровые активы без интеграции с сайтом или приложением. Мерчант создаёт счёт в личном кабинете, получает уникальную ссылку или QR-код и отправляет его клиенту через удобный канал.</p></div>
+        <div class="product-detail-grid"><div class="product-purpose"><h3>Для кого и какую задачу решает</h3><p>Для компаний с удалёнными платежами, индивидуальными счетами и продажами через менеджеров, email или мессенджеры. Продукт помогает проверить спрос на криптоплатежи до подключения API.</p><div class="version-boundary"><span>Граница первой версии</span><strong>Одноразовая ссылка с фиксированной суммой, сроком действия и автоматическим отслеживанием статуса.</strong></div></div><ol class="product-flow" aria-label="Схема работы Pay by Link"><li>Мерчант создаёт счёт</li><li>Cicada формирует ссылку и QR-код</li><li>Мерчант отправляет их клиенту</li><li>Клиент выбирает актив и сеть</li><li>Cicada показывает сумму и адрес</li><li>Клиент отправляет цифровые активы</li><li>Cicada проверяет транзакцию</li><li>Мерчант получает статус и settlement</li></ol></div>
+        <details class="product-disclosure"><summary aria-controls="pay-by-link-content" aria-expanded="false"><span>Пользовательский сценарий и возможности</span><i aria-hidden="true">+</i></summary><div class="product-disclosure-body" id="pay-by-link-content"><div><h3>Базовые возможности</h3><ul class="feature-list"><li>одноразовая ссылка, фиксированная сумма и срок действия</li><li>счёт в CAD, USD, EUR или криптовалюте</li><li>выбор актива и сети, адрес и QR-код</li><li>автоматический пересчёт суммы и статусы платежа</li><li>история счетов, поиск и уведомления</li><li>risk scoring, недоплата, переплата и возврат</li><li>расчёт с мерчантом в криптовалюте или фиате</li></ul></div><div><h3>Возможности последующих версий</h3><ul class="feature-list"><li>многоразовые ссылки и ссылки без фиксированной суммы</li><li>массовое создание счетов и напоминания</li><li>брендирование и создание ссылок через API</li><li>дополнительные поля клиента и аналитика конверсии</li><li>роли пользователей внутри кабинета</li></ul><p class="hypothesis-note">Открытие платёжной страницы без регистрации клиента — рабочая гипотеза. Финальная модель зависит от юридических и compliance-требований.</p></div></div></details>
+      </div></section>
+
+      <section class="product-detail product-detail-soft" id="ecommerce" aria-labelledby="ecommerce-title"><div class="section-shell">
+        <div class="product-detail-head"><span>03</span><div><p class="description-kicker">E-COMMERCE GATEWAY</p><h2 id="ecommerce-title">Интегрированный checkout</h2></div><p>E-commerce Gateway встраивает оплату цифровыми активами в checkout интернет-магазина, маркетплейса, SaaS-сервиса или платформы цифровых товаров. Платёж создаётся из заказа, а статус автоматически возвращается в систему мерчанта.</p></div>
+        <div class="product-comparison" aria-label="Сравнение Pay by Link и E-commerce Gateway"><div><span>Сценарий</span><strong>Pay by Link</strong><strong>E-commerce Gateway</strong></div><div><span>Создание</span><p>Счёт создаёт сотрудник</p><p>Платёж создаёт система мерчанта</p></div><div><span>Подключение</span><p>Интеграция не обязательна</p><p>Требуется техническая интеграция</p></div><div><span>Путь клиента</span><p>Ссылка отправляется вручную</p><p>Оплата выбирается в checkout</p></div><div><span>Статус</span><p>Доступен в Dashboard</p><p>Возвращается через webhook</p></div></div>
+        <div class="product-detail-grid"><div class="product-purpose"><h3>Для кого и какую задачу решает</h3><p>Для интернет-магазинов, маркетплейсов, SaaS-сервисов и платформ с системным потоком заказов. Cicada берёт на себя адреса, расчёт суммы, определение статуса, первичные проверки, конвертацию и сопоставление транзакции с заказом.</p></div><ol class="product-flow" aria-label="Схема работы E-commerce Gateway"><li>Клиент оформляет заказ</li><li>Система создаёт Payment Intent</li><li>Cicada открывает hosted checkout</li><li>Клиент выбирает актив и сеть</li><li>Клиент отправляет цифровые активы</li><li>Cicada проверяет транзакцию</li><li>Webhook передаёт статус мерчанту</li><li>Мерчант исполняет заказ, Cicada — settlement</li></ol></div>
+        <details class="product-disclosure"><summary aria-controls="ecommerce-content" aria-expanded="false"><span>Возможности и способы интеграции</span><i aria-hidden="true">+</i></summary><div class="product-disclosure-body" id="ecommerce-content"><div><h3>Основные возможности</h3><ul class="feature-list"><li>REST API, hosted checkout и подписанные webhooks</li><li>order ID, metadata и return URLs</li><li>выбор актива и сети, ограниченное время курса</li><li>expired, underpaid и overpaid платежи</li><li>полные и частичные возвраты</li><li>branding, sandbox, test keys и журнал событий</li><li>Dashboard, reconciliation и settlement</li></ul></div><aside><span>INTEGRATION OPTIONS</span><p>Hosted checkout, REST API и webhooks формируют базовую модель. CMS/e-commerce plugin, embedded checkout, виджет и SDK — продуктовые возможности без зафиксированного порядка реализации. Конкретный первый plugin ещё не выбран.</p></aside></div></details>
+      </div></section>
+
+      <section class="product-detail" id="igaming" aria-labelledby="igaming-title"><div class="section-shell">
+        <div class="product-detail-head"><span>04</span><div><p class="description-kicker">IGAMING GATEWAY</p><h2 id="igaming-title">Account-based депозиты</h2></div><p>iGaming Gateway — специализированное решение для пополнения игрового аккаунта цифровыми активами и последующего расчёта с оператором в фиатной валюте или криптовалюте. Подключение возможно напрямую либо через игровую платформу.</p></div>
+        <div class="product-detail-grid"><div class="product-purpose"><h3>Для кого и какую задачу решает</h3><p>Для онлайн-казино, betting-платформ, игровых операторов и поставщиков iGaming-платформ. Решение отделяет blockchain-процессинг от внутренней логики оператора и связывает платёж с аккаунтом игрока.</p><p class="hypothesis-note">Требования к iGaming Gateway — рабочая продуктовая гипотеза, которую необходимо подтвердить интервью с операторами и поставщиками игровых платформ.</p></div><ol class="product-flow" aria-label="Схема депозита iGaming Gateway"><li>Игрок выбирает пополнение</li><li>Платформа создаёт депозит в Cicada</li><li>Cicada возвращает сумму, адрес и QR-код</li><li>Игрок отправляет цифровые активы</li><li>KYT/AML-проверка и risk scoring</li><li>Cicada отправляет статус платформе</li><li>Платформа принимает решение о зачислении</li><li>Cicada выполняет conversion и settlement</li></ol></div>
+        <details class="product-disclosure"><summary aria-controls="igaming-content" aria-expanded="false"><span>Возможности и границы концепции</span><i aria-hidden="true">+</i></summary><div class="product-disclosure-body" id="igaming-content"><div><h3>Основные возможности</h3><ul class="feature-list"><li>депозит в фиатной или криптовалютной величине</li><li>уникальный платёж и передача player ID</li><li>API, deposit webhooks и confirmations policy</li><li>KYT/AML, risk scoring и ручная обработка риска</li><li>недоплата, переплата, tolerance и возвраты</li><li>OTC conversion, settlement и reconciliation</li><li>лимиты и интеграция с игровой платформой</li><li>постоянные deposit addresses как опция, требующая подтверждения</li></ul></div><aside class="potential-extension"><span>POTENTIAL EXTENSION</span><h3>Выплаты игрокам</h3><p>В дальнейшем продукт может поддерживать выплаты. Этот сценарий требует дополнительных правил проверки адресов, лимитов, approvals, управления ликвидностью и безопасности и не входит в базовую версию.</p></aside></div></details>
+      </div></section>
+
+      <section class="shared-platform" aria-labelledby="shared-platform-title"><div class="section-shell"><div class="description-heading description-heading-light"><div><p class="description-kicker">SHARED PLATFORM</p><h2 id="shared-platform-title">Один Core для всех платёжных сценариев</h2></div><p>Мерчант проходит регистрацию один раз, подключает необходимые продукты и использует единый баланс, настройки, статусы и отчётность. Новый канал не требует отдельной платёжной инфраструктуры.</p></div><ul class="shared-platform-grid"><li>Merchant Account</li><li>Payment Intent</li><li>Hosted Checkout</li><li>Fireblocks</li><li>Wallets</li><li>Blockchain Monitoring</li><li>Compliance</li><li>Risk Scoring</li><li>Ledger</li><li>OTC / Exchange</li><li>Settlement</li><li>Webhooks</li><li>Dashboard</li><li>Reporting</li><li>Reconciliation</li><li>Audit Trail</li></ul></div></section>
+
+      <section class="description-roadmap section-shell" aria-labelledby="description-roadmap-title"><div><p class="description-kicker">PRODUCT ROADMAP</p><h2 id="description-roadmap-title">Как будем создавать продукт</h2></div><div><p>Описание продукта отвечает на вопрос, что входит в Cicada Payments. Последовательность разработки, зависимости и критерии перехода между этапами вынесены в отдельный Roadmap.</p><a href="./roadmap/"><span>Открыть Roadmap</span><b aria-hidden="true">→</b></a></div></section>
+
+      <section class="description-related section-shell" aria-labelledby="description-related-title"><div class="description-heading"><div><p class="description-kicker">RELATED MATERIALS</p><h2 id="description-related-title">Связанные материалы</h2></div><p>От продуктовой модели можно перейти к рыночным ориентирам, выводам анализа и решениям, которые ещё необходимо принять.</p></div><div class="description-related-grid"><a href="./competitors/"><span>01</span><h3>Competitors</h3><p>Компании и платёжные решения — функциональные и продуктовые ориентиры Cicada Payments.</p><b>Открыть →</b></a><a href="./Conclusions/"><span>02</span><h3>Conclusions</h3><p>Выводы конкурентного анализа, целевая модель и приоритеты продуктового паритета.</p><b>Открыть →</b></a><a href="./open-decisions/"><span>03</span><h3>Open decisions</h3><p>Вопросы до фиксации архитектуры, регуляторного периметра и границ MVP.</p><b>Открыть →</b></a></div></section>
     </main>
 
-    <footer class="site-footer section-shell"><img src="./assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><p>Product portfolio &amp; launch roadmap</p></footer>
+    <footer class="site-footer section-shell"><img src="./assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><p>Project Description · 11.09.2026</p></footer>
   </body>
 </html>
