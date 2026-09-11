@@ -103,13 +103,14 @@ function renderResearch() {
   const list = document.querySelector("#research-list");
   workstreams.forEach((item, index) => {
     const detail = document.createElement("details"); detail.className = "research-item"; detail.dataset.workstream = item.slug; detail.open = index === 0;
-    const summary = document.createElement("summary"); summary.append(el("span", "research-number", String(index + 1).padStart(2, "0")), el("span", "research-title", item.title), el("span", "research-priority", item.priority), el("span", "research-toggle", "+"));
+    const summary = document.createElement("summary");
+    const priorityClass = item.priority.startsWith("Критический") ? "research-priority is-critical" : "research-priority is-high";
+    summary.append(el("span", "research-number", String(index + 1).padStart(2, "0")), el("span", "research-title", item.title), el("span", priorityClass, item.priority), el("span", "research-toggle", "+"));
     const body = el("div", "research-body");
-    const why = el("div", "research-why"); why.append(el("p", "research-caption", "Почему важно"), el("p", "", item.why));
-    const questions = el("div", "research-questions"); questions.append(el("p", "research-caption", "Ключевые вопросы")); const ul = el("ul"); item.questions.forEach((question) => ul.append(el("li", "", question))); questions.append(ul);
+    const why = el("div", "research-why"); why.append(el("p", "research-caption", "Зачем изучать"), el("p", "", item.why));
+    const questions = el("div", "research-questions"); questions.append(el("p", "research-caption", "Что проверить")); const ul = el("ul"); item.questions.forEach((question) => ul.append(el("li", "", question))); questions.append(ul);
     const outcome = el("div", "research-outcome"); outcome.append(el("p", "research-caption", "Ожидаемый результат"), el("strong", "", item.result));
     if (item.benchmarks.length) { const benchmarks = el("div", "research-benchmarks"); benchmarks.append(el("p", "research-caption", "Benchmark-компании"), benchmarkLinks(item.benchmarks)); body.append(why, questions, outcome, benchmarks); } else { body.append(why, questions, outcome); }
-    const copy = el("button", "copy-section-link", "Скопировать ссылку"); copy.type = "button"; copy.addEventListener("click", async () => { focusWorkstream(item.slug); try { await navigator.clipboard.writeText(window.location.href); copy.textContent = "Ссылка скопирована"; setTimeout(() => { copy.textContent = "Скопировать ссылку"; }, 1600); } catch { copy.textContent = "Скопируйте URL из браузера"; } }); body.append(copy);
     detail.addEventListener("toggle", () => { if (detail.open) focusWorkstream(item.slug); }); detail.append(summary, body); list.append(detail);
   });
 }
