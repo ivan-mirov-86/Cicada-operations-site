@@ -32,6 +32,7 @@ const parityGroups = [
 ];
 
 const companyAnchors = { "NOWPayments": "nowpayments", "CoinGate": "coingate", "0xProcessing": "0xprocessing", "NordPay": "nordpay", "PassimPay": "passimpay", "EukaPay": "eukapay" };
+const companySites = { "NOWPayments": "nowpayments.io", "CoinGate": "coingate.com", "0xProcessing": "0xprocessing.com", "NordPay": "nord-pay.com", "PassimPay": "passimpay.io", "EukaPay": "eukapay.com" };
 
 const workstreams = [
   { slug: "custody", title: "Custody и flow of funds", priority: "Критический", why: "Решение custodial, non-custodial или hybrid определяет лицензирование, архитектуру ledger, settlement, refunds, payouts и требования к безопасности.", questions: ["кто контролирует private keys", "когда средства считаются принадлежащими мерчанту", "где возникает merchant balance", "кто выполняет conversion", "как обеспечивается segregation и safeguarding", "что происходит при compliance hold или insolvency провайдера"], result: "Утверждённая схема flow of funds и custody decision", benchmarks: [] },
@@ -69,7 +70,23 @@ function renderParity() {
 
 function benchmarkLinks(names) {
   const wrap = el("div", "benchmark-links");
-  names.forEach((name) => { const link = el("a", "", name); link.href = `../competitors/?view=shortlist#company-${companyAnchors[name]}`; link.target = "_blank"; link.rel = "noopener noreferrer"; wrap.append(link); });
+  names.forEach((name) => {
+    const link = el("a");
+    const logo = el("span", "benchmark-logo");
+    const fallback = el("span", "benchmark-logo-fallback", name.charAt(0).toUpperCase());
+    const image = document.createElement("img");
+    image.src = `https://www.google.com/s2/favicons?domain=${encodeURIComponent(companySites[name])}&sz=64`;
+    image.alt = "";
+    image.loading = "lazy";
+    image.decoding = "async";
+    image.addEventListener("error", () => logo.classList.add("is-fallback"));
+    logo.append(fallback, image);
+    link.append(logo, el("span", "", name));
+    link.href = `../competitors/?view=shortlist#company-${companyAnchors[name]}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    wrap.append(link);
+  });
   return wrap;
 }
 

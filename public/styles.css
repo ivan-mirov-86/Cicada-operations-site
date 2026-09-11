@@ -552,8 +552,12 @@ h1 em { color: var(--blue); font-style: normal; }
 .research-outcome { padding: 20px; border-left: 3px solid var(--blue); background: #fff; }
 .research-outcome strong { color: #303846; font-size: 15px; line-height: 1.55; }
 .benchmark-links { display: flex; flex-wrap: wrap; gap: 8px; }
-.benchmark-links a { padding: 7px 10px; border: 1px solid #d4dbea; border-radius: 999px; color: #394765; background: #fff; font-size: 12px; font-weight: 650; }
+.benchmark-links a { display: inline-flex; align-items: center; gap: 7px; padding: 5px 10px 5px 6px; border: 1px solid #d4dbea; border-radius: 999px; color: #394765; background: #fff; font-size: 12px; font-weight: 650; }
 .benchmark-links a:hover { border-color: var(--blue); color: var(--blue); }
+.benchmark-logo { position: relative; display: grid; flex: 0 0 auto; width: 20px; height: 20px; overflow: hidden; place-items: center; border: 1px solid #e0e5ef; border-radius: 6px; color: var(--blue); background: #f3f6fc; font-size: 9px; font-weight: 750; }
+.benchmark-logo img { position: relative; z-index: 1; width: 14px; height: 14px; object-fit: contain; }
+.benchmark-logo-fallback { position: absolute; inset: 0; display: grid; place-items: center; }
+.benchmark-logo.is-fallback img { display: none; }
 .copy-section-link { width: fit-content; padding: 10px 14px; border: 1px solid #bfc9de; border-radius: 999px; color: #33405a; background: transparent; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
 .copy-section-link:hover { border-color: var(--blue); color: var(--blue); }
 .decision-list { overflow: hidden; border: 1px solid var(--line); border-radius: 20px; }
