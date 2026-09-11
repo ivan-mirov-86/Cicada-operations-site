@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#ff5a00" />
     <title>Выводы конкурентного анализа — Cicada Operations</title>
     <link rel="icon" href="../assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
-    <link rel="stylesheet" href="../styles.css?v=20260911-20" />
+    <link rel="stylesheet" href="../styles.css?v=20260911-21" />
     <script src="./conclusions.js?v=20260911-1" defer></script>
   </head>
   <body>
@@ -39,18 +39,16 @@
         <div class="conclusions-section-heading"><div><p class="conclusions-kicker">TWO MARKET VIEWS</p><h2>Два среза анализа</h2></div><p>Функциональное сравнение и юридическая оценка отвечают на разные вопросы. Сильный продуктовый benchmark не является подтверждением надёжности его регуляторной модели.</p></div>
         <div class="analysis-cards">
           <article class="analysis-card">
-            <p class="analysis-card-meta"><span>01</span> Канадский рынок</p>
-            <h3>Что показывает Паритет</h3>
-            <p>Базовые платёжные функции у канадских конкурентов во многом совпадают. Реальные различия возникают в fiat settlement, постоянных адресах, обработке нестандартных платежей, refunds, ролях, approvals и качестве reconciliation. Наличие FINTRAC-регистрации само по себе не подтверждает устойчивость продукта или качество compliance.</p>
-            <ul><li>checkout, invoices, API и webhooks стали обязательным минимумом;</li><li>постоянные адреса важны для gaming, wallets и account top-ups;</li><li>fiat settlement зависит от конкретного юридического лица и банковских партнёров;</li><li>FINTRAC registration нельзя отображать как лицензию;</li><li>contracting entity, custody и safeguarding требуют отдельной проверки.</li></ul>
-            <a href="../competitors/?view=shortlist#cryptoacquiring-parity">Посмотреть сравнение канадских конкурентов <span aria-hidden="true">→</span></a>
+            <p class="analysis-card-meta"><span>01</span> Криптоэквайринг (Canada MSB)</p>
+            <p>У канадских криптоэквайрингов базовая платёжная функциональность во многом сопоставима. Основные различия проявляются в модели fiat settlement, архитектуре адресов, обработке нестандартных платежей и зрелости операционных контролей. FINTRAC-регистрация подтверждает AML/ATF-надзор, но не является платёжной лицензией и не заменяет оценку всей модели.</p>
+            <ul><li>hosted checkout, payment links, API и webhooks — базовый рыночный минимум;</li><li>постоянные адреса важны для gaming, wallets и account top-ups, но усложняют monitoring и reconciliation;</li><li>fiat settlement нужно подтверждать по каждому юридическому лицу, валюте, рынку и банковскому партнёру;</li><li>refunds, underpayments, overpayments, роли, approvals и audit log определяют операционную зрелость;</li><li>contracting entity, custody, safeguarding и разделение клиентских средств требуют отдельного due diligence.</li></ul>
+            <a href="../competitors/?view=shortlist#cryptoacquiring-parity">Посмотреть сравнение криптоэквайрингов <span aria-hidden="true">→</span></a>
           </article>
           <article class="analysis-card">
-            <p class="analysis-card-meta"><span>02</span> Международные шлюзы</p>
-            <h3>Что показывает шорт-лист шлюзов</h3>
-            <p>Ни один конкурент не является полной моделью для копирования. NOWPayments показывает широту функций и каналов подключения, CoinGate — операционную и регуляторную зрелость, 0xProcessing — гибкость API, static-address и high-risk сценариев. Целевой продукт необходимо собирать из сильных сторон нескольких моделей.</p>
-            <ul><li>NOWPayments — benchmark продуктовой широты и быстрого подключения;</li><li>CoinGate — benchmark settlement, refunds, controls и лицензирования;</li><li>0xProcessing — benchmark API-first, white label и crypto-native flows;</li><li>функциональный benchmark не означает приемлемую юридическую модель;</li><li>широкая asset coverage не заменяет надёжную операционную инфраструктуру.</li></ul>
-            <a href="../competitors/?view=shortlist#gateway-parity">Посмотреть сравнение крипто-шлюзов <span aria-hidden="true">→</span></a>
+            <p class="analysis-card-meta"><span>02</span> Криптоплатёжные шлюзы</p>
+            <p>Международные криптоплатёжные шлюзы показывают разные модели зрелости. NOWPayments демонстрирует широту функций и каналов подключения, CoinGate — зрелость settlement и merchant controls, 0xProcessing — гибкость API-first, static-address и high-risk сценариев. Ни один из них не является готовой моделью для Cicada: целевой продукт должен объединить сильные стороны нескольких подходов.</p>
+            <ul><li>NOWPayments — benchmark по широте активов, сетей, способов интеграции и скорости подключения;</li><li>CoinGate — benchmark по settlement, refunds, merchant controls и работе в регулируемом контуре;</li><li>0xProcessing — benchmark по API-first, static addresses, white label и crypto-native flows;</li><li>доступность функций нужно подтверждать для конкретного юридического лица и сегмента мерчанта;</li><li>количество активов не заменяет надёжные settlement, compliance, support и reconciliation.</li></ul>
+            <a href="../competitors/?view=shortlist#gateway-parity">Посмотреть сравнение криптоплатёжных шлюзов <span aria-hidden="true">→</span></a>
           </article>
         </div>
       </section>
