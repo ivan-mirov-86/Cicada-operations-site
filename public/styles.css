@@ -665,12 +665,15 @@ h1 em { color: var(--blue); font-style: normal; }
 .roadmap-priority ol { display: grid; grid-template-columns: repeat(4, 1fr); counter-reset: priority; gap: 10px; }
 .roadmap-priority li { min-height: 82px; padding: 34px 12px 12px; border: 1px solid #dce2ee; border-radius: 12px; background: #fff; counter-increment: priority; }
 .roadmap-priority li::before { position: absolute; top: 10px; left: 12px; color: var(--blue); font-size: 11px; font-weight: 750; content: "0" counter(priority); }
-.roadmap-transitions { padding-block: 112px; background: #f4f7fb; }
+.roadmap-transitions { position: relative; isolation: isolate; overflow: hidden; padding-block: 112px; background: radial-gradient(circle at 86% 12%, rgb(12 64 238 / 15%), transparent 31%), linear-gradient(145deg, #f7f9ff, #eef3fc 72%, #f6f8fc); }
+.roadmap-transitions::before { position: absolute; top: -310px; right: -190px; z-index: -1; width: 660px; height: 660px; border: 1px solid rgb(12 64 238 / 11%); border-radius: 50%; box-shadow: 0 0 0 74px rgb(12 64 238 / 4%), 0 0 0 148px rgb(12 64 238 / 3%); content: ""; }
+.roadmap-transitions::after { position: absolute; bottom: 46px; left: -90px; z-index: -1; width: 360px; height: 1px; background: linear-gradient(90deg, transparent, rgb(12 64 238 / 28%), transparent); content: ""; transform: rotate(-18deg); }
+.roadmap-transitions .section-shell { position: relative; z-index: 1; }
 .transition-formula { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1.35fr; gap: 14px; align-items: center; margin-bottom: 18px; padding: 24px; border-radius: 18px; color: #fff; background: var(--blue); }
 .transition-formula span { text-align: center; font-size: 16px; font-weight: 650; }
 .transition-formula b { color: #adc0ff; font-size: 21px; font-weight: 400; }
 .transition-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.transition-grid article { min-height: 150px; padding: 24px; border: 1px solid #dce2ed; border-radius: 16px; background: #fff; }
+.transition-grid article { min-height: 150px; padding: 24px; border: 1px solid #d5ddec; border-radius: 16px; background: rgb(255 255 255 / 88%); box-shadow: 0 14px 34px rgb(29 52 105 / 7%); backdrop-filter: blur(8px); }
 .transition-grid span { color: var(--blue); font-size: 12px; font-weight: 750; }
 .transition-grid p { margin: 30px 0 0; color: #4f5868; font-size: 14px; line-height: 1.6; }
 .roadmap-related { padding-block: 112px; }
