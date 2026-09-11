@@ -858,6 +858,7 @@ h1 em { color: var(--blue); font-style: normal; }
 .product-detail-soft { background: #f6f8fc; }
 .product-detail-core { color: #fff; border-top: 0; background: linear-gradient(135deg, #0b1734, #10265c); }
 .product-detail-head { display: grid; grid-template-columns: 72px .72fr 1.28fr; gap: 32px; align-items: start; margin-bottom: 44px; }
+.product-detail-head-wide { grid-template-columns: 72px .88fr 1.12fr; }
 .product-detail-head > span { display: grid; width: 58px; height: 58px; place-items: center; border: 1px solid #bfcae8; border-radius: 50%; color: var(--blue); font-size: 19px; font-weight: 750; }
 .product-detail-head h2 { margin: 0; font-size: clamp(34px, 3.6vw, 50px); font-weight: 500; line-height: 1.05; letter-spacing: -.05em; }
 .product-detail-head > p { margin: 32px 0 0; color: #626c7b; font-size: 16px; line-height: 1.7; }
