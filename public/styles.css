@@ -1025,8 +1025,6 @@ h1 em { color: var(--blue); font-style: normal; }
 .global-scheme-hero h1 { margin: 0; font-size: clamp(52px, 5.2vw, 74px); font-weight: 500; line-height: .98; letter-spacing: -.055em; }
 .global-scheme-hero > div:last-child { display: flex; max-width: 690px; flex-direction: column; align-items: flex-start; gap: 26px; }
 .global-scheme-hero p { margin: 0; color: #4f5969; font-size: 18px; line-height: 1.68; }
-.global-scheme-hero a { display: inline-flex; align-items: center; gap: 28px; padding: 13px 15px 13px 20px; border-radius: 999px; color: #fff; background: var(--blue); font-size: 14px; font-weight: 700; box-shadow: 0 16px 34px rgb(12 64 238 / 20%); }
-.global-scheme-hero a b { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; color: var(--blue); background: #fff; font-size: 17px; }
 
 .global-map { scroll-margin-top: 78px; padding-block: 104px; color: #fff; background: radial-gradient(circle at 80% 3%, rgb(45 89 255 / 30%), transparent 29%), radial-gradient(circle at 8% 78%, rgb(23 71 210 / 22%), transparent 25%), var(--navy); }
 .global-map-heading { display: block; }
@@ -1144,8 +1142,4 @@ h1 em { color: var(--blue); font-style: normal; }
   .product-connections-grid > article { min-height: 340px; padding: 24px; }
   .global-scheme-boundary { grid-template-columns: 1fr; gap: 18px; padding: 24px 21px; }
   .global-scheme-boundary a { grid-column: auto; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .global-scheme-hero a { scroll-behavior: auto; }
 }
