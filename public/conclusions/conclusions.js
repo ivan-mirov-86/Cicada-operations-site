@@ -95,7 +95,6 @@ function focusWorkstream(slug, shouldScroll = false) {
   document.querySelectorAll(".research-item").forEach((item) => { if (item !== details) item.open = false; });
   details.open = true;
   document.querySelectorAll(".research-item").forEach((item) => item.classList.toggle("is-focused", item === details));
-  const url = new URL(window.location.href); url.searchParams.set("focus", slug); history.replaceState(null, "", url);
   if (shouldScroll) details.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 

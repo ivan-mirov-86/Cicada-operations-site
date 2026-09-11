@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Страница не найдена в рабочем пространстве Cicada Payments." />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0c40ee" />
+    <title>Страница не найдена — Cicada Operations</title>
+    <script>
+      (() => {
+        const githubBase = "/Cicada-operations-site/";
+        const base = window.location.pathname.startsWith(githubBase) ? githubBase : "/";
+        const baseElement = document.createElement("base");
+        baseElement.href = base;
+        document.head.append(baseElement);
+      })();
+    </script>
+    <link rel="icon" href="./assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
+    <link rel="stylesheet" href="./styles.css?v=20260911-49" />
+  </head>
+  <body class="not-found-page">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Cicada Operations — главная">
+        <img src="./assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><span>Operations</span>
+      </a>
+      <nav class="site-nav" aria-label="Главная навигация">
+        <a class="nav-link" href="./projects.html">Project description</a>
+        <a class="nav-link" href="./roadmap/">Roadmap</a>
+        <a class="nav-link" href="./scheme.html">Global Scheme</a>
+        <a class="nav-link" href="./competitors/">Competitors</a>
+        <a class="nav-link nav-link-open-decisions" href="./open-decisions/">Open questions</a>
+      </nav>
+    </header>
+
+    <main class="not-found-main section-shell">
+      <div class="not-found-code" aria-hidden="true">404</div>
+      <section class="not-found-copy" aria-labelledby="not-found-title">
+        <p class="not-found-kicker">PAGE NOT FOUND</p>
+        <h1 id="not-found-title">Такой страницы нет</h1>
+        <p>Возможно, адрес изменился или материал был удалён. Вернитесь на главную страницу и выберите актуальный раздел рабочего пространства.</p>
+        <div class="not-found-actions">
+          <a class="not-found-primary" href="./index.html">На главную <span aria-hidden="true">→</span></a>
+          <a href="./open-decisions/">Открытые вопросы</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-shell"><img src="./assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><p>Project workspace · 404</p></footer>
+  </body>
+</html>

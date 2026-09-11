@@ -7,20 +7,20 @@
     <meta name="theme-color" content="#ff5a00" />
     <title>Competitors — Cicada Operations</title>
     <link rel="icon" href="../assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
-    <link rel="stylesheet" href="../styles.css?v=20260911-40" />
+    <link rel="stylesheet" href="../styles.css?v=20260911-49" />
     <script src="./competitors.js?v=20260911-7" defer></script>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="../index.html" aria-label="Cicada Operations — главная"><img src="../assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><span>Operations</span></a>
-      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link" href="../projects.html">Project description</a><a class="nav-link" href="../roadmap/">Roadmap</a><a class="nav-link" href="../scheme.html">Global Scheme</a><a class="nav-link active" href="./" aria-current="page">Competitors</a><a class="nav-link nav-link-open-decisions" href="../open-decisions/">Open decisions</a></nav>
+      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link" href="../projects.html">Project description</a><a class="nav-link" href="../roadmap/">Roadmap</a><a class="nav-link" href="../scheme.html">Global Scheme</a><a class="nav-link active" href="./" aria-current="page">Competitors</a><a class="nav-link nav-link-open-decisions" href="../open-decisions/">Open questions</a></nav>
     </header>
 
     <main class="competitors-page">
       <section class="competitors-intro section-shell">
         <div class="competitors-title-row">
           <h1 class="competitors-title">Competitive landscape</h1>
-          <a class="competitors-conclusions-link" href="/Conclusions"><span class="competitors-conclusions-alert" aria-hidden="true">❗</span> Выводы по конкурентам <span aria-hidden="true">→</span></a>
+          <a class="competitors-conclusions-link" href="../conclusions/"><span class="competitors-conclusions-alert" aria-hidden="true">❗</span> Выводы по конкурентам <span aria-hidden="true">→</span></a>
         </div>
         <div class="competitors-summary">
           <p>На этой странице собраны компании и платёжные решения, которые мы рассматриваем как потенциальных конкурентов и продуктовые ориентиры для Cicada Payment Gateway. Анализ охватывает четыре направления: Core Gateway, Pay by Link, iGaming Gateway и E-commerce Gateway. Сравнение помогает определить необходимый функционал, продуктовый паритет и приоритеты дальнейшей разработки.</p>
@@ -31,7 +31,7 @@
             <button class="product-info-toggle" type="button" aria-expanded="false" aria-controls="core-product-info" aria-label="Подробнее о Cicada Core">i</button>
             <div class="product-info" id="core-product-info">
               <p>Cicada Core рассматривается не как отдельный клиентский продукт, а как общая платформа, на которой работают три продукта: Pay by Link, iGaming Gateway и E-commerce Gateway. В дальнейшем в Core будут добавляться новые платёжные шлюзы и субпродукты.</p>
-              <a href="#">Подробнее <span aria-hidden="true">→</span></a>
+              <a href="../projects.html#core">Подробнее <span aria-hidden="true">→</span></a>
             </div>
           </article>
           <article class="gateway-product">
@@ -40,7 +40,7 @@
             <div class="product-info" id="pay-by-link-product-info">
               <p>Pay by Link — инструмент для приёма платежей в цифровых активах без технической интеграции с сайтом или приложением мерчанта.</p>
               <p>Мерчант создаёт счёт в личном кабинете Cicada, получает уникальную ссылку или QR-код и самостоятельно отправляет его клиенту через email, мессенджер, социальную сеть, SMS или другой канал. Клиент открывает платёжную страницу и переводит выбранную криптовалюту. Cicada отслеживает платёж и показывает мерчанту его актуальный статус.</p>
-              <a href="#">Подробнее <span aria-hidden="true">→</span></a>
+              <a href="../projects.html#pay-by-link">Подробнее <span aria-hidden="true">→</span></a>
             </div>
           </article>
           <article class="gateway-product">
@@ -49,7 +49,7 @@
             <div class="product-info" id="igaming-product-info">
               <p>iGaming Gateway — специализированное решение для пополнения игрового аккаунта цифровыми активами и последующего расчёта с оператором платформы в фиатной валюте или криптовалюте.</p>
               <p>Продукт может подключаться напрямую к системе оператора либо через используемую им игровую платформу. В дальнейшем решение также может поддерживать выплаты игрокам.</p>
-              <a href="#">Подробнее <span aria-hidden="true">→</span></a>
+              <a href="../projects.html#igaming">Подробнее <span aria-hidden="true">→</span></a>
             </div>
           </article>
           <article class="gateway-product">
@@ -58,7 +58,7 @@
             <div class="product-info" id="ecommerce-product-info">
               <p>E-commerce Gateway — способ встроить оплату цифровыми активами непосредственно в checkout интернет-магазина, маркетплейса, SaaS-сервиса или платформы цифровых товаров.</p>
               <p>В отличие от Pay by Link, платёж создаётся автоматически на основании заказа в системе мерчанта. Cicada получает итоговую сумму, проводит клиента через оплату и возвращает системе мерчанта статус транзакции.</p>
-              <a href="#">Подробнее <span aria-hidden="true">→</span></a>
+              <a href="../projects.html#ecommerce">Подробнее <span aria-hidden="true">→</span></a>
             </div>
           </article>
         </div>

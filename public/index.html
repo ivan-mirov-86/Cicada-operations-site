@@ -6,8 +6,24 @@
     <meta name="description" content="Cicada Operations — единое пространство материалов по формированию продукта Cicada Payments." />
     <meta name="theme-color" content="#0c40ee" />
     <title>Cicada Payments — Project Workspace</title>
+    <script>
+      (() => {
+        const pathname = window.location.pathname.replace(/\/+$/, "") || "/";
+        const githubBase = "/Cicada-operations-site";
+        const base = pathname === githubBase || pathname.startsWith(`${githubBase}/`) ? githubBase : "";
+        const route = pathname.slice(base.length) || "/";
+        const legacyConclusionsRoutes = new Set(["/Conclusions", "/Conclusions/index.html"]);
+        const homeRoutes = new Set(["/", "/index.html"]);
+
+        if (legacyConclusionsRoutes.has(route)) {
+          window.location.replace(`${base}/conclusions/`);
+        } else if (!homeRoutes.has(route)) {
+          window.location.replace(`${base}/404.html`);
+        }
+      })();
+    </script>
     <link rel="icon" href="./assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
-    <link rel="stylesheet" href="./styles.css?v=20260911-45" />
+    <link rel="stylesheet" href="./styles.css?v=20260911-49" />
   </head>
   <body>
     <header class="site-header">
@@ -19,7 +35,7 @@
         <a class="nav-link" href="./roadmap/">Roadmap</a>
         <a class="nav-link" href="./scheme.html">Global Scheme</a>
         <a class="nav-link" href="./competitors/">Competitors</a>
-        <a class="nav-link nav-link-open-decisions" href="./open-decisions/">Open decisions</a>
+        <a class="nav-link nav-link-open-decisions" href="./open-decisions/">Open questions</a>
       </nav>
     </header>
 
@@ -43,14 +59,14 @@
         <div class="section-shell">
           <div class="hub-section-heading">
             <div><p class="hub-kicker">WORKSPACE LOGIC</p><h2 id="hub-map-title">Как устроено пространство</h2></div>
-            <p>Каждый раздел отвечает на отдельный уровень вопросов. Последовательность помогает пройти от продуктовой модели к плану, архитектуре, рыночным основаниям и блокирующим решениям.</p>
+            <p>Каждый раздел отвечает на отдельный уровень вопросов. Последовательность помогает пройти от продуктовой модели к плану, архитектуре, рыночным основаниям и блокирующим вопросам.</p>
           </div>
           <nav class="hub-path" aria-label="Логика разделов сайта">
             <a href="./projects.html"><span>01</span><small>Что создаём</small><strong>Project description</strong></a>
             <a href="./roadmap/"><span>02</span><small>В каком порядке</small><strong>Roadmap</strong></a>
             <a href="./scheme.html"><span>03</span><small>Как устроено</small><strong>Global Scheme</strong></a>
             <a href="./competitors/"><span>04</span><small>На что ориентируемся</small><strong>Competitors</strong></a>
-            <a class="is-warning" href="./open-decisions/"><span>05</span><small>Что блокирует</small><strong>Open decisions</strong></a>
+            <a class="is-warning" href="./open-decisions/"><span>05</span><small>Что блокирует</small><strong>Open questions</strong></a>
           </nav>
         </div>
       </section>
@@ -115,7 +131,7 @@
               <li>продуктовый и операционный benchmark;</li>
               <li>выводы для целевой модели Cicada.</li>
             </ul>
-            <div class="hub-card-actions"><a href="./competitors/">Открыть анализ <b aria-hidden="true">→</b></a><a href="./Conclusions/">Открыть выводы <b aria-hidden="true">→</b></a></div>
+            <div class="hub-card-actions"><a href="./competitors/">Открыть анализ <b aria-hidden="true">→</b></a><a href="./conclusions/">Открыть выводы <b aria-hidden="true">→</b></a></div>
           </article>
         </div>
 
@@ -123,7 +139,7 @@
           <div>
             <p class="hub-kicker">05 · BLOCKING DECISIONS</p>
             <p class="hub-question">Что необходимо решить до фиксации MVP?</p>
-            <h3>Open decisions</h3>
+            <h3>Open questions</h3>
           </div>
           <div>
             <p>Этот раздел собирает вопросы, ответы на которые определяют продуктовые границы, архитектуру, регуляторный периметр и операционную модель. Пока они не закрыты, решения по разработке остаются допущениями и могут привести к дорогостоящей переработке.</p>
@@ -134,7 +150,7 @@
               <li>settlement, договоры, данные и готовность к запуску.</li>
             </ul>
           </div>
-          <a href="./open-decisions/">Открыть решения <b aria-hidden="true">→</b></a>
+          <a href="./open-decisions/">Открыть вопросы <b aria-hidden="true">→</b></a>
         </article>
       </section>
     </main>

@@ -77,7 +77,7 @@ function element(tag, className, text) {
 
 const list = document.querySelector("#decision-list");
 const head = element("div", "decision-row decision-head");
-head.append(element("span", "", "Вопросы для решения"));
+head.append(element("span", "", "Открытые вопросы"));
 list.append(head);
 
 decisionGroups.forEach((group, groupIndex) => {

@@ -7,13 +7,13 @@
     <meta name="theme-color" content="#071431" />
     <title>Global Scheme — Cicada Operations</title>
     <link rel="icon" href="./assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
-    <link rel="stylesheet" href="./styles.css?v=20260911-43" />
+    <link rel="stylesheet" href="./styles.css?v=20260911-49" />
     <script src="./scheme.js?v=20260910-2" defer></script>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="./index.html" aria-label="Cicada Operations — главная"><img src="./assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><span>Operations</span></a>
-      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link" href="./projects.html">Project description</a><a class="nav-link" href="./roadmap/">Roadmap</a><a class="nav-link active" href="./scheme.html" aria-current="page">Global Scheme</a><a class="nav-link" href="./competitors/">Competitors</a><a class="nav-link nav-link-open-decisions" href="./open-decisions/">Open decisions</a></nav>
+      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link" href="./projects.html">Project description</a><a class="nav-link" href="./roadmap/">Roadmap</a><a class="nav-link active" href="./scheme.html" aria-current="page">Global Scheme</a><a class="nav-link" href="./competitors/">Competitors</a><a class="nav-link nav-link-open-decisions" href="./open-decisions/">Open questions</a></nav>
     </header>
 
     <main class="global-scheme-page">
@@ -77,7 +77,7 @@
           <article class="reveal-step"><span>02</span><h3>E-commerce Gateway</h3><p>Backend создаёт платёж из заказа и получает его состояние автоматически.</p><dl><div><dt>Мерчант</dt><dd>REST API</dd></div><div><dt>Клиент</dt><dd>Hosted Checkout</dd></div><div><dt>Статус</dt><dd>Signed Webhook</dd></div></dl></article>
           <article class="reveal-step"><div class="connection-card-top"><span>03</span><small>PRODUCT HYPOTHESIS</small></div><h3>iGaming Gateway</h3><p>Игровая платформа создаёт депозит и связывает транзакцию с player ID.</p><dl><div><dt>Платформа</dt><dd>Deposit API</dd></div><div><dt>Игрок</dt><dd>Deposit Checkout</dd></div><div><dt>Статус</dt><dd>Deposit Webhook</dd></div></dl></article>
         </div>
-        <aside class="global-scheme-boundary reveal-step"><div><span>ARCHITECTURE BOUNDARY</span><h3>Что ещё требует решения</h3></div><p>Custody и flow of funds, точный набор внешних провайдеров и условия fiat settlement зависят от юридической и операционной модели. Схема показывает целевой контур, а не подтверждённую production-готовность.</p><a href="./open-decisions/">Открыть решения <b aria-hidden="true">→</b></a></aside>
+        <aside class="global-scheme-boundary reveal-step"><div><span>ARCHITECTURE BOUNDARY</span><h3>Что ещё требует решения</h3></div><p>Custody и flow of funds, точный набор внешних провайдеров и условия fiat settlement зависят от юридической и операционной модели. Схема показывает целевой контур, а не подтверждённую production-готовность.</p><a href="./open-decisions/">Открыть вопросы <b aria-hidden="true">→</b></a></aside>
       </div></section>
     </main>
 
