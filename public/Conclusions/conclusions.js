@@ -1,8 +1,28 @@
 const models = [
-  { title: "Простота подключения", benchmarks: ["NOWPayments"], points: ["hosted checkout", "payment links и invoices", "понятный API", "плагины", "быстрый time-to-live"] },
-  { title: "Управляемый merchant lifecycle", benchmarks: ["CoinGate"], points: ["payment statuses", "underpayment и overpayment", "refunds", "payout approvals", "reconciliation и audit trail"] },
-  { title: "Crypto-native гибкость", benchmarks: ["0xProcessing", "NordPay", "PassimPay"], points: ["постоянные адреса", "массовые выплаты", "recurring flows", "white label", "Web3 и high-risk integrations"] },
-  { title: "Канадский юридический контур", benchmarks: ["EukaPay"], benchmarkNote: "и проверенные канадские провайдеры", points: ["канадское contracting entity", "FINTRAC compliance", "корректный licence/registration disclosure", "понятные banking partners", "CAD/fiat settlement и safeguarding"] }
+  {
+    title: "Подключение и приём платежей",
+    description: "Мерчант должен получить подходящий канал приёма оплаты — от no-code ссылки до полной API-интеграции — без изменения базовой логики платежа.",
+    benchmarks: ["NOWPayments", "EukaPay"],
+    points: ["merchant dashboard и Payment Links", "hosted checkout и QR-код", "REST API, SDK и webhooks", "CMS и e-commerce plugins", "единая модель Payment Intent"]
+  },
+  {
+    title: "Управление платёжным циклом",
+    description: "Cicada должна управлять платежом от создания счёта до финального расчёта, сохраняя понятный статус и связь между инвойсом, blockchain-транзакцией и settlement.",
+    benchmarks: ["CoinGate", "NordPay"],
+    points: ["payment statuses и signed webhooks", "underpayment, overpayment и late payment", "conversion и refunds", "settlement, payouts и approvals", "reconciliation и audit trail"]
+  },
+  {
+    title: "Crypto processing и инфраструктура",
+    description: "Общее Core-ядро должно скрывать сложность сетей, кошельков и транзакционного мониторинга от Pay by Link, iGaming и E-commerce Gateway.",
+    benchmarks: ["0xProcessing", "PassimPay"],
+    points: ["управляемая matrix активов и сетей", "уникальные и постоянные адреса", "blockchain monitoring и KYT", "wallet infrastructure и internal ledger", "treasury и маршрутизация транзакций"]
+  },
+  {
+    title: "Compliance и расчёты",
+    description: "Юридический и settlement-контур определяет, каких мерчантов можно обслуживать, кто контролирует средства и в какой форме Cicada исполняет обязательства перед мерчантом.",
+    benchmarks: ["EukaPay", "CoinGate"],
+    points: ["KYB/KYC и merchant risk profile", "sanctions, KYT holds и case management", "contracting entity и regulatory disclosures", "custody, safeguarding и segregation", "banking partners и fiat settlement"]
+  }
 ];
 
 const parityGroups = [
@@ -29,9 +49,10 @@ function renderModels() {
     const card = el("article", "model-card");
     const head = el("div", "model-card-head");
     head.append(el("span", "model-number", String(index + 1).padStart(2, "0")), el("h3", "", model.title));
-    const benchmark = el("div", "model-benchmark"); benchmark.append(el("span", "", "Benchmark"), benchmarkLinks(model.benchmarks)); if (model.benchmarkNote) benchmark.append(el("small", "", model.benchmarkNote));
+    const description = el("p", "model-card-description", model.description);
+    const benchmark = el("div", "model-benchmark"); benchmark.append(el("span", "", "Ориентиры исследования"), benchmarkLinks(model.benchmarks));
     const list = el("ul"); model.points.forEach((point) => list.append(el("li", "", point)));
-    card.append(head, benchmark, list); grid.append(card);
+    card.append(head, description, list, benchmark); grid.append(card);
   });
 }
 
