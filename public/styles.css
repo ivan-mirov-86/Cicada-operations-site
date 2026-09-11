@@ -1026,10 +1026,10 @@ h1 em { color: var(--blue); font-style: normal; }
 .global-scheme-hero a b { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; color: var(--blue); background: #fff; font-size: 17px; }
 
 .global-map { scroll-margin-top: 78px; padding-block: 104px; color: #fff; background: radial-gradient(circle at 80% 3%, rgb(45 89 255 / 30%), transparent 29%), radial-gradient(circle at 8% 78%, rgb(23 71 210 / 22%), transparent 25%), var(--navy); }
-.global-map-heading { display: grid; grid-template-columns: 1.05fr .95fr; gap: 70px; align-items: end; }
+.global-map-heading { display: block; }
 .global-map-heading .description-kicker { color: #8ba6ff; }
-.global-map-heading h2 { margin: 0; font-size: clamp(46px, 5vw, 68px); font-weight: 500; line-height: 1.02; letter-spacing: -.052em; }
-.global-map-legend { display: flex; flex-wrap: wrap; gap: 9px; justify-content: flex-end; padding-bottom: 6px; }
+.global-map-heading h2 { margin: 0; font-size: clamp(44px, 4.2vw, 60px); font-weight: 500; line-height: 1.02; letter-spacing: -.052em; white-space: nowrap; }
+.global-map-legend { display: flex; flex-wrap: wrap; gap: 9px; justify-content: flex-start; margin-top: 28px; }
 .global-map-legend span { position: relative; padding: 9px 12px 9px 28px; border: 1px solid rgb(255 255 255 / 18%); border-radius: 999px; color: #c8d1e3; font-size: 12px; }
 .global-map-legend span::before { position: absolute; top: 50%; left: 12px; width: 7px; height: 7px; border-radius: 50%; background: #6e90ff; content: ""; transform: translateY(-50%); }
 .global-map-legend .legend-external::before { background: #9aa6bd; }
@@ -1105,8 +1105,9 @@ h1 em { color: var(--blue); font-style: normal; }
 .global-scheme-boundary a { display: inline-flex; align-items: center; gap: 24px; padding: 12px 14px 12px 17px; border-radius: 999px; color: #fff; background: #ff5a00; white-space: nowrap; font-size: 13px; font-weight: 750; }
 
 @media (max-width: 1100px) {
-  .global-scheme-hero, .global-map-heading { grid-template-columns: 1fr; gap: 32px; }
+  .global-scheme-hero { grid-template-columns: 1fr; gap: 32px; }
   .global-scheme-hero { padding-block: 52px 64px; }
+  .global-map-heading h2 { white-space: normal; }
   .global-map-legend { justify-content: flex-start; }
   .global-actors-grid { grid-template-columns: repeat(2, 1fr); }
   .global-external-grid { grid-template-columns: repeat(3, 1fr); }
