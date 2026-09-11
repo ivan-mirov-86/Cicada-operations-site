@@ -3,96 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Архитектура Cicada Payment Gateway: каналы оплаты, интеграции, оркестрация и расчёты." />
-    <meta name="theme-color" content="#ff5a00" />
-    <title>Scheme — Cicada Operations</title>
+    <meta name="description" content="Глобальная схема Cicada Payments: участники, продукты, общее платёжное ядро, жизненный цикл платежа и внешняя инфраструктура." />
+    <meta name="theme-color" content="#071431" />
+    <title>Global Scheme — Cicada Operations</title>
     <link rel="icon" href="./assets/favicon.svg?v=20260910-3" type="image/svg+xml" sizes="any" />
-    <link rel="stylesheet" href="./styles.css?v=20260911-32" />
+    <link rel="stylesheet" href="./styles.css?v=20260911-35" />
     <script src="./scheme.js?v=20260910-2" defer></script>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="./index.html" aria-label="Cicada Operations — главная"><img src="./assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><span>Operations</span></a>
-      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link active" href="./scheme.html" aria-current="page">Scheme</a><a class="nav-link" href="./projects.html">Project Description</a><a class="nav-link" href="./roadmap/">Roadmap</a><a class="nav-link" href="./competitors/">Competitors</a><a class="nav-link" href="./open-decisions/">Open decisions</a></nav>
+      <nav class="site-nav" aria-label="Главная навигация"><a class="nav-link active" href="./scheme.html" aria-current="page">Global Scheme</a><a class="nav-link" href="./projects.html">Project Description</a><a class="nav-link" href="./roadmap/">Roadmap</a><a class="nav-link" href="./competitors/">Competitors</a><a class="nav-link" href="./open-decisions/">Open decisions</a></nav>
     </header>
 
-    <main class="scheme-page">
-      <section class="scheme-intro section-shell reveal-step">
-        <p class="eyebrow"><span></span> Product architecture</p>
-        <h1>Cicada Payment<br /><em>Gateway</em></h1>
-        <p>Платёжный шлюз, который позволяет мерчанту принимать оплату от клиента: выставлять счёт в фиатной или цифровой валюте и создавать платёжную ссылку. Мерчант выбирает валюту счёта, управляет проверками и конвертацией, а также настраивает получение расчёта в фиате (USD, EUR, AED) или выбранном цифровом активе.</p>
+    <main class="global-scheme-page">
+      <section class="global-scheme-hero section-shell reveal-step">
+        <div><p class="description-kicker">SYSTEM MAP</p><h1>Global Scheme</h1></div>
+        <div><p>Cicada Payments — единая платёжная платформа, в которой три прикладных продукта используют общий Core. Схема показывает, кто создаёт платёж, через какой продукт он проходит, как обрабатывается и где заканчивается ответственность Cicada.</p><a href="#platform-map">Посмотреть всю систему <b aria-hidden="true">↓</b></a></div>
       </section>
 
-      <section class="scheme-canvas section-shell" aria-label="Архитектура Cicada Payment Gateway">
-        <div class="scheme-stage reveal-step">
-          <p class="scheme-label">Каналы оплаты для покупателя</p>
-          <div class="scheme-grid scheme-grid-four">
-            <article class="scheme-card"><strong>QR Code</strong><span>Оплата в магазине</span></article>
-            <article class="scheme-card"><strong>Payment Link</strong><span>Ссылка в сообщении</span></article>
-            <article class="scheme-card"><strong>Hosted Checkout</strong><span>Платёжная страница</span></article>
-            <article class="scheme-card"><strong>POS</strong><span>Касса и терминал</span></article>
+      <section class="global-map" id="platform-map" aria-labelledby="platform-map-title">
+        <div class="section-shell">
+          <div class="global-map-heading reveal-step">
+            <div><p class="description-kicker">END-TO-END ARCHITECTURE</p><h2 id="platform-map-title">От платёжного сценария<br />до расчёта</h2></div>
+            <div class="global-map-legend" aria-label="Легенда схемы"><span class="legend-cicada">Cicada Payments</span><span class="legend-external">Внешняя инфраструктура</span><span class="legend-decision">Требует решения</span></div>
           </div>
-        </div>
 
-        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
+          <div class="global-map-frame" aria-label="Участники используют три продукта Cicada Payments. Все продукты передают платежи в Cicada Core, который взаимодействует с внешней инфраструктурой.">
+            <section class="global-map-layer reveal-step" aria-labelledby="actors-title">
+              <div class="global-layer-label"><span>01</span><h3 id="actors-title">Участники и системы</h3></div>
+              <div class="global-actors-grid"><article><strong>Покупатель</strong><p>Оплачивает счёт или заказ</p></article><article><strong>Игрок</strong><p>Пополняет игровой аккаунт</p></article><article><strong>Сотрудник мерчанта</strong><p>Создаёт и контролирует платежи</p></article><article><strong>Система мерчанта</strong><p>Автоматизирует заказы и депозиты</p></article></div>
+            </section>
 
-        <div class="scheme-stage reveal-step">
-          <p class="scheme-label">Доставка функционала мерчанту</p>
-          <div class="scheme-grid scheme-grid-four">
-            <article class="scheme-card"><strong>REST API</strong><span>Server-to-server</span></article>
-            <article class="scheme-card"><strong>Web &amp; Mobile SDK</strong><span>Встроенный checkout</span></article>
-            <article class="scheme-card"><strong>Plugin</strong><span>Сайт и интернет-магазин</span></article>
-            <article class="scheme-card"><strong>Dashboard</strong><span>No-code управление</span></article>
-          </div>
-        </div>
+            <div class="global-flow-connector reveal-step"><span>выбирают платёжный сценарий</span><i aria-hidden="true">↓</i></div>
 
-        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
-        <article class="scheme-layer scheme-layer-control reveal-step"><strong>Merchant Control Plane</strong><span>Мерчанты · магазины · терминалы · пользователи · API-ключи · комиссии · лимиты · settlement-настройки</span></article>
-        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
-        <article class="scheme-layer scheme-layer-orchestration reveal-step"><strong>Payment Orchestration Layer</strong><span>Payment Intent · жизненный цикл платежа · маршрутизация · статусы · webhooks · refunds · idempotency</span></article>
-        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
+            <section class="global-map-layer reveal-step" aria-labelledby="products-title">
+              <div class="global-layer-label"><span>02</span><h3 id="products-title">Прикладные продукты</h3></div>
+              <div class="global-products-grid">
+                <article class="global-product-card"><span>NO-CODE</span><h3>Pay by Link</h3><p>Удалённые счета и индивидуальные продажи без интеграции.</p><ul><li>Dashboard</li><li>Payment Link</li><li>QR-код</li></ul></article>
+                <article class="global-product-card"><span>ORDER-BASED</span><h3>E-commerce Gateway</h3><p>Оплата заказа внутри checkout интернет-магазина или платформы.</p><ul><li>REST API</li><li>Hosted Checkout</li><li>Webhooks</li></ul></article>
+                <article class="global-product-card global-product-hypothesis"><div><span>ACCOUNT-BASED</span><small>Гипотеза</small></div><h3>iGaming Gateway</h3><p>Депозиты с привязкой транзакции к аккаунту игрока.</p><ul><li>Deposit API</li><li>Player ID</li><li>Webhooks</li></ul></article>
+              </div>
+            </section>
 
-        <div class="scheme-stage reveal-step">
-          <p class="scheme-label">Платёжное и регулируемое ядро</p>
-          <div class="scheme-grid scheme-grid-three">
-            <article class="scheme-card"><strong>Compliance &amp; Risk</strong><span>KYB · KYC · SoF/SoW · KYT</span></article>
-            <article class="scheme-card"><strong>Wallet &amp; Blockchain</strong><span>Адреса · custody · monitoring</span></article>
-            <article class="scheme-card"><strong>Quote &amp; Exchange</strong><span>Курс · rate lock · OTC · hedge</span></article>
-          </div>
-        </div>
+            <div class="global-flow-connector global-flow-connector-core reveal-step"><span>все продукты используют единое ядро</span><i aria-hidden="true">↓</i></div>
 
-        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
-        <article class="scheme-layer scheme-layer-ledger reveal-step"><strong>Ledger — финансовый источник истины</strong><span>Балансы · движение активов · обязательства перед мерчантом · комиссии · сверка · аудит</span></article>
-        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
-        <article class="scheme-layer reveal-step"><strong>Settlement Engine</strong><span>EUR и crypto payouts · расписания · банковские реквизиты · отчёты · возвраты переводов</span></article>
-        <div class="scheme-arrow reveal-step" aria-hidden="true">↓</div>
+            <section class="global-core reveal-step" aria-labelledby="core-map-title">
+              <div class="global-core-heading"><div><span>03 · SHARED PLATFORM</span><h3 id="core-map-title">Cicada Core</h3></div><p>Общий контур создания, проверки, учёта, конвертации и расчёта платежей.</p></div>
+              <div class="global-core-control"><article><strong>Merchant Account</strong><span>Профиль · продукты · настройки</span></article><article><strong>Payment Intent</strong><span>Сумма · курс · адрес · статус</span></article><article><strong>Payment Orchestration</strong><span>Lifecycle · routing · refunds</span></article></div>
+              <div class="global-core-services"><article><strong>Compliance &amp; Risk</strong><span>KYB · KYC · KYT · sanctions</span></article><article><strong>Wallets &amp; Fireblocks</strong><span>Адреса · custody · signing</span></article><article><strong>Blockchain Monitoring</strong><span>Транзакции · confirmations</span></article><article><strong>Ledger</strong><span>Балансы · проводки · обязательства</span></article><article><strong>OTC / Exchange</strong><span>Quote · rate lock · conversion</span></article><article><strong>Settlement</strong><span>Crypto или fiat расчёт</span></article></div>
+              <div class="global-core-operations"><span>Dashboard</span><span>Signed Webhooks</span><span>Reporting</span><span>Reconciliation</span><span>Audit Trail</span></div>
+            </section>
 
-        <div class="scheme-stage scheme-external reveal-step">
-          <p class="scheme-label">Внешняя инфраструктура</p>
-          <div class="scheme-grid scheme-grid-five">
-            <article class="scheme-card"><strong>Blockchain</strong></article>
-            <article class="scheme-card"><strong>Custodian</strong></article>
-            <article class="scheme-card"><strong>Chainalysis</strong></article>
-            <article class="scheme-card"><strong>OTC / Liquidity</strong></article>
-            <article class="scheme-card"><strong>Banks</strong></article>
+            <div class="global-flow-connector reveal-step"><span>подключает необходимые провайдеры</span><i aria-hidden="true">↓</i></div>
+
+            <section class="global-map-layer global-external-layer reveal-step" aria-labelledby="external-title">
+              <div class="global-layer-label"><span>04</span><h3 id="external-title">Внешняя инфраструктура</h3></div>
+              <div class="global-external-grid"><article><strong>Blockchain networks</strong><p>Переводы и подтверждения</p></article><article><strong>Custody provider</strong><p>Ключи и wallet-инфраструктура</p></article><article><strong>KYT / AML provider</strong><p>On-chain проверки</p></article><article><strong>OTC / Liquidity</strong><p>Курс и конвертация</p></article><article><strong>Banks</strong><p>Fiat settlement</p></article></div>
+            </section>
           </div>
         </div>
       </section>
 
-      <section class="channel-difference section-shell reveal-step">
-        <div class="channel-difference-heading">
-          <p class="eyebrow"><span></span> Integration channels</p>
-          <h2>Разница между<br />каналами</h2>
-        </div>
-        <div class="difference-list">
-          <article><b>01</b><div><h3>Dashboard</h3><p>Сотрудник мерчанта работает вручную в личном кабинете.</p></div></article>
-          <article><b>02</b><div><h3>API</h3><p>Backend мерчанта автоматически взаимодействует с Cicada.</p></div></article>
-          <article><b>03</b><div><h3>SDK</h3><p>Готовые платёжные компоненты в приложении или на сайте.</p></div></article>
-          <article><b>04</b><div><h3>Plugin</h3><p>Готовое подключение Cicada к CMS или e-commerce-платформе.</p></div></article>
-        </div>
+      <section class="payment-lifecycle section-shell reveal-step" aria-labelledby="lifecycle-title">
+        <div class="description-heading"><div><p class="description-kicker">PAYMENT LIFECYCLE</p><h2 id="lifecycle-title">Сквозной путь платежа</h2></div><p>Независимо от прикладного продукта операция проходит через один управляемый жизненный цикл и сохраняет связь между бизнес-событием, blockchain-транзакцией и расчётом.</p></div>
+        <ol class="payment-lifecycle-grid"><li><span>01</span><strong>Создание</strong><p>Счёт, заказ или депозит создаёт Payment Intent.</p></li><li><span>02</span><strong>Checkout</strong><p>Клиент получает сумму, актив, сеть и адрес.</p></li><li><span>03</span><strong>Транзакция</strong><p>Перевод обнаруживается в blockchain.</p></li><li><span>04</span><strong>Проверки</strong><p>Применяются confirmations, KYT и risk rules.</p></li><li><span>05</span><strong>Ledger</strong><p>Операция отражается в финансовом учёте.</p></li><li><span>06</span><strong>Конвертация</strong><p>Актив обменивается при необходимости.</p></li><li><span>07</span><strong>Settlement</strong><p>Формируется расчёт с мерчантом.</p></li><li><span>08</span><strong>Сверка</strong><p>События и суммы связываются в отчётности.</p></li></ol>
       </section>
+
+      <section class="product-connections" aria-labelledby="connections-title"><div class="section-shell">
+        <div class="description-heading reveal-step"><div><p class="description-kicker">PRODUCT CONNECTIONS</p><h2 id="connections-title">Как продукты подключаются</h2></div><p>Канал подключения зависит от сценария мерчанта, но платёжные сущности, статусы и операционный контур остаются общими.</p></div>
+        <div class="product-connections-grid">
+          <article class="reveal-step"><span>01</span><h3>Pay by Link</h3><p>Сотрудник создаёт счёт в Dashboard и передаёт клиенту ссылку или QR-код.</p><dl><div><dt>Мерчант</dt><dd>Dashboard</dd></div><div><dt>Клиент</dt><dd>Payment Link</dd></div><div><dt>Статус</dt><dd>Dashboard</dd></div></dl></article>
+          <article class="reveal-step"><span>02</span><h3>E-commerce Gateway</h3><p>Backend создаёт платёж из заказа и получает его состояние автоматически.</p><dl><div><dt>Мерчант</dt><dd>REST API</dd></div><div><dt>Клиент</dt><dd>Hosted Checkout</dd></div><div><dt>Статус</dt><dd>Signed Webhook</dd></div></dl></article>
+          <article class="reveal-step"><div class="connection-card-top"><span>03</span><small>PRODUCT HYPOTHESIS</small></div><h3>iGaming Gateway</h3><p>Игровая платформа создаёт депозит и связывает транзакцию с player ID.</p><dl><div><dt>Платформа</dt><dd>Deposit API</dd></div><div><dt>Игрок</dt><dd>Deposit Checkout</dd></div><div><dt>Статус</dt><dd>Deposit Webhook</dd></div></dl></article>
+        </div>
+        <aside class="global-scheme-boundary reveal-step"><div><span>ARCHITECTURE BOUNDARY</span><h3>Что ещё требует решения</h3></div><p>Custody и flow of funds, точный набор внешних провайдеров и условия fiat settlement зависят от юридической и операционной модели. Схема показывает целевой контур, а не подтверждённую production-готовность.</p><a href="./open-decisions/">Открыть решения <b aria-hidden="true">→</b></a></aside>
+      </div></section>
     </main>
 
-    <footer class="site-footer section-shell"><img src="./assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><p>Payment Gateway architecture</p></footer>
+    <footer class="site-footer section-shell"><img src="./assets/cicada-wordmark-blue.svg?v=20260910-2" alt="Cicada" /><p>Global Scheme · 11.09.2026</p></footer>
   </body>
 </html>
